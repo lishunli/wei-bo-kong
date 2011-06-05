@@ -1,4 +1,5 @@
 #summary 更新记录
+#sidebar TableOfContents
 
 2011-06-03 v0.9.3<br>
 第一个公开版本
