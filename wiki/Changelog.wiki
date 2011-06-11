@@ -1,6 +1,15 @@
 #summary 更新记录
 #labels Phase-Requirements
 #sidebar TableOfContents
+  * [Articles HOWTO articles]
+    * [ArticlesXSS Web security]
+    * [ArticlesDom DOM manipulation]
+    * [ArticlesStyle CSS and style]
+    * [ArticlesTips Tips and tricks]
+  * [DOMReference DOM reference]
+  * [HTMLElements HTML reference]
+  * [CSSReference CSS reference]
+
 
 = 更新详情 =
 
@@ -8,6 +17,7 @@
 +添加更新提示<br>
 +隐藏底部广告,链接<br>
 +隐藏转载对话<br>
+
 
 
 == v0.9.3 (2011-06-05)==
