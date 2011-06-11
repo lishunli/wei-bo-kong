@@ -2,6 +2,8 @@
 #labels Phase-Requirements
 #sidebar TableOfContents
 
+[Changelog#更新详情]
+[Changelog#其他]
 
 = 更新详情 =
 
@@ -9,7 +11,7 @@
 +添加更新提示<br>
 +隐藏底部广告,链接<br>
 +隐藏转载对话<br>
-[#更新详情]
+
 == v0.9.3 (2011-06-05)==
 第一个公开版本
 
