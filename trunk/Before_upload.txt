@@ -1,5 +1,0 @@
-1.更新版本
-  a.weibo.user.js
-  b.manifest.json
-  c.manifest.js
-2.删除所有alert

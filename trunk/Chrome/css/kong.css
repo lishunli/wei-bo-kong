@@ -1,0 +1,37 @@
+#kong_update {
+	position: absolute;
+	bottom: 0px;
+	right: 50px;
+	width: 150px;
+	height:200px;
+	display: block;
+	border: solid 1px #E5E5E5;
+	background: white;
+	z-index:9;
+}
+
+#kong_title {
+	text-align: center;
+	font-weight: bold;
+}
+
+#kong_date {
+	text-align: right;
+}
+
+#kong_func {
+	position: fixed;
+	bottom:5px;
+	right: 55px;
+}
+
+.kong_hr {
+	border: 1px dashed grey;
+}
+
+.kong_expand {
+	margin-left: 10px;
+	color: black;
+	font-size: 12px;
+	font-family: Arial,Helvetica,sans-serif;
+}
