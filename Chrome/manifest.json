@@ -1,0 +1,29 @@
+{
+	"name": "__MSG_appName__",
+	"version": "0.9.4",
+	"description": "__MSG_appDesc__",
+	"default_locale": "zh_CN",
+	"options_page": "options.html",
+	"page_action": {
+		"default_icon": "icon.png",
+		"default_popup": "popup.html"
+	},
+	"icons": {
+		"16": "img/icon/icon_16.png",
+		"48": "img/icon/icon_48.png",
+		"128": "img/icon/icon_128.png"
+	},
+	"permissions": [
+		"http://weibo.com/",
+		"http://t.sina.com.cn/",
+		"tabs"
+	],
+	"background_page": "background.html",
+	"content_scripts": [
+    {
+      "matches": ["http://weibo.com/*", "http://t.sina.com.cn/*"],
+	  "css": ["css/kong.css"],
+      "js": ["Weibo.user.js"]
+    }
+  ]
+}
