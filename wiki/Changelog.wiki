@@ -1,11 +1,14 @@
 #summary 更新记录
+#labels Phase-Requirements
 #sidebar TableOfContents
 
-2011-06-10 v0.9.4<br>
+= 更新详情 =
+
+== v0.9.4 (2011-06-10)==
 +添加更新提示<br>
 +隐藏底部广告,链接<br>
 +隐藏转载对话<br>
 
 
-2011-06-03 v0.9.3<br>
+== v0.9.3 ==
 第一个公开版本
