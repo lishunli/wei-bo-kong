@@ -1,5 +1,5 @@
 ﻿// WeiboKong
-// version 0.9.4
+// version 0.9.5
 // 2011-06-0*
 //
 // ==UserScript==
@@ -10,8 +10,8 @@
 // @include		  http://t.sina.com.cn/*
 // ==/UserScript==
 
-var VERSION = "0.9.4";
-var UPDATE = "+添加更新提示<br>+隐藏底部广告,链接<br>+隐藏转载对话<br>";
+var VERSION = "0.9.5";
+var UPDATE = "+压缩了扩展的体积";
 var DATE = "2011-06-09"
 
 function topnav(options) {
