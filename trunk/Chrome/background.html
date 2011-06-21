@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+	<meta charset="gbk">
   </head>
   <body>
 	<script type="text/javascript" src="lib/store.js"></script> 
@@ -48,6 +49,19 @@
 						}
 					});
 				});
+			}
+			else if (request.action == 'notify' ) {
+				var notification = chrome.extension.getURL("notification.html");
+				//var icon = chrome.extension.getURL("img/icon/icon_48.png");
+				/*var notification = webkitNotifications.createNotification( 
+				  icon,
+				  '您有新微博！',  // notification title
+				  ''  // notification body text
+				);*/
+				var notification = webkitNotifications.createHTMLNotification(
+				  notification 
+				);
+				notification.show();
 			}
 		};
 		chrome.extension.onRequest.addListener(onRequest);
