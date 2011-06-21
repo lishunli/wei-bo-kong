@@ -1,6 +1,6 @@
 ﻿// WeiboKong
 // version 0.9.5
-// 2011-06-0*
+// 2011-06-21
 //
 // ==UserScript==
 // @name          WeiboKong
@@ -11,8 +11,8 @@
 // ==/UserScript==
 
 var VERSION = "0.9.5";
-var UPDATE = "+压缩了扩展的体积";
-var DATE = "2011-06-09"
+var UPDATE = "*压缩了扩展的体积<br>+过滤关键字<br>+新微博桌面提醒<br>";
+var DATE = "2011-06-21"
 
 function topnav(options) {
 	var allDivs, thisDiv;
@@ -294,30 +294,79 @@ function others(options) {
 }
 
 function filter(options) {
-	if ( options['enable_filter'] == false ) {
-		return;
+	if ( options['enable_filter'] == true ) {
+		if ( options['filter'] != "" ) {
+			var names = options['filter'].toString().split(",");
+			for (var i in names) {
+				allDivs = document.evaluate(
+					"//a[@title='" + names[i] + "']",
+					document,
+					null,
+					XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
+					null);
+				for (var i = 0; i < allDivs.snapshotLength; i++) {
+					thisDiv = allDivs.snapshotItem(i);
+					thisDiv = thisDiv.parentNode;
+					thisDiv = thisDiv.parentNode;
+					thisDiv = thisDiv.parentNode;
+					thisDiv.parentNode.removeChild(thisDiv);
+				}
+			}
+		}
 	}
-	if ( options['filter'] != "" ) {
-		var names = options['filter'].toString().split(",");
-		for (var i in names) {
+	if ( options['enable_filter_keyword_origin'] == true ) {
+		if ( options['filter_keyword'] != "" ) {
 			allDivs = document.evaluate(
-				"//a[@title='" + names[i] + "']",
+				"//p[@class='sms']",
 				document,
 				null,
 				XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
 				null);
 			for (var i = 0; i < allDivs.snapshotLength; i++) {
 				thisDiv = allDivs.snapshotItem(i);
-				thisDiv = thisDiv.parentNode;
-				thisDiv = thisDiv.parentNode;
-				thisDiv = thisDiv.parentNode;
-				thisDiv.parentNode.removeChild(thisDiv);
+				var keywords = options['filter_keyword'].toString().split(",");
+				var html = thisDiv.innerHTML;
+				
+				for (var k in keywords) {
+					if ( html.search( keywords[k] ) != -1 ) {
+						thisDiv = thisDiv.parentNode;
+						thisDiv = thisDiv.parentNode;
+						thisDiv.parentNode.removeChild(thisDiv);
+						break;
+					}
+				}
+				
+			}
+		}
+	}
+	if ( options['enable_filter_keyword_forward'] == true ) {
+		if ( options['filter_keyword'] != "" ) {
+			allDivs = document.evaluate(
+				"//div[@class='MIB_assign']",
+				document,
+				null,
+				XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
+				null);
+			for (var i = 0; i < allDivs.snapshotLength; i++) {
+				thisDiv = allDivs.snapshotItem(i);
+				var keywords = options['filter_keyword'].toString().split(",");
+				var html = thisDiv.innerHTML;
+				
+				for (var k in keywords) {
+					if ( html.search( keywords[k] ) != -1 ) {
+						thisDiv = thisDiv.parentNode;
+						thisDiv = thisDiv.parentNode;
+						thisDiv.parentNode.removeChild(thisDiv);
+						break;
+					}
+				}
+				
 			}
 		}
 	}
 }
 
-function checkUpdate() {8
+function checkUpdate() {
 	if ( localStorage["version"] == undefined || VERSION > localStorage["version"] ) {
 		localStorage["version"] = VERSION;
 		newElement = document.createElement('div');
@@ -331,9 +380,42 @@ function checkUpdate() {8
 	}
 }
 
+function checkNew(notified,options) {
+	if ( options['notification_post'] == true ) {
+		var flag = false;
+		allDivs = document.evaluate(
+			"//a[@class='newMblog_ts1']",
+			document,
+			null,
+			XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
+			null);
+		for (var i = 0; i < allDivs.snapshotLength; i++) {
+			thisDiv = allDivs.snapshotItem(i);
+			if ( thisDiv.style.display != "none" ) {
+				flag = true;
+				if ( notified == false ) {
+					chrome.extension.sendRequest({'action' : 'notify'}, function(){});
+					notified = true;
+				}
+
+			}
+		}
+		if ( flag == false ) notified = false;
+	}
+	t = setTimeout(function(){checkNew(notified,options);}, options['notification_intervals'] * 1000 );
+}
+
+function notification(options) {
+	if ( options['enable_notification'] == false ) {
+		return;
+	}
+	checkNew(false,options);
+}
+
 function doit(options) {
 	checkUpdate();
 	//Enable all the functions
+	
 	if ( options['enable_all'] == false ) return;
 	
 	topnav(options);
@@ -342,6 +424,7 @@ function doit(options) {
 	mainboard(options);
 	others(options);
 	filter(options);
+	notification(options);
 }
 
 function getSlash(html) {

@@ -198,15 +198,15 @@ this.manifest = {
 		
 		{
             "tab": "消息过滤",
-            "group": "过滤",
+            "group": "过滤用户",
             "name": "enable_filter",
             "type": "checkbox",
-            "label": "启用过滤",
+            "label": "启用过滤用户",
         },
 		
 		{
             "tab": "消息过滤",
-            "group": "过滤",
+            "group": "过滤用户",
             "name": "filter",
             "type": "text",
             "label": "请输入想屏蔽用户名",
@@ -216,10 +216,72 @@ this.manifest = {
 		
 		{
             "tab": "消息过滤",
-            "group": "过滤",
+            "group": "过滤用户",
             "name": "bugs",
             "type": "description",
             "text": "*目前只能过滤第一页内容,请以半角逗号分隔多个用户名"
+        },
+		
+		{
+            "tab": "消息过滤",
+            "group": "过滤关键字",
+            "name": "enable_filter_keyword_origin",
+            "type": "checkbox",
+            "label": "过滤原创内容",
+        },
+		
+		{
+            "tab": "消息过滤",
+            "group": "过滤关键字",
+            "name": "enable_filter_keyword_forward",
+            "type": "checkbox",
+            "label": "过滤转发内容",
+        },
+		
+		{
+            "tab": "消息过滤",
+            "group": "过滤关键字",
+            "name": "filter_keyword",
+            "type": "text",
+            "label": "请输入想屏蔽的关键字",
+			"text": "以半角逗号,分隔关键字",
+			"masked": "false"
+        },
+		
+		{
+            "tab": "消息过滤",
+            "group": "过滤关键字",
+            "name": "bugs",
+            "type": "description",
+            "text": "*目前只能过滤第一页内容,请以半角逗号分隔多个关键字"
+        },
+		
+		{
+            "tab": "桌面提醒",
+            "group": "全局设置",
+            "name": "enable_notification",
+            "type": "checkbox",
+            "label": "启用桌面提醒"
+        },
+		
+		{
+            "tab": "桌面提醒",
+            "group": "全局设置",
+            "name": "notification_intervals",
+            "type": "slider",
+			"min": 10,
+			"max": 600,
+			"step": 10,
+			"display": true,
+            "label": "检查间隔(秒)"
+        },
+		
+		{
+            "tab": "桌面提醒",
+            "group": "详细设置",
+            "name": "notification_post",
+            "type": "checkbox",
+            "label": "有新微博时提醒"
         },
 		
 		{
@@ -235,7 +297,7 @@ this.manifest = {
             "group": "版本信息",
             "name": "version",
             "type": "description",
-            "text": "v0.9.4"
+            "text": "v0.9.5"
         },
 		
 		{
