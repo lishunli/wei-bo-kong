@@ -402,7 +402,9 @@ function checkNew(notified,options) {
 		}
 		if ( flag == false ) notified = false;
 	}
-	t = setTimeout(function(){checkNew(notified,options);}, options['notification_intervals'] * 1000 );
+	var intervals = options['notification_intervals'];
+	if ( intervals < 10 ) intervals = 10;
+	t = setTimeout(function(){checkNew(notified,options);}, intervals * 1000 );
 }
 
 function notification(options) {
