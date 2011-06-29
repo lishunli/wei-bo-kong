@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 var VERSION = "0.9.5";
-var UPDATE = "*压缩了扩展的体积<br>+过滤关键字<br>+新微博桌面提醒<br>";
+var UPDATE = "+隐藏主面板推荐区<br>+隐藏右侧栏我加入的群<br>";
 var DATE = "2011-06-21"
 
 function topnav(options) {
@@ -191,6 +191,13 @@ function rightside(options) {
 			thisDiv = allDivs[0];
 			thisDiv.parentNode.removeChild(thisDiv);
 		}
+		
+		if ( options['hide_right_group'] == true ) {
+			allDivs = document.getElementsByName('app10003');
+			thisDiv = allDivs[0];
+			thisDiv.parentNode.removeChild(thisDiv);
+		}
+		
 		if ( options['hide_right_cf'] == true ) {
 			allDivs = document.evaluate(
 				"//div[@class='f_pro']",
@@ -230,6 +237,10 @@ function mainboard(options) {
 			thisDiv = allDivs.snapshotItem(i);
 			thisDiv.parentNode.removeChild(thisDiv);
 		}
+	}
+	if ( options['hide_main_tips'] == true ) {
+		thisDiv = document.getElementById('pully_list');
+		thisDiv.parentNode.removeChild(thisDiv);
 	}
 	if ( options['hide_main_sort'] == true ) {
 		thisDiv = document.getElementById('MIB_newFilter');
