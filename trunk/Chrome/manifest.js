@@ -127,6 +127,14 @@ this.manifest = {
 		{
             "tab": "右侧边栏",
             "group": "详细设置",
+            "name": "hide_right_group",
+            "type": "checkbox",
+            "label": "隐藏我加入的群"
+        },
+		
+		{
+            "tab": "右侧边栏",
+            "group": "详细设置",
             "name": "hide_right_cf",
             "type": "checkbox",
             "label": "隐藏手机新浪,意见反馈"
@@ -146,6 +154,14 @@ this.manifest = {
             "name": "hide_main_post",
             "type": "checkbox",
             "label": "隐藏发布栏"
+        },
+		
+		{
+            "tab": "主面板",
+            "group": "详细设置",
+            "name": "hide_main_tips",
+            "type": "checkbox",
+            "label": "隐藏推荐"
         },
 		
 		{

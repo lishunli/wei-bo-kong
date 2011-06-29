@@ -62,28 +62,36 @@ window.addEvent("domready", function () {
 		me.addEventListener("mouseover", function(){hover("325px","400px","hide_right_alltopic");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
+		me = settings.manifest.hide_right_group.label;
+		me.addEventListener("mouseover", function(){hover("350px","400px","hide_right_group");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
 		me = settings.manifest.hide_right_cf.label;
-		me.addEventListener("mouseover", function(){hover("350px","400px","hide_right_cf");}, false);
+		me.addEventListener("mouseover", function(){hover("375px","400px","hide_right_cf");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_report.label;
-		me.addEventListener("mouseover", function(){hover("375px","400px","hide_right_report");}, false);
+		me.addEventListener("mouseover", function(){hover("400px","400px","hide_right_report");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_main_post.label;
 		me.addEventListener("mouseover", function(){hover("100px","400px","hide_main_post");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
+		me = settings.manifest.hide_main_tips.label;
+		me.addEventListener("mouseover", function(){hover("125px","400px","hide_main_tips");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
 		me = settings.manifest.hide_main_sort.label;
-		me.addEventListener("mouseover", function(){hover("125px","400px","hide_main_sort");}, false);
+		me.addEventListener("mouseover", function(){hover("150px","400px","hide_main_sort");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_main_forward.label;
-		me.addEventListener("mouseover", function(){hover("150px","400px","hide_main_forward");}, false);
+		me.addEventListener("mouseover", function(){hover("175px","400px","hide_main_forward");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_main_micro.label;
-		me.addEventListener("mouseover", function(){hover("170px","400px","hide_main_micro");}, false);
+		me.addEventListener("mouseover", function(){hover("200px","400px","hide_main_micro");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_other_nav.label;
