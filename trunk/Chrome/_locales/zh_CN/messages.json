@@ -6,5 +6,9 @@
   "appDesc": {
     "message": "自定义你的新浪微博,去除多余的界面元素,让微博变得更干净简洁!", 
     "description":"App description."
+  },
+  "appVersion": {
+	"message": "0.9.5", 
+    "description":"App version."
   }
 }
