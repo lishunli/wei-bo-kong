@@ -24,7 +24,7 @@
     {
       "matches": ["http://weibo.com/*", "http://t.sina.com.cn/*"],
 	  "css": ["css/kong.css"],
-      "js": ["Weibo.user.js"],
+      "js": ["jquery.min.js", "Weibo.user.js"],
 	  "run_at": "document_idle",
 	  "all_frames": true
     }

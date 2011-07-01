@@ -15,7 +15,7 @@ this.manifest = {
 		{
             "tab": "顶端导航条",
             "group": "全局设置",
-            "name": "hide_top",
+            "name": "hide_top",	
             "type": "checkbox",
             "label": "隐藏所有元素"
         },
@@ -313,7 +313,7 @@ this.manifest = {
             "group": "版本信息",
             "name": "version",
             "type": "description",
-            "text": "v0.9.5"
+            "text": chrome.i18n.getMessage("appVersion")
         },
 		
 		{

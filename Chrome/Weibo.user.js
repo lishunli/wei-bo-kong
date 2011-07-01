@@ -10,171 +10,56 @@
 // @include		  http://t.sina.com.cn/*
 // ==/UserScript==
 
-var VERSION = "0.9.5";
-var UPDATE = "+隐藏主面板推荐区<br>+隐藏右侧栏我加入的群<br>";
+var VERSION = chrome.i18n.getMessage("appVersion");
+var UPDATE = "+隐藏主面板推荐区<br>+隐藏右侧栏我加入的群<br>*用jQuery重写精简了很多代码<br>";
 var DATE = "2011-06-21"
 
 function topnav(options) {
-	var allDivs, thisDiv;
 	if ( options['hide_top'] == true ) {
-		allDivs = document.evaluate(
-			"//div[@class='tsina_gnbarea']",
-			document,
-			null,
-			XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-			null);
-		for (var i = 0; i < allDivs.snapshotLength; i++) {
-			thisDiv = allDivs.snapshotItem(i);
-			thisDiv.parentNode.removeChild(thisDiv);
-		}
+		$(".tsina_gnbarea").hide();
 	} else {
 		if ( options['hide_top_left'] ) {
-			allDivs = document.evaluate(
-				"//ul[@class='gnb_l']",
-				document,
-				null,
-				XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-				null);
-			for (var i = 0; i < allDivs.snapshotLength; i++) {
-				thisDiv = allDivs.snapshotItem(i);
-				thisDiv.parentNode.removeChild(thisDiv);
-			}
+			$(".gnb_l").hide();
 		}
 		if ( options['hide_top_right'] ) {
-			allDivs = document.evaluate(
-				"//ul[@class='gnb_r']",
-				document,
-				null,
-				XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-				null);
-			for (var i = 0; i < allDivs.snapshotLength; i++) {
-				thisDiv = allDivs.snapshotItem(i);
-				thisDiv.parentNode.removeChild(thisDiv);
-			}
+			$(".gnb_r").hide();
 		}
 	}
 }
 
 function secondnav(options) {
-	var allDivs, thisDiv;
 	if ( options['hide_secondnav'] == true ) {
-		allDivs = document.evaluate(
-			"//div[@class='head_menu']",
-			document,
-			null,
-			XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-			null);
-		for (var i = 0; i < allDivs.snapshotLength; i++) {
-			thisDiv = allDivs.snapshotItem(i);
-			thisDiv.parentNode.removeChild(thisDiv);
-		}
-		allDivs = document.evaluate(
-			"//div[@class='newlogo festival']",
-			document,
-			null,
-			XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-			null);
-		for (var i = 0; i < allDivs.snapshotLength; i++) {
-			thisDiv = allDivs.snapshotItem(i);
-			thisDiv.parentNode.removeChild(thisDiv);
-		}
+		$(".head_menu").hide();
+		$(".newlogo.festival").hide();
 	} else {
 		if ( options['hide_secondnav_logo'] == true ) {
-			allDivs = document.evaluate(
-				"//div[@class='newlogo festival']",
-				document,
-				null,
-				XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-				null);
-			for (var i = 0; i < allDivs.snapshotLength; i++) {
-				thisDiv = allDivs.snapshotItem(i);
-				thisDiv.parentNode.removeChild(thisDiv);
-			}
+			$(".newlogo.festival").hide();
 		}
 		if ( options['hide_secondnav_nav'] == true ) {
-			allDivs = document.evaluate(
-				"//div[@class='head_menu']",
-				document,
-				null,
-				XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-				null);
-			for (var i = 0; i < allDivs.snapshotLength; i++) {
-				thisDiv = allDivs.snapshotItem(i);
-				thisDiv.parentNode.removeChild(thisDiv);
-			}
+			$(".head_menu").hide();
 		}
 	}
 }
 
 function rightside(options) {
-	var allDivs, thisDiv;
 	if ( options['hide_right'] == true ) {
-		allDivs = document.evaluate(
-			"//div[@class='mainR MIB_200 MIB_txtar MIB_linkar']",
-			document,
-			null,
-			XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-			null);
-		for (var i = 0; i < allDivs.snapshotLength; i++) {
-			thisDiv = allDivs.snapshotItem(i);
-			thisDiv.parentNode.removeChild(thisDiv);
-		}
-		allDivs = document.evaluate(
-			"//div[@class='MIB_mblogbgr ']",
-			document,
-			null,
-			XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-			null);
-		for (var i = 0; i < allDivs.snapshotLength; i++) {
-			thisDiv = allDivs.snapshotItem(i);
-			thisDiv.style.width='600px';
-		}
-		
+		$(".mainR.MIB_200.MIB_txtar.MIB_linkar").hide();
+		$(".MIB_mblogbgr ").css("width", "600px");	
 	}
 	else {
 		if ( options['hide_right_info'] == true ) {
-			allDivs = document.evaluate(
-				"//div[@class='userinfo']",
-				document,
-				null,
-				XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-				null);
-			for (var i = 0; i < allDivs.snapshotLength; i++) {
-				thisDiv = allDivs.snapshotItem(i);
-				thisDiv.parentNode.removeChild(thisDiv);
-			}
+			$(".userinfo").hide();
 		}
 		if ( options['hide_right_app'] == true ) {
-			allDivs = document.evaluate(
-				"//div[@class='widgetIntroduce widgetH2']",
-				document,
-				null,
-				XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-				null);
-			for (var i = 0; i < allDivs.snapshotLength; i++) {
-				thisDiv = allDivs.snapshotItem(i);
-				thisDiv.parentNode.removeChild(thisDiv);
-			}
+			$(".widgetIntroduce.widgetH2").hide();
 		}
 		if ( options['hide_right_nav'] == true ) {
-			allDivs = document.evaluate(
-				"//div[@class='right_nav']",
-				document,
-				null,
-				XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-				null);
-			for (var i = 0; i < allDivs.snapshotLength; i++) {
-				thisDiv = allDivs.snapshotItem(i);
-				thisDiv.parentNode.removeChild(thisDiv);
-			}
+			$(".right_nav").hide();
 		}
 		if ( options['hide_right_ads'] == true ) {
-			thisDiv = document.getElementById('ads_35');
-			thisDiv.parentNode.removeChild(thisDiv);
-			thisDiv = document.getElementById('ads_36');
-			thisDiv.parentNode.removeChild(thisDiv);
-			thisDiv = document.getElementById('ads_37');
-			thisDiv.parentNode.removeChild(thisDiv);
+			$("#ads_35").hide();
+			$("#ads_36").hide();
+			$("#ads_37").hide();
 		}
 		if ( options['hide_right_topic'] == true ) {
 			allDivs = document.getElementsByName('app4');
@@ -199,66 +84,57 @@ function rightside(options) {
 		}
 		
 		if ( options['hide_right_cf'] == true ) {
-			allDivs = document.evaluate(
-				"//div[@class='f_pro']",
-				document,
-				null,
-				XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-				null);
-			for (var i = 0; i < allDivs.snapshotLength; i++) {
-				thisDiv = allDivs.snapshotItem(i);
-				thisDiv.parentNode.removeChild(thisDiv);
-			}
+			$(".f_pro").hide();
 		}
 		if ( options['hide_right_report'] == true ) {
-			allDivs = document.evaluate(
-				"//div[@class='rightTxtList']",
-				document,
-				null,
-				XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-				null);
-			for (var i = 0; i < allDivs.snapshotLength; i++) {
-				thisDiv = allDivs.snapshotItem(i);
-				thisDiv.parentNode.removeChild(thisDiv);
-			}
+			$(".rightTxtList").hide();
 		}
 	}
 }
 
 function mainboard(options) {
 	if ( options['hide_main_post'] == true ) {
-		allDivs = document.evaluate(
-			"//div[@class='MIB_mbloghead']",
-			document,
-			null,
-			XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-			null);
-		for (var i = 0; i < allDivs.snapshotLength; i++) {
-			thisDiv = allDivs.snapshotItem(i);
-			thisDiv.parentNode.removeChild(thisDiv);
-		}
+		$(".MIB_mbloghead").hide();
 	}
 	if ( options['hide_main_tips'] == true ) {
-		thisDiv = document.getElementById('pully_list');
-		thisDiv.parentNode.removeChild(thisDiv);
+		$("#pully_list").hide();
 	}
 	if ( options['hide_main_sort'] == true ) {
-		thisDiv = document.getElementById('MIB_newFilter');
-		thisDiv.parentNode.removeChild(thisDiv);
+		$("#MIB_newFilter").hide();
 	}
 	if ( options['hide_main_micro'] == true ) {
-		allDivs = document.evaluate(
-			"//div[@class='feed_att MIB_linkbl MIB_txtbl']",
-			document,
-			null,
-			XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-			null);
-		for (var i = 0; i < allDivs.snapshotLength; i++) {
-			thisDiv = allDivs.snapshotItem(i);
-			thisDiv.parentNode.removeChild(thisDiv);
-		}
+		$(".feed_att.MIB_linkbl.MIB_txtbl").hide();
 	}
 	if ( options['hide_main_forward'] == true ) {
+		$(".sms").each(function (){
+			var html = $(this).html();
+			
+			var pos = -1;
+			var i = 0;
+			var ina = false;
+			for ( i = 0;i < html.length;i++ ) {
+				if ( html[i] == '<' ) ina = true;
+				if (html[i] == '<' && html[i+1] == '/' ) ina = false;
+				if ( ina == true ) continue;
+				if ( html[i] == '/' && html[i + 1] == '/' ) {
+					pos = i;
+					break;
+				}
+			}
+			if ( pos != -1 ) {
+				var mine = html.substring(0, pos);
+				var theirs = html.substring(pos + 2, html.length);
+				
+				$(this).html(mine + 
+					"<a id=\"kong_display_" + i 
+					+ "\" href=\"\" class=\"kong_expand\" onClick=\"document.getElementById('kong_foward_" 
+					+ i + "').style.display = 'block'; document.getElementById('kong_display_" + i 
+					+ "').style.display = 'none'; return false;\">展开</a><span id= \"kong_foward_" + i 
+					+ "\" style=\" display: none; margin-left: 40px; \"><hr class=\"kong_hr\">" + 
+					theirs + "</span>");
+			}
+		});
+		/*
 		allDivs = document.evaluate(
 			"//p[@class='sms']",
 			document,
@@ -275,32 +151,19 @@ function mainboard(options) {
 			thisDiv.innerHTML = mine;
 			thisDiv.innerHTML += "<a id=\"kong_display_" + i + "\" href=\"\" class=\"kong_expand\" onClick=\"document.getElementById('kong_foward_" + i + "').style.display = 'block'; document.getElementById('kong_display_" + i + "').style.display = 'none'; return false;\">展开</a>"
 			thisDiv.innerHTML += "<span id= \"kong_foward_" + i + "\" style=\" display: none; margin-left: 40px; \"><hr class=\"kong_hr\">" + theirs + "</span>"
-		}
+		}*/
 	}
 }
 
 function others(options) {
 	if ( options['hide_other_nav'] == true ) {
-		allDivs = document.evaluate(
-			"//div[@class='cmn_nav cn_away']",
-			document,
-			null,
-			XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-			null);
-		for (var i = 0; i < allDivs.snapshotLength; i++) {
-			thisDiv = allDivs.snapshotItem(i);
-			thisDiv.parentNode.removeChild(thisDiv);
-		}
+		$(".cmn_nav.cn_away").hide();
 	}
-	
 	if ( options['hide_other_ads'] == true ) {
-		thisDiv = document.getElementById('ads_bottom_1');
-		thisDiv.parentNode.removeChild(thisDiv);
+		$("#ads_bottom_1").hide();
 	}
-	
 	if ( options['hide_other_bot'] == true ) {
-		thisDiv = document.getElementById('bottomborder');
-		thisDiv.parentNode.removeChild(thisDiv);
+		$("#bottomborder").hide();
 	}
 }
 
@@ -427,8 +290,8 @@ function notification(options) {
 
 function doit(options) {
 	checkUpdate();
-	//Enable all the functions
 	
+	//Enable all the functions
 	if ( options['enable_all'] == false ) return;
 	
 	topnav(options);
@@ -438,18 +301,6 @@ function doit(options) {
 	others(options);
 	filter(options);
 	notification(options);
-}
-
-function getSlash(html) {
-	var i = 0;
-	var ina = false;
-	for ( i = 0;i < html.length;i++ ) {
-		if ( html[i] == '<' ) ina = true;
-		if (html[i] == '<' && html[i+1] == '/' ) ina = false;
-		if ( ina == true ) continue;
-		if ( html[i] == '/' && html[i + 1] == '/' ) return i;
-	}
-	return -1;
 }
 
 chrome.extension.sendRequest({'action' : 'getOptions'}, doit);
