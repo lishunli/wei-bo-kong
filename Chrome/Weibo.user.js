@@ -1,6 +1,6 @@
 ﻿// WeiboKong
-// version 0.9.5
-// 2011-06-21
+// version 0.9.6
+// 2011-07-02
 //
 // ==UserScript==
 // @name          WeiboKong
@@ -11,8 +11,8 @@
 // ==/UserScript==
 
 var VERSION = chrome.i18n.getMessage("appVersion");
-var UPDATE = "+隐藏主面板推荐区<br>+隐藏右侧栏我加入的群<br>*用jQuery重写精简了很多代码<br>";
-var DATE = "2011-06-21"
+var UPDATE = "+隐藏主面板推荐区<br>+隐藏右侧栏我加入的群<br>*用jQuery重写精简了很多代码<br>+新的图片浏览模式(COOL)<br>+为微博控按钮添加特别样式";
+var DATE = "2011-07-02"
 
 function topnav(options) {
 	if ( options['hide_top'] == true ) {
@@ -106,7 +106,7 @@ function mainboard(options) {
 		$(".feed_att.MIB_linkbl.MIB_txtbl").hide();
 	}
 	if ( options['hide_main_forward'] == true ) {
-		$(".sms").each(function (){
+		$(".sms").each(function (index){
 			var html = $(this).html();
 			
 			var pos = -1;
@@ -124,35 +124,116 @@ function mainboard(options) {
 			if ( pos != -1 ) {
 				var mine = html.substring(0, pos);
 				var theirs = html.substring(pos + 2, html.length);
-				
 				$(this).html(mine + 
-					"<a id=\"kong_display_" + i 
-					+ "\" href=\"\" class=\"kong_expand\" onClick=\"document.getElementById('kong_foward_" 
-					+ i + "').style.display = 'block'; document.getElementById('kong_display_" + i 
-					+ "').style.display = 'none'; return false;\">展开</a><span id= \"kong_foward_" + i 
-					+ "\" style=\" display: none; margin-left: 40px; \"><hr class=\"kong_hr\">" + 
-					theirs + "</span>");
+					"<div id=\"kong_display_" + index + "\" class=\"kong_button\" >展开</div><span id= \"kong_foward_" + index 
+					+ "\" style=\" display: none; margin-left: 40px; \"><hr class=\"kong_hr\">"+ theirs + "</span>");
+				var keep = false;
+				$("#kong_display_"+index).click(function(){
+					if ( keep == false ) {
+						keep = true;
+						$(this).html("隐藏");
+					}
+					else {
+						keep = false;
+						$(this).html("保持展开");
+					}
+				});
+				
+				$("#kong_display_"+index).hover(function(){
+					$(this).addClass("kong_button_hover");
+					if ( keep == false ) {
+						$(this).html("保持展开");
+					}
+					else {
+						$(this).html("隐藏");
+					}
+					$("#kong_foward_"+index).show();
+				},function(){
+					$(this).removeClass("kong_button_hover");
+					if ( keep == false ) {
+						$("#kong_foward_"+index).hide();
+						$(this).html("展开");
+					}
+					else {
+						$(this).html("隐藏");
+					}
+				});
 			}
 		});
-		/*
-		allDivs = document.evaluate(
-			"//p[@class='sms']",
-			document,
-			null,
-			XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-			null);
-		for (var i = 0; i < allDivs.snapshotLength; i++) {
-			thisDiv = allDivs.snapshotItem(i);
-			var html = thisDiv.innerHTML;
-			var pos = getSlash(html);
-			if ( pos == -1 ) continue;
-			var mine = html.substring(0, pos);
-			var theirs = html.substring(pos + 2, html.length);
-			thisDiv.innerHTML = mine;
-			thisDiv.innerHTML += "<a id=\"kong_display_" + i + "\" href=\"\" class=\"kong_expand\" onClick=\"document.getElementById('kong_foward_" + i + "').style.display = 'block'; document.getElementById('kong_display_" + i + "').style.display = 'none'; return false;\">展开</a>"
-			thisDiv.innerHTML += "<span id= \"kong_foward_" + i + "\" style=\" display: none; margin-left: 40px; \"><hr class=\"kong_hr\">" + theirs + "</span>"
-		}*/
 	}
+	if ( options["hide_main_image"] == true ) {
+		$(".feed_img > a").each( function (){
+			var str = $(this).attr( "onclick" );
+			var thumbnail_url = $(this).children().attr( "src" );
+			var bmiddle = thumbnail_url.replace("thumbnail", "bmiddle")
+			var large = thumbnail_url.replace("thumbnail", "large");
+			$(this).parent().append("<span><div class='thumbnail kong_button_left' href='javascript:void(0);'>&nbsp;&nbsp;显示缩略图&nbsp;&nbsp;</div><div class='bmiddle kong_button_middle' href='javascript:void(0);'>&nbsp;&nbsp;&nbsp;&nbsp;显示中图&nbsp;&nbsp;&nbsp;&nbsp;</div><div class='kong_button_right'>新窗口打开大图</div></span><br><br><img style='display:none' />");
+			var keep = false;
+			$(this).parent().children("span").children(".kong_button_right").click(function() {
+				window.open(large,"WeiboKong");
+			});
+			$(this).parent().children("span").children(".thumbnail").hover(function() {
+				$(this).addClass("kong_button_hover");
+				$(this).parent().parent().children("img").attr("src", thumbnail_url);
+				$(this).parent().parent().children("img").show();
+					
+				if ( keep == false ) {
+					$(this).html("保持图片展开");
+				}
+				else {
+					$(this).html("&nbsp;&nbsp;&nbsp;&nbsp;隐藏图片&nbsp;&nbsp;&nbsp;&nbsp;");
+				}
+			}, function() {
+				$(this).removeClass("kong_button_hover");
+				if ( keep == false ) { 
+					$(this).html("&nbsp;&nbsp;显示缩略图&nbsp;&nbsp;");
+					$(this).parent().parent().children("img").hide();
+				}
+			});
+			
+			$(this).parent().children("span").children(".bmiddle").hover(function() {
+				$(this).addClass("kong_button_hover");
+				$(this).parent().parent().children("img").attr("src", bmiddle);
+				$(this).parent().parent().children("img").show();
+				if ( keep == false ) {
+					$(this).html("保持图片展开");
+				}
+				else {
+					$(this).html("&nbsp;&nbsp;&nbsp;&nbsp;隐藏图片&nbsp;&nbsp;&nbsp;&nbsp;");
+				}
+			}, function() {
+				$(this).removeClass("kong_button_hover");
+				if ( keep == false ) { 
+					$(this).html("&nbsp;&nbsp;&nbsp;&nbsp;显示中图&nbsp;&nbsp;&nbsp;&nbsp;");
+					$(this).parent().parent().children("img").hide();
+				}
+			});
+			
+			$(this).parent().children("span").children(".thumbnail").click(function() {
+				if ( keep == false ) {
+					keep = true;
+					$(this).html("&nbsp;&nbsp;&nbsp;&nbsp;隐藏图片&nbsp;&nbsp;&nbsp;&nbsp;");
+				}
+				else {
+					keep = false;
+					$(this).html("保持图片展开");
+				}
+			});
+			
+			$(this).parent().children("span").children(".bmiddle").click(function() {
+				if ( keep == false ) {
+					keep = true;
+					$(this).html("&nbsp;&nbsp;&nbsp;&nbsp;隐藏图片&nbsp;&nbsp;&nbsp;&nbsp;");
+				}
+				else {
+					keep = false;
+					$(this).html("保持图片展开");
+				}
+			});
+			$(this).hide();
+		});
+	}
+	
 }
 
 function others(options) {
