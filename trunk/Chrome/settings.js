@@ -90,8 +90,12 @@ window.addEvent("domready", function () {
 		me.addEventListener("mouseover", function(){hover("175px","400px","hide_main_forward");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
+		me = settings.manifest.hide_main_image.label;
+		me.addEventListener("mouseover", function(){hover("200px","400px","hide_main_image");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
 		me = settings.manifest.hide_main_micro.label;
-		me.addEventListener("mouseover", function(){hover("200px","400px","hide_main_micro");}, false);
+		me.addEventListener("mouseover", function(){hover("225px","400px","hide_main_micro");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_other_nav.label;

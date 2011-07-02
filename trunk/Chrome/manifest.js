@@ -183,6 +183,14 @@ this.manifest = {
 		{
             "tab": "主面板",
             "group": "详细设置",
+            "name": "hide_main_image",
+            "type": "checkbox",
+            "label": "隐藏图片(鼠标悬停至‘展开图片’即可自动显示图片)"
+        },
+		
+		{
+            "tab": "主面板",
+            "group": "详细设置",
             "name": "hide_main_micro",
             "type": "checkbox",
             "label": "精简模式(仅显示微博正文,隐藏转发,收藏,评论等功能)"
