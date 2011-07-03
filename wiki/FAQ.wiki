@@ -24,4 +24,4 @@
 
 ==E. 微博控如何自动更新？为何看不到更新记录？ ==
   # Chrome会不定期自动更新插件， 更新提示将会在自动更新后，在微薄页面右下角附近显示10秒。
-  # 可以在http://code.google.com/p/wei-bo-kong/wiki/Changelog查看完整的更新记录。
+  # 可以在http://code.google.com/p/wei-bo-kong/wiki/Changelog 查看完整的更新记录。
