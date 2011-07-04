@@ -13,6 +13,19 @@ this.manifest = {
         },
 		
 		{
+            "tab": "基本设置",
+            "group": "微博控主题",
+            "name": "global_theme",
+            "type": "popupButton",
+            "label": "请选择主题配色",
+            "options": [
+				["original", "默认配色"],
+                ["blue", "蓝色"],
+                ["grey", "灰色"]
+            ]
+        },
+		
+		{
             "tab": "顶端导航条",
             "group": "全局设置",
             "name": "hide_top",	

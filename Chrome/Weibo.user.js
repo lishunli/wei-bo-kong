@@ -93,6 +93,8 @@ function rightside(options) {
 }
 
 function mainboard(options) {
+	var theme = "kong_button" + getTheme( options['global_theme'] );
+	var theme_hover = "kong_button_hover" + getTheme( options['global_theme'] );
 	if ( options['hide_main_post'] == true ) {
 		$(".MIB_mbloghead").hide();
 	}
@@ -125,7 +127,7 @@ function mainboard(options) {
 				var mine = html.substring(0, pos);
 				var theirs = html.substring(pos + 2, html.length);
 				$(this).html(mine + 
-					"<div id=\"kong_display_" + index + "\" class=\"kong_button\" >展开</div><span id= \"kong_foward_" + index 
+					"<div id=\"kong_display_" + index + "\" class=\"kong_button " + theme + "\" >展开</div><span id= \"kong_foward_" + index 
 					+ "\" style=\" display: none; margin-left: 40px; \"><hr class=\"kong_hr\">"+ theirs + "</span>");
 				var keep = false;
 				$("#kong_display_"+index).click(function(){
@@ -140,7 +142,7 @@ function mainboard(options) {
 				});
 				
 				$("#kong_display_"+index).hover(function(){
-					$(this).addClass("kong_button_hover");
+					$(this).addClass(theme_hover);
 					if ( keep == false ) {
 						$(this).html("保持展开");
 					}
@@ -149,7 +151,7 @@ function mainboard(options) {
 					}
 					$("#kong_foward_"+index).show();
 				},function(){
-					$(this).removeClass("kong_button_hover");
+					$(this).removeClass(theme_hover);
 					if ( keep == false ) {
 						$("#kong_foward_"+index).hide();
 						$(this).html("展开");
@@ -167,13 +169,13 @@ function mainboard(options) {
 			var thumbnail_url = $(this).children().attr( "src" );
 			var bmiddle = thumbnail_url.replace("thumbnail", "bmiddle")
 			var large = thumbnail_url.replace("thumbnail", "large");
-			$(this).parent().append("<span><div class='thumbnail kong_button_left' href='javascript:void(0);'>&nbsp;&nbsp;显示缩略图&nbsp;&nbsp;</div><div class='bmiddle kong_button_middle' href='javascript:void(0);'>&nbsp;&nbsp;&nbsp;&nbsp;显示中图&nbsp;&nbsp;&nbsp;&nbsp;</div><div class='kong_button_right'>新窗口打开大图</div></span><br><br><img style='display:none' />");
+			$(this).parent().append("<span><div class='thumbnail kong_button_left " + theme + "' href='javascript:void(0);'>&nbsp;&nbsp;显示缩略图&nbsp;&nbsp;</div><div class='bmiddle kong_button_middle " + theme + "' href='javascript:void(0);'>&nbsp;&nbsp;&nbsp;&nbsp;显示中图&nbsp;&nbsp;&nbsp;&nbsp;</div><div class='kong_button_right " + theme + "'>新窗口打开大图</div></span><br><br><img style='display:none' />");
 			var keep = false;
 			$(this).parent().children("span").children(".kong_button_right").click(function() {
 				window.open(large,"WeiboKong");
 			});
 			$(this).parent().children("span").children(".thumbnail").hover(function() {
-				$(this).addClass("kong_button_hover");
+				$(this).addClass(theme_hover);
 				$(this).parent().parent().children("img").attr("src", thumbnail_url);
 				$(this).parent().parent().children("img").show();
 					
@@ -184,7 +186,7 @@ function mainboard(options) {
 					$(this).html("&nbsp;&nbsp;&nbsp;&nbsp;隐藏图片&nbsp;&nbsp;&nbsp;&nbsp;");
 				}
 			}, function() {
-				$(this).removeClass("kong_button_hover");
+				$(this).removeClass(theme_hover);
 				if ( keep == false ) { 
 					$(this).html("&nbsp;&nbsp;显示缩略图&nbsp;&nbsp;");
 					$(this).parent().parent().children("img").hide();
@@ -192,7 +194,7 @@ function mainboard(options) {
 			});
 			
 			$(this).parent().children("span").children(".bmiddle").hover(function() {
-				$(this).addClass("kong_button_hover");
+				$(this).addClass(theme_hover);
 				$(this).parent().parent().children("img").attr("src", bmiddle);
 				$(this).parent().parent().children("img").show();
 				if ( keep == false ) {
@@ -202,7 +204,7 @@ function mainboard(options) {
 					$(this).html("&nbsp;&nbsp;&nbsp;&nbsp;隐藏图片&nbsp;&nbsp;&nbsp;&nbsp;");
 				}
 			}, function() {
-				$(this).removeClass("kong_button_hover");
+				$(this).removeClass(theme_hover);
 				if ( keep == false ) { 
 					$(this).html("&nbsp;&nbsp;&nbsp;&nbsp;显示中图&nbsp;&nbsp;&nbsp;&nbsp;");
 					$(this).parent().parent().children("img").hide();
@@ -371,7 +373,7 @@ function notification(options) {
 
 function doit(options) {
 	checkUpdate();
-	
+	$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
 	//Enable all the functions
 	if ( options['enable_all'] == false ) return;
 	
@@ -382,6 +384,20 @@ function doit(options) {
 	others(options);
 	filter(options);
 	notification(options);
+}
+
+function getTheme( theme )
+{
+	switch (theme) {
+		case 'grey':
+		return '_grey';
+		case 'blue':
+		return '_blue';
+		case 'original':
+		return '_original';
+		default:
+		return '_original';
+	}
 }
 
 chrome.extension.sendRequest({'action' : 'getOptions'}, doit);
