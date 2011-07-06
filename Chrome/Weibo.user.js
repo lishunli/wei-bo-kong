@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 var VERSION = chrome.i18n.getMessage("appVersion");
-var UPDATE = "+微博控按钮皮肤<br>*隐藏图片后，鼠标悬浮于显示图片按钮0.5秒后自动显示图片<br>";
+var UPDATE = "+微博控按钮皮肤<br>*隐藏图片后，鼠标悬浮于显示图片按钮0.5秒后自动显示图片<br>+新私信、粉丝、评论桌面提醒<br>";
 var DATE = "2011-07-02"
 
 function topnav(options) {
@@ -351,9 +351,9 @@ function checkUpdate() {
 	}
 }
 
-function checkNew(notified,options) {
+function checkNew(notified1,notified2,notified3,notified4,options) {
+	var flag = false;
 	if ( options['notification_post'] == true ) {
-		var flag = false;
 		allDivs = document.evaluate(
 			"//a[@class='newMblog_ts1']",
 			document,
@@ -364,25 +364,55 @@ function checkNew(notified,options) {
 			thisDiv = allDivs.snapshotItem(i);
 			if ( thisDiv.style.display != "none" ) {
 				flag = true;
-				if ( notified == false ) {
-					chrome.extension.sendRequest({'action' : 'notify'}, function(){});
-					notified = true;
+				if ( notified1 == false ) {
+					chrome.extension.sendRequest({'action' : 'notify', 'type' : 'post'}, function(){});
+					notified1 = true;
 				}
-
 			}
 		}
-		if ( flag == false ) notified = false;
+		if ( flag == false ) notified1 = false;
 	}
+	flag = false;
+	if ( $(".yInfo p:first-child").css("display") != "none" && $(".yInfo p:first-child").html() != "" ) {
+		flag = true;
+		if ( notified2 == false ) {
+			chrome.extension.sendRequest({'action' : 'notify', 'type' : 'comment'}, function(){});
+			notified2 = true;
+		}
+	}
+	if ( flag == false ) notified2 = false;
+	
+	flag = false;
+	if ( $(".yInfo p:first-child").next().css("display") != "none" && $(".yInfo p:first-child").next().html() != "" ) {
+		flag = true;
+		if ( notified3 == false ) {
+			chrome.extension.sendRequest({'action' : 'notify', 'type' : 'fan'}, function(){});
+			notified3 = true;
+		}
+	}
+	if ( flag == false ) notified3 = false;
+	
+	flag = false;
+	if ( $(".yInfo p:first-child").next().next().css("display") != "none" && $(".yInfo p:first-child").next().next().html() != "" ) {
+		flag = true;
+		if ( notified4 == false ) {
+			chrome.extension.sendRequest({'action' : 'notify', 'type' : 'msg'}, function(){});
+			notified4 = true;
+		}
+	}
+	if ( flag == false ) notified4 = false;
+	
+	
 	var intervals = options['notification_intervals'];
 	if ( intervals < 10 ) intervals = 10;
-	t = setTimeout(function(){checkNew(notified,options);}, intervals * 1000 );
+	t = setTimeout(function(){checkNew(notified1,notified2,notified3,notified4,options);}, intervals * 1000 );
 }
 
 function notification(options) {
 	if ( options['enable_notification'] == false ) {
 		return;
 	}
-	checkNew(false,options);
+	checkNew(false,false,false,false,options);
 }
 
 function doit(options) {

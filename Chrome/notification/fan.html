@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="gbk">
+	<script type="text/javascript">
+		function load() {
+			document.getElementById('icon').src = chrome.extension.getURL("img/icon/icon_16.png");
+		}
+		function closeWin() {
+			window.close();
+		}
+    </script>
+  </head>
+  <body onload='load()' style="font-family: Arial,Helvetica,sans-serif; font-size: 14px ">
+	
+	<p><img id="icon" style="margin-right: 10px" />您有新粉丝!</p>
+	<a href="#" onclick='closeWin()' >关闭窗口</a>
+		
+  </body>
+</html>
