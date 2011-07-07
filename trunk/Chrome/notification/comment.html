@@ -5,6 +5,7 @@
 	<script type="text/javascript">
 		function load() {
 			document.getElementById('icon').src = chrome.extension.getURL("img/icon/icon_16.png");
+			var timer = setTimeout(function() {window.close();}, 10000);
 		}
 		function closeWin() {
 			window.close();
