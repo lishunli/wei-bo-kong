@@ -70,12 +70,6 @@
 				}
 				else if ( request.type == 'msg') {
 					var notification = chrome.extension.getURL("notification/msg.html");
-					//var icon = chrome.extension.getURL("img/icon/icon_48.png");
-					/*var notification = webkitNotifications.createNotification( 
-					  icon,
-					  '您有新微博！',  // notification title
-					  ''  // notification body text
-					);*/
 					var notification = webkitNotifications.createHTMLNotification(
 					  notification 
 					);
@@ -83,12 +77,6 @@
 				}
 				else if ( request.type == 'fan') {
 					var notification = chrome.extension.getURL("notification/fan.html");
-					//var icon = chrome.extension.getURL("img/icon/icon_48.png");
-					/*var notification = webkitNotifications.createNotification( 
-					  icon,
-					  '您有新微博！',  // notification title
-					  ''  // notification body text
-					);*/
 					var notification = webkitNotifications.createHTMLNotification(
 					  notification 
 					);
@@ -96,12 +84,6 @@
 				}
 				else if ( request.type == 'comment') {
 					var notification = chrome.extension.getURL("notification/comment.html");
-					//var icon = chrome.extension.getURL("img/icon/icon_48.png");
-					/*var notification = webkitNotifications.createNotification( 
-					  icon,
-					  '您有新微博！',  // notification title
-					  ''  // notification body text
-					);*/
 					var notification = webkitNotifications.createHTMLNotification(
 					  notification 
 					);
