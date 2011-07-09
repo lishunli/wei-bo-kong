@@ -45,7 +45,7 @@
 							var t = tabs[i].url;
 							if (t.match('weibo.com')) {
 								var tab = tabs[i];
-								chrome.tabs.update(tab.id, {url: request.url, selected: tab.selected}, null);
+								chrome.tabs.update(tab.id, {url: tab.url, selected: tab.selected}, null);
 							}
 						}
 					});

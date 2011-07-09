@@ -17,9 +17,9 @@ this.manifest = {
             "group": "微博控主题",
             "name": "global_theme",
             "type": "popupButton",
-            "label": "请选择主题配色",
+            "label": "请选择按钮配色",
             "options": [
-				["original", "默认配色"],
+				["original", "默认配色(跟微博主题相同)"],
                 ["blue", "蓝色"],
                 ["grey", "灰色"]
             ]
@@ -322,6 +322,30 @@ this.manifest = {
         },
 		
 		{
+            "tab": "桌面提醒",
+            "group": "详细设置",
+            "name": "notification_comment",
+            "type": "checkbox",
+            "label": "有新评论时提醒"
+        },
+		
+		{
+            "tab": "桌面提醒",
+            "group": "详细设置",
+            "name": "notification_fan",
+            "type": "checkbox",
+            "label": "有新粉丝时提醒"
+        },
+		
+		{
+            "tab": "桌面提醒",
+            "group": "详细设置",
+            "name": "notification_msg",
+            "type": "checkbox",
+            "label": "有新私信时提醒"
+        },
+		
+		{
             "tab": "关于",
             "group": "关于微博控",
             "name": "thx",
@@ -335,6 +359,14 @@ this.manifest = {
             "name": "version",
             "type": "description",
             "text": chrome.i18n.getMessage("appVersion")
+        },
+		
+		{
+            "tab": "关于",
+            "group": "更新详情",
+            "name": "version",
+            "type": "description",
+            "text": "+微博控按钮皮肤<br>*隐藏图片后，鼠标悬浮于显示图片按钮0.5秒后自动显示图片<br>+新私信、粉丝、评论桌面提醒<br>"
         },
 		
 		{

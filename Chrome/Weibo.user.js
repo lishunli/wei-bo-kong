@@ -1,6 +1,6 @@
 ﻿// WeiboKong
-// version 0.9.6
-// 2011-07-02
+// version 0.9.7
+// 2011-07-09
 //
 // ==UserScript==
 // @name          WeiboKong
@@ -12,7 +12,7 @@
 
 var VERSION = chrome.i18n.getMessage("appVersion");
 var UPDATE = "+微博控按钮皮肤<br>*隐藏图片后，鼠标悬浮于显示图片按钮0.5秒后自动显示图片<br>+新私信、粉丝、评论桌面提醒<br>";
-var DATE = "2011-07-02"
+var DATE = "2011-07-09"
 
 function topnav(options) {
 	if ( options['hide_top'] == true ) {
@@ -372,35 +372,41 @@ function checkNew(notified1,notified2,notified3,notified4,options) {
 		}
 		if ( flag == false ) notified1 = false;
 	}
-	flag = false;
-	if ( $(".yInfo p:first-child").css("display") != "none" && $(".yInfo p:first-child").html() != "" ) {
-		flag = true;
-		if ( notified2 == false ) {
-			chrome.extension.sendRequest({'action' : 'notify', 'type' : 'comment'}, function(){});
-			notified2 = true;
-		}
-	}
-	if ( flag == false ) notified2 = false;
 	
 	flag = false;
-	if ( $(".yInfo p:first-child").next().css("display") != "none" && $(".yInfo p:first-child").next().html() != "" ) {
-		flag = true;
-		if ( notified3 == false ) {
-			chrome.extension.sendRequest({'action' : 'notify', 'type' : 'fan'}, function(){});
-			notified3 = true;
+	if ( options['notification_comment']  == true ) {
+		if ( $(".yInfo p:first-child").css("display") != "none" && $(".yInfo p:first-child").html() != "" ) {
+			flag = true;
+			if ( notified2 == false ) {
+				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'comment'}, function(){});
+				notified2 = true;
+			}
 		}
+		if ( flag == false ) notified2 = false;
 	}
-	if ( flag == false ) notified3 = false;
+	flag = false;
+	if ( options['notification_fan']  == true ) {
+		if ( $(".yInfo p:first-child").next().css("display") != "none" && $(".yInfo p:first-child").next().html() != "" ) {
+			flag = true;
+			if ( notified3 == false ) {
+				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'fan'}, function(){});
+				notified3 = true;
+			}
+		}
+		if ( flag == false ) notified3 = false;
+	}
 	
 	flag = false;
-	if ( $(".yInfo p:first-child").next().next().css("display") != "none" && $(".yInfo p:first-child").next().next().html() != "" ) {
-		flag = true;
-		if ( notified4 == false ) {
-			chrome.extension.sendRequest({'action' : 'notify', 'type' : 'msg'}, function(){});
-			notified4 = true;
+	if ( options['notification_msg']  == true ) {
+		if ( $(".yInfo p:first-child").next().next().css("display") != "none" && $(".yInfo p:first-child").next().next().html() != "" ) {
+			flag = true;
+			if ( notified4 == false ) {
+				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'msg'}, function(){});
+				notified4 = true;
+			}
 		}
+		if ( flag == false ) notified4 = false;
 	}
-	if ( flag == false ) notified4 = false;
 	
 	
 	var intervals = options['notification_intervals'];
@@ -417,6 +423,7 @@ function notification(options) {
 
 function doit(options) {
 	checkUpdate();
+	
 	$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
 	//Enable all the functions
 	if ( options['enable_all'] == false ) return;
