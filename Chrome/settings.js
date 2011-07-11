@@ -34,44 +34,52 @@ window.addEvent("domready", function () {
 		me.addEventListener("mouseover", function(){hover("100px","400px","hide_right");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
-		me = settings.manifest.hide_right_info.label;
-		me.addEventListener("mouseover", function(){hover("150px","400px","hide_right_info");}, false);
-		me.addEventListener("mouseout", unhover, false);
-		
-		me = settings.manifest.hide_right_app.label;
-		me.addEventListener("mouseover", function(){hover("200px","400px","hide_right_app");}, false);
-		me.addEventListener("mouseout", unhover, false);
-		
-		me = settings.manifest.hide_right_nav.label;
-		me.addEventListener("mouseover", function(){hover("225px","400px","hide_right_nav");}, false);
+		me = settings.manifest.hide_right_widgets.label;
+		me.addEventListener("mouseover", function(){hover("125px","400px","hide_right_widgets");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_ads.label;
-		me.addEventListener("mouseover", function(){hover("250px","400px","hide_right_ads");}, false);
+		me.addEventListener("mouseover", function(){hover("150px","400px","hide_right_ads");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
-		me = settings.manifest.hide_right_topic.label;
-		me.addEventListener("mouseover", function(){hover("275px","400px","hide_right_topic");}, false);
+		me = settings.manifest.hide_right_info.label;
+		me.addEventListener("mouseover", function(){hover("200px","400px","hide_right_info");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
-		me = settings.manifest.hide_right_people.label;
-		me.addEventListener("mouseover", function(){hover("300px","400px","hide_right_people");}, false);
+		me = settings.manifest.hide_right_app.label;
+		me.addEventListener("mouseover", function(){hover("225px","400px","hide_right_app");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
-		me = settings.manifest.hide_right_alltopic.label;
-		me.addEventListener("mouseover", function(){hover("325px","400px","hide_right_alltopic");}, false);
-		me.addEventListener("mouseout", unhover, false);
-		
-		me = settings.manifest.hide_right_group.label;
-		me.addEventListener("mouseover", function(){hover("350px","400px","hide_right_group");}, false);
+		me = settings.manifest.hide_right_nav.label;
+		me.addEventListener("mouseover", function(){hover("250px","400px","hide_right_nav");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_cf.label;
-		me.addEventListener("mouseover", function(){hover("375px","400px","hide_right_cf");}, false);
+		me.addEventListener("mouseover", function(){hover("275px","400px","hide_right_cf");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_report.label;
-		me.addEventListener("mouseover", function(){hover("400px","400px","hide_right_report");}, false);
+		me.addEventListener("mouseover", function(){hover("300px","400px","hide_right_report");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_topic.label;
+		me.addEventListener("mouseover", function(){hover("375px","400px","hide_right_topic");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_people.label;
+		me.addEventListener("mouseover", function(){hover("400px","400px","hide_right_people");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_alltopic.label;
+		me.addEventListener("mouseover", function(){hover("425px","400px","hide_right_alltopic");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_group.label;
+		me.addEventListener("mouseover", function(){hover("450px","400px","hide_right_group");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_popuser.label;
+		me.addEventListener("mouseover", function(){hover("475px","400px","hide_right_popuser");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_main_post.label;

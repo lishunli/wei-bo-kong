@@ -47,6 +47,14 @@ function rightside(options) {
 		$(".MIB_mblogbgr ").css("width", "600px");	
 	}
 	else {
+		if ( options['hide_right_widgets'] ) {
+			$('div[name^="app"]').hide();
+		}
+		if ( options['hide_right_ads'] == true ) {
+			$("#ads_35").hide();
+			$("#ads_36").hide();
+			$("#ads_37").hide();
+		}
 		if ( options['hide_right_info'] == true ) {
 			$(".userinfo").hide();
 		}
@@ -56,11 +64,7 @@ function rightside(options) {
 		if ( options['hide_right_nav'] == true ) {
 			$(".right_nav").hide();
 		}
-		if ( options['hide_right_ads'] == true ) {
-			$("#ads_35").hide();
-			$("#ads_36").hide();
-			$("#ads_37").hide();
-		}
+		
 		if ( options['hide_right_topic'] == true ) {
 			$('div[name="app4"]').hide();
 		}
