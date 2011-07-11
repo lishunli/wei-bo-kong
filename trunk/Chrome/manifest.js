@@ -83,6 +83,22 @@ this.manifest = {
 		
 		{
             "tab": "右侧边栏",
+            "group": "全局设置",
+            "name": "hide_right_widgets",
+            "type": "checkbox",
+            "label": "隐藏所有模块"
+        },
+		
+		{
+            "tab": "右侧边栏",
+            "group": "全局设置",
+            "name": "hide_right_ads",
+            "type": "checkbox",
+            "label": "隐藏广告(共3处)"
+        },
+		
+		{
+            "tab": "右侧边栏",
             "group": "详细设置",
             "name": "hide_right_info",
             "type": "checkbox",
@@ -108,46 +124,6 @@ this.manifest = {
 		{
             "tab": "右侧边栏",
             "group": "详细设置",
-            "name": "hide_right_ads",
-            "type": "checkbox",
-            "label": "隐藏广告(共3处)"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "详细设置",
-            "name": "hide_right_topic",
-            "type": "checkbox",
-            "label": "隐藏热门话题"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "详细设置",
-            "name": "hide_right_people",
-            "type": "checkbox",
-            "label": "隐藏可能感兴趣的人"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "详细设置",
-            "name": "hide_right_alltopic",
-            "type": "checkbox",
-            "label": "隐藏关注的话题"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "详细设置",
-            "name": "hide_right_group",
-            "type": "checkbox",
-            "label": "隐藏我加入的群"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "详细设置",
             "name": "hide_right_cf",
             "type": "checkbox",
             "label": "隐藏手机新浪,意见反馈"
@@ -163,12 +139,44 @@ this.manifest = {
 		
 		{
             "tab": "右侧边栏",
-            "group": "详细设置",
+            "group": "模块设置",
+            "name": "hide_right_topic",
+            "type": "checkbox",
+            "label": "隐藏热门话题"
+        },
+		
+		{
+            "tab": "右侧边栏",
+            "group": "模块设置",
+            "name": "hide_right_people",
+            "type": "checkbox",
+            "label": "隐藏可能感兴趣的人"
+        },
+		
+		{
+            "tab": "右侧边栏",
+            "group": "模块设置",
+            "name": "hide_right_alltopic",
+            "type": "checkbox",
+            "label": "隐藏关注的话题"
+        },
+		
+		{
+            "tab": "右侧边栏",
+            "group": "模块设置",
+            "name": "hide_right_group",
+            "type": "checkbox",
+            "label": "隐藏我加入的群"
+        },
+		
+		{
+            "tab": "右侧边栏",
+            "group": "模块设置",
             "name": "hide_right_popuser",
             "type": "checkbox",
             "label": "隐藏人气用户"
         },
-		
+
 		{
             "tab": "主面板",
             "group": "详细设置",
