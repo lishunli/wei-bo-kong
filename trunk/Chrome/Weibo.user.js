@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 var VERSION = chrome.i18n.getMessage("appVersion");
-var UPDATE = "+微博控按钮皮肤<br>*隐藏图片后，鼠标悬浮于显示图片按钮0.5秒后自动显示图片<br>+新私信、粉丝、评论桌面提醒<br>";
+var UPDATE = "+隐藏右边栏人气用户<br>";
 var DATE = "2011-07-09"
 
 function topnav(options) {
@@ -62,25 +62,17 @@ function rightside(options) {
 			$("#ads_37").hide();
 		}
 		if ( options['hide_right_topic'] == true ) {
-			allDivs = document.getElementsByName('app4');
-			thisDiv = allDivs[0];
-			thisDiv.parentNode.removeChild(thisDiv);
+			$('div[name="app4"]').hide();
 		}
 		if ( options['hide_right_people'] == true ) {
-			allDivs = document.getElementsByName('app20');
-			thisDiv = allDivs[0];
-			thisDiv.parentNode.removeChild(thisDiv);
+			$('div[name="app20"]').hide();
 		}
 		if ( options['hide_right_alltopic'] == true ) {
-			allDivs = document.getElementsByName('app5');
-			thisDiv = allDivs[0];
-			thisDiv.parentNode.removeChild(thisDiv);
+			$('div[name="app5"]').hide();
 		}
 		
 		if ( options['hide_right_group'] == true ) {
-			allDivs = document.getElementsByName('app10003');
-			thisDiv = allDivs[0];
-			thisDiv.parentNode.removeChild(thisDiv);
+			$('div[name="app10003"]').hide();
 		}
 		
 		if ( options['hide_right_cf'] == true ) {
@@ -88,6 +80,9 @@ function rightside(options) {
 		}
 		if ( options['hide_right_report'] == true ) {
 			$(".rightTxtList").hide();
+		}
+		if ( options['hide_right_popuser'] == true ) {
+			$('div[name="app6"]').hide();
 		}
 	}
 }

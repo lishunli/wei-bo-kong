@@ -162,6 +162,14 @@ this.manifest = {
         },
 		
 		{
+            "tab": "右侧边栏",
+            "group": "详细设置",
+            "name": "hide_right_popuser",
+            "type": "checkbox",
+            "label": "隐藏人气用户"
+        },
+		
+		{
             "tab": "主面板",
             "group": "详细设置",
             "name": "hide_main_post",
