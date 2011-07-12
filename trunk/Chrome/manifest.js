@@ -50,6 +50,14 @@ this.manifest = {
         },
 		
 		{
+            "tab": "顶端导航条",
+            "group": "详细设置",
+            "name": "hide_top_tip",
+            "type": "checkbox",	
+            "label": "隐藏小提示"
+        },
+		
+		{
             "tab": "二级导航条",
             "group": "全局设置",
             "name": "hide_secondnav",
@@ -95,6 +103,14 @@ this.manifest = {
             "name": "hide_right_ads",
             "type": "checkbox",
             "label": "隐藏广告(共3处)"
+        },
+		
+		{
+            "tab": "右侧边栏",
+            "group": "详细设置",
+            "name": "hide_right_tip",
+            "type": "checkbox",
+            "label": "隐藏小提示"
         },
 		
 		{

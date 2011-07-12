@@ -11,18 +11,22 @@
 // ==/UserScript==
 
 var VERSION = chrome.i18n.getMessage("appVersion");
-var UPDATE = "+隐藏右边栏人气用户<br>";
+var UPDATE = "+隐藏右边栏人气用户<br>+隐藏右边栏所有模块<br>";
 var DATE = "2011-07-09"
 
 function topnav(options) {
 	if ( options['hide_top'] == true ) {
 		$(".tsina_gnbarea").hide();
+		$(".eventTip").hide();
 	} else {
-		if ( options['hide_top_left'] ) {
+		if ( options['hide_top_left'] == true ) {
 			$(".gnb_l").hide();
 		}
-		if ( options['hide_top_right'] ) {
+		if ( options['hide_top_right'] == true ) {
 			$(".gnb_r").hide();
+		}
+		if ( options['hide_top_tip'] == true ) {
+			$(".eventTip").hide();
 		}
 	}
 }
@@ -44,6 +48,7 @@ function secondnav(options) {
 function rightside(options) {
 	if ( options['hide_right'] == true ) {
 		$(".mainR.MIB_200.MIB_txtar.MIB_linkar").hide();
+		$(".PopLayer").hide();
 		$(".MIB_mblogbgr ").css("width", "600px");	
 	}
 	else {
@@ -87,6 +92,9 @@ function rightside(options) {
 		}
 		if ( options['hide_right_popuser'] == true ) {
 			$('div[name="app6"]').hide();
+		}
+		if ( options['hide_right_tip'] == true ) {
+			$(".PopLayer").hide();
 		}
 	}
 }
