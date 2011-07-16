@@ -266,6 +266,214 @@ this.manifest = {
         },
 		
 		{
+            "tab": "好友页面",
+            "group": "全局设置",
+            "name": "enable_friend",
+            "type": "checkbox",
+            "label": "启用好友页面优化"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "顶端导航条",
+            "name": "hide_top_friend",	
+            "type": "checkbox",
+            "label": "隐藏所有元素"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "顶端导航条",
+            "name": "hide_top_left_friend",
+            "type": "checkbox",
+            "label": "隐藏左侧链接"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "顶端导航条",
+            "name": "hide_top_right_friend",
+            "type": "checkbox",	
+            "label": "隐藏右侧链接"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "二级导航条",
+            "name": "hide_secondnav_friend",
+            "type": "checkbox",
+            "label": "隐藏所有元素"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "二级导航条",
+            "name": "hide_secondnav_logo_friend",
+            "type": "checkbox",
+            "label": "隐藏新浪Logo"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "二级导航条",
+            "name": "hide_secondnav_nav_friend",
+            "type": "checkbox",
+            "label": "隐藏右侧导航条"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "右侧边栏",
+            "name": "hide_right_info_friend",
+            "type": "checkbox",
+            "label": "隐藏好友信息"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "右侧边栏",
+            "name": "hide_right_medal_friend",
+            "type": "checkbox",
+            "label": "隐藏好友徽章"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "右侧边栏",
+            "name": "hide_right_follow_friend",
+            "type": "checkbox",
+            "label": "隐藏'关注Ta的人同时关注'"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "右侧边栏",
+            "name": "hide_right_bothfollow_friend",
+            "type": "checkbox",
+            "label": "隐藏共同关注"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "右侧边栏",
+            "name": "hide_right_profile_friend",
+            "type": "checkbox",
+            "label": "隐藏好友资料"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "右侧边栏",
+            "name": "hide_right_tag_friend",
+            "type": "checkbox",
+            "label": "隐藏好友标签"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "右侧边栏",
+            "name": "hide_right_topic_friend",
+            "type": "checkbox",
+            "label": "隐藏好友关注的话题"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "右侧边栏",
+            "name": "hide_right_fan_friend",
+            "type": "checkbox",
+            "label": "隐藏好友粉丝"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "右侧边栏",
+            "name": "hide_right_group_friend",
+            "type": "checkbox",
+            "label": "隐藏好友加入到群"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "右侧边栏",
+            "name": "hide_right_feedback_friend",
+            "type": "checkbox",
+            "label": "隐藏意见反馈"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "右侧边栏",
+            "name": "hide_right_report_friend",
+            "type": "checkbox",
+            "label": "隐藏举报"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "主面板",
+            "name": "hide_main_relation_friend",
+            "type": "checkbox",
+            "label": "隐藏关注情况"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "主面板",
+            "name": "hide_main_handle_friend",
+            "type": "checkbox",
+            "label": "隐藏好友操作"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "主面板",
+            "name": "hide_main_tab_friend",
+            "type": "checkbox",
+            "label": "隐藏微博/TA的资料"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "主面板",
+            "name": "hide_main_filter_friend",
+            "type": "checkbox",
+            "label": "隐藏筛选"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "主面板",
+            "name": "hide_main_micro_friend",
+            "type": "checkbox",
+            "label": "精简模式(仅显示微博正文,隐藏转发,收藏,评论等功能)"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "其它设置",
+            "name": "hide_other_nav_friend",
+            "type": "checkbox",
+            "label": "隐藏常用导航"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "其它设置",
+            "name": "hide_other_ads_friend",
+            "type": "checkbox",
+            "label": "隐藏底部广告"
+        },
+		
+		{
+            "tab": "好友页面",
+            "group": "其它设置",
+            "name": "hide_other_bot_friend",
+            "type": "checkbox",
+            "label": "隐藏底部链接"
+        },
+		
+		{
             "tab": "消息过滤",
             "group": "过滤用户",
             "name": "enable_filter",
