@@ -12,7 +12,11 @@
 
 var VERSION = chrome.i18n.getMessage("appVersion");
 var UPDATE = "+隐藏右边栏人气用户<br>+隐藏右边栏所有模块<br>";
-var DATE = "2011-07-09"
+var DATE = "2011-07-09";
+
+
+
+
 
 function topnav(options) {
 	if ( options['hide_top'] == true ) {
@@ -428,20 +432,107 @@ function notification(options) {
 	checkNew(false,false,false,false,options);
 }
 
+function friendpage(options) {
+	if ( options['hide_top_friend'] == true ) {
+		$(".tsina_gnbarea").hide();
+	} else {
+		if ( options['hide_top_left_friend'] == true ) {
+			$(".gnb_l").hide();
+		}
+		if ( options['hide_top_right_friend'] == true ) {
+			$(".gnb_r").hide();
+		}
+	}
+	
+	if ( options['hide_secondnav_friend'] == true ) {
+		$(".head_menu").hide();
+		$(".newlogo.festival").hide();
+	} else {
+		if ( options['hide_secondnav_logo_friend'] == true ) {
+			$(".newlogo.festival").hide();
+		}
+		if ( options['hide_secondnav_nav_friend'] == true ) {
+			$(".head_menu").hide();
+		}
+	}
+	if ( options['hide_right_info_friend'] == true ) {
+		$(".user_atten.MIB_linedot").hide();
+	}
+	if ( options['hide_right_medal_friend'] == true ) {
+		$(".medal_show1").hide();
+	}
+	if ( options['hide_right_follow_friend'] == true ) {
+		$('div[name="app43"]').hide();
+	}
+	if ( options['hide_right_bothfollow_friend'] == true ) {
+		$('div[name="app41"]').hide();
+	}
+	if ( options['hide_right_profile_friend'] == true ) {
+		$('div[name="app15"]').hide();
+	}
+	if ( options['hide_right_tag_friend'] == true ) {
+		$('div[name="app11"]').hide();
+	}
+	if ( options['hide_right_topic_friend'] == true ) {
+		$('div[name="app5"]').hide();
+	}
+	if ( options['hide_right_fan_friend'] == true ) {
+		$('div[name="app9"]').hide();
+	}
+	if ( options['hide_right_group_friend'] == true ) {
+		$('div[name="app10003"]').hide();
+	}
+	if ( options['hide_right_feedback_friend'] == true ) {
+		$('.MIB_dot').parent().parent().hide();
+	}
+	if ( options['hide_right_report_friend'] == true ) {
+		$(".rightTxtList").hide();
+	}
+	if ( options['hide_main_relation_friend'] == true ) {
+		$(".MIB_btn_inter.lf").hide();
+	}
+	if ( options['hide_main_handle_friend'] == true ) {
+		$(".more_handle").hide();
+	}
+	if ( options['hide_main_tab_friend'] == true ) {
+		$(".nfTagB.nfTagOff").hide();
+	}
+	if ( options['hide_main_filter_friend'] == true ) {
+		$(".nfBox").hide();
+	}
+	if ( options['hide_main_micro_friend'] == true ) {
+		$(".feed_att.MIB_linkbl.MIB_txtbl").hide();
+	}
+	
+	if ( options['hide_other_nav_friend'] == true ) {
+		$(".cmn_nav.cn_away").hide();
+	}
+	if ( options['hide_other_ads_friend'] == true ) {
+		$("#ads_bottom_1").hide();
+	}
+	if ( options['hide_other_bot_friend'] == true ) {
+		$("#bottomborder").hide();
+	}
+}
+
 function doit(options) {
 	checkUpdate();
-	
-	$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
-	//Enable all the functions
-	if ( options['enable_all'] == false ) return;
-	
-	topnav(options);
-	secondnav(options);
-	rightside(options);
-	mainboard(options);
-	others(options);
-	filter(options);
-	notification(options);
+	if ( $(document).attr('title').match("我的首页") ){
+		//Enable all the functions
+		if ( options['enable_all'] == false ) return;
+		$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
+		topnav(options);
+		secondnav(options);
+		rightside(options);
+		mainboard(options);
+		others(options);
+		filter(options);
+		notification(options);
+	}
+	else {
+		if ( options['enable_friend'] == false ) return;
+		friendpage(options);
+	}
 }
 
 function getTheme( theme )

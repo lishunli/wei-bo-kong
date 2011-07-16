@@ -136,6 +136,7 @@ window.addEvent("domready", function () {
 
 });
 
+
 function hover(x, y, img) {
 	var hover = document.getElementById("hover");
 	hover.style.position = "fixed";
