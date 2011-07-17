@@ -3,12 +3,24 @@
     "message": "微博控",
     "description": "App name."
   },
+  
   "appDesc": {
     "message": "自定义你的新浪微博,去除多余的界面元素,让微博变得更干净简洁!", 
     "description":"App description."
   },
+  
   "appVersion": {
-	"message": "0.9.7", 
+	"message": "0.9.9", 
     "description":"App version."
+  },
+  
+  "appChangelog": {
+	"message": "+隐藏右边栏人气用户<br>+隐藏右边栏所有模块<br>+隐藏好友页面元素(COOL)<br>*将选项中的图片提示位置改为固定<br>", 
+    "description":"App changelog."
+  },
+  
+  "appReleaseDate": {
+	"message": "2011-07-17", 
+    "description":"App release date."
   }
 }
