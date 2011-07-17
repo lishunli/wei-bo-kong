@@ -7,128 +7,230 @@ window.addEvent("domready", function () {
 		
 		
 		var me = settings.manifest.hide_top.label;
-		me.addEventListener("mouseover", function(){hover("100px","400px","hide_top");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_top");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_top_left.label;
-		me.addEventListener("mouseover", function(){hover("150px","400px","hide_top_left");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_top_left");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_top_right.label;
-		me.addEventListener("mouseover", function(){hover("200px","400px","hide_top_right");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_top_right");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_top_tip.label;
-		me.addEventListener("mouseover", function(){hover("225px","400px","hide_top_tip");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_top_tip");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_secondnav.label;
-		me.addEventListener("mouseover", function(){hover("100px","400px","hide_secondnav");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_secondnav");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_secondnav_logo.label;
-		me.addEventListener("mouseover", function(){hover("150px","400px","hide_secondnav_logo");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_secondnav_logo");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_secondnav_nav.label;
-		me.addEventListener("mouseover", function(){hover("200px","400px","hide_secondnav_nav");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_secondnav_nav");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right.label;
-		me.addEventListener("mouseover", function(){hover("100px","400px","hide_right");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_widgets.label;
-		me.addEventListener("mouseover", function(){hover("125px","400px","hide_right_widgets");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_widgets");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_ads.label;
-		me.addEventListener("mouseover", function(){hover("150px","400px","hide_right_ads");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_ads");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_tip.label;
-		me.addEventListener("mouseover", function(){hover("200px","400px","hide_right_tip");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_tip");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_info.label;
-		me.addEventListener("mouseover", function(){hover("225px","400px","hide_right_info");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_info");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_app.label;
-		me.addEventListener("mouseover", function(){hover("250px","400px","hide_right_app");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_app");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_nav.label;
-		me.addEventListener("mouseover", function(){hover("275px","400px","hide_right_nav");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_nav");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_cf.label;
-		me.addEventListener("mouseover", function(){hover("300px","400px","hide_right_cf");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_cf");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_report.label;
-		me.addEventListener("mouseover", function(){hover("375px","400px","hide_right_report");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_report");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_topic.label;
-		me.addEventListener("mouseover", function(){hover("400px","400px","hide_right_topic");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_topic");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_people.label;
-		me.addEventListener("mouseover", function(){hover("425px","400px","hide_right_people");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_people");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_alltopic.label;
-		me.addEventListener("mouseover", function(){hover("450px","400px","hide_right_alltopic");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_alltopic");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_group.label;
-		me.addEventListener("mouseover", function(){hover("475px","400px","hide_right_group");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_group");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_right_popuser.label;
-		me.addEventListener("mouseover", function(){hover("500px","400px","hide_right_popuser");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_popuser");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_main_post.label;
-		me.addEventListener("mouseover", function(){hover("100px","400px","hide_main_post");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_main_post");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_main_tips.label;
-		me.addEventListener("mouseover", function(){hover("125px","400px","hide_main_tips");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_main_tips");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_main_sort.label;
-		me.addEventListener("mouseover", function(){hover("150px","400px","hide_main_sort");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_main_sort");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_main_forward.label;
-		me.addEventListener("mouseover", function(){hover("175px","400px","hide_main_forward");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_main_forward");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_main_image.label;
-		me.addEventListener("mouseover", function(){hover("200px","400px","hide_main_image");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_main_image");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_main_micro.label;
-		me.addEventListener("mouseover", function(){hover("225px","400px","hide_main_micro");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_main_micro");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_other_nav.label;
-		me.addEventListener("mouseover", function(){hover("100px","400px","hide_other_nav");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_other_nav");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_other_ads.label;
-		me.addEventListener("mouseover", function(){hover("125px","400px","hide_other_ads");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_other_ads");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.hide_other_bot.label;
-		me.addEventListener("mouseover", function(){hover("150px","400px","hide_other_bot");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_other_bot");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_top_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_top");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_top_left_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_top_left");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_top_right_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_top_right");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_secondnav_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_secondnav");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_secondnav_logo_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_secondnav_logo");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_secondnav_nav_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_secondnav_nav");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_other_nav_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_other_nav");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_other_ads_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_other_ads");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_other_bot_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_other_bot");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_info_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_info_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_medal_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_medal_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_follow_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_follow_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_bothfollow_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_bothfollow_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_profile_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_profile_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_tag_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_tag_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_topic_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_topic_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_fan_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_fan_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_group_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_group_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_feedback_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_feedback_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_report_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_right_report_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_main_relation_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_main_relation_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_main_handle_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_main_handle_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_main_tab_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_main_tab_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_main_filter_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_main_filter_friend");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_main_micro_friend.label;
+		me.addEventListener("mouseover", function(){hover("55px","550px","hide_main_micro");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.filter.label;
-		me.addEventListener("mouseover", function(){hover("150px","400px","filter");}, false);
+		me.addEventListener("mouseover", function(){hover("55px","550px","filter");}, false);
 		me.addEventListener("mouseout", unhover, false);
+		
+		
 		
 		
 		

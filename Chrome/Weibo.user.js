@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 var VERSION = chrome.i18n.getMessage("appVersion");
-var UPDATE = "+隐藏右边栏人气用户<br>+隐藏右边栏所有模块<br>";
+var UPDATE = "+隐藏右边栏人气用户<br>+隐藏右边栏所有模块<br>+隐藏好友页面元素(COOL)<br>*将选项中的图片提示位置改为固定<br>";
 var DATE = "2011-07-09";
 
 
@@ -517,9 +517,8 @@ function friendpage(options) {
 
 function doit(options) {
 	checkUpdate();
+	if ( options['enable_all'] == false ) return;
 	if ( $(document).attr('title').match("我的首页") ){
-		//Enable all the functions
-		if ( options['enable_all'] == false ) return;
 		$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
 		topnav(options);
 		secondnav(options);
