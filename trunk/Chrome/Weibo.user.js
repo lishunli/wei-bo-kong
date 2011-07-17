@@ -1,6 +1,6 @@
 ﻿// WeiboKong
-// version 0.9.7
-// 2011-07-09
+// version 0.9.9
+// 2011-07-17
 //
 // ==UserScript==
 // @name          WeiboKong
@@ -11,8 +11,8 @@
 // ==/UserScript==
 
 var VERSION = chrome.i18n.getMessage("appVersion");
-var UPDATE = "+隐藏右边栏人气用户<br>+隐藏右边栏所有模块<br>+隐藏好友页面元素(COOL)<br>*将选项中的图片提示位置改为固定<br>";
-var DATE = "2011-07-09";
+var UPDATE = chrome.i18n.getMessage("appChangelog");
+var DATE = "2011-07-17";
 
 
 

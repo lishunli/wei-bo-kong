@@ -603,10 +603,18 @@ this.manifest = {
 		
 		{
             "tab": "关于",
+            "group": "发布时间",
+            "name": "version",
+            "type": "description",
+            "text": chrome.i18n.getMessage("appReleaseDate")
+        },
+		
+		{
+            "tab": "关于",
             "group": "更新详情",
             "name": "version",
             "type": "description",
-            "text": "+微博控按钮皮肤<br>*隐藏图片后，鼠标悬浮于显示图片按钮0.5秒后自动显示图片<br>+新私信、粉丝、评论桌面提醒<br>"
+            "text": chrome.i18n.getMessage("appChangelog")
         },
 		
 		{
