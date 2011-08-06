@@ -25,6 +25,16 @@ this.manifest = {
             ]
         },
 		
+		/*
+		{
+            "tab": "基本设置",
+            "group": "实用功能",
+            "name": "enable_autonew",
+            "type": "checkbox",
+            "label": "自动展开新微博"
+        },
+		*/
+		
 		{
             "tab": "顶端导航条",
             "group": "全局设置",

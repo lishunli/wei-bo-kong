@@ -1,6 +1,6 @@
 ﻿// WeiboKong
-// version 0.9.9
-// 2011-07-17
+// version 1.0.0
+// 2011-08-06
 //
 // ==UserScript==
 // @name          WeiboKong
@@ -12,11 +12,7 @@
 
 var VERSION = chrome.i18n.getMessage("appVersion");
 var UPDATE = chrome.i18n.getMessage("appChangelog");
-var DATE = "2011-07-17";
-
-
-
-
+var DATE = chrome.i18n.getMessage("appReleaseDate");
 
 function topnav(options) {
 	if ( options['hide_top'] == true ) {
@@ -73,7 +69,6 @@ function rightside(options) {
 		if ( options['hide_right_nav'] == true ) {
 			$(".right_nav").hide();
 		}
-		
 		if ( options['hide_right_topic'] == true ) {
 			$('div[name="app4"]').hide();
 		}
@@ -87,7 +82,6 @@ function rightside(options) {
 		if ( options['hide_right_group'] == true ) {
 			$('div[name="app10003"]').hide();
 		}
-		
 		if ( options['hide_right_cf'] == true ) {
 			$(".f_pro").hide();
 		}
@@ -276,10 +270,12 @@ function others(options) {
 }
 
 function filter(options) {
+	/*
 	if ( options['enable_filter'] == true ) {
 		if ( options['filter'] != "" ) {
 			var names = options['filter'].toString().split(",");
 			for (var i in names) {
+			
 				allDivs = document.evaluate(
 					"//a[@title='" + names[i] + "']",
 					document,
@@ -293,57 +289,39 @@ function filter(options) {
 					thisDiv = thisDiv.parentNode;
 					thisDiv.parentNode.removeChild(thisDiv);
 				}
+				
 			}
 		}
 	}
+	*/
 	if ( options['enable_filter_keyword_origin'] == true ) {
 		if ( options['filter_keyword'] != "" ) {
-			allDivs = document.evaluate(
-				"//p[@class='sms']",
-				document,
-				null,
-				XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-				null);
-			for (var i = 0; i < allDivs.snapshotLength; i++) {
-				thisDiv = allDivs.snapshotItem(i);
-				var keywords = options['filter_keyword'].toString().split(",");
-				var html = thisDiv.innerHTML;
+			var keywords = options['filter_keyword'].toString().split(",");
+			$(".sms").each(function (index){
+				var html = $(this).html();
 				
 				for (var k in keywords) {
 					if ( html.search( keywords[k] ) != -1 ) {
-						thisDiv = thisDiv.parentNode;
-						thisDiv = thisDiv.parentNode;
-						thisDiv.parentNode.removeChild(thisDiv);
+						$(this).parent().parent().hide();
 						break;
 					}
 				}
-				
-			}
+			});
 		}
 	}
 	if ( options['enable_filter_keyword_forward'] == true ) {
 		if ( options['filter_keyword'] != "" ) {
-			allDivs = document.evaluate(
-				"//div[@class='MIB_assign']",
-				document,
-				null,
-				XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-				null);
-			for (var i = 0; i < allDivs.snapshotLength; i++) {
-				thisDiv = allDivs.snapshotItem(i);
-				var keywords = options['filter_keyword'].toString().split(",");
-				var html = thisDiv.innerHTML;
+			var keywords = options['filter_keyword'].toString().split(",");
+			$(".MIB_assign").each(function (index){
+				var html = $(this).html();
 				
 				for (var k in keywords) {
 					if ( html.search( keywords[k] ) != -1 ) {
-						thisDiv = thisDiv.parentNode;
-						thisDiv = thisDiv.parentNode;
-						thisDiv.parentNode.removeChild(thisDiv);
+						$(this).parent().parent().hide();
 						break;
 					}
 				}
-				
-			}
+			});
 		}
 	}
 }
@@ -363,27 +341,26 @@ function checkUpdate() {
 }
 
 function checkNew(notified1,notified2,notified3,notified4,options) {
+    //mainboard(options);
 	var flag = false;
 	if ( options['notification_post'] == true ) {
-		allDivs = document.evaluate(
-			"//a[@class='newMblog_ts1']",
-			document,
-			null,
-			XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-			null);
-		for (var i = 0; i < allDivs.snapshotLength; i++) {
-			thisDiv = allDivs.snapshotItem(i);
-			if ( thisDiv.style.display != "none" ) {
-				flag = true;
-				if ( notified1 == false ) {
-					chrome.extension.sendRequest({'action' : 'notify', 'type' : 'post'}, function(){});
-					notified1 = true;
-				}
+		if ( $(".newMblog_ts1").css("display") != "none" ) {
+			flag = true;
+			if ( notified1 == false ) {
+				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'post'}, function(){});
+				notified1 = true;
+					/*
+					 *自动打开新微薄
+					 *
+					if ( options['enable_autonew'] == true ) {
+					$(".newMblog_ts1").click();
+					alert("new");
+					}
+					*/
 			}
 		}
 		if ( flag == false ) notified1 = false;
 	}
-	
 	flag = false;
 	if ( options['notification_comment']  == true ) {
 		if ( $(".yInfo p:first-child").css("display") != "none" && $(".yInfo p:first-child").html() != "" ) {
@@ -443,7 +420,6 @@ function friendpage(options) {
 			$(".gnb_r").hide();
 		}
 	}
-	
 	if ( options['hide_secondnav_friend'] == true ) {
 		$(".head_menu").hide();
 		$(".newlogo.festival").hide();
