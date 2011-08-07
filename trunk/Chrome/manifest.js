@@ -483,6 +483,7 @@ this.manifest = {
             "label": "隐藏底部链接"
         },
 		
+		/*
 		{
             "tab": "消息过滤",
             "group": "过滤用户",
@@ -508,6 +509,7 @@ this.manifest = {
             "type": "description",
             "text": "*目前只能过滤第一页内容,请以半角逗号分隔多个用户名"
         },
+		*/
 		
 		{
             "tab": "消息过滤",
