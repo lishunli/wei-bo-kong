@@ -10,17 +10,17 @@
   },
   
   "appVersion": {
-	"message": "0.9.9", 
+	"message": "1.0.0", 
     "description":"App version."
   },
   
   "appChangelog": {
-	"message": "+隐藏右边栏人气用户<br>+隐藏右边栏所有模块<br>+隐藏好友页面元素(COOL)<br>*将选项中的图片提示位置改为固定<br>", 
+	"message": "*优化了部分代码<br>*压缩了部分介绍图片<br>-暂时禁用了过滤用户功能<br>", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2011-07-17", 
+	"message": "2011-08-06", 
     "description":"App release date."
   }
 }
