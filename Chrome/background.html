@@ -57,12 +57,6 @@
 			else if (request.action == 'notify' ) {
 				if ( request.type == 'post') {
 					var notification = chrome.extension.getURL("notification/post.html");
-					//var icon = chrome.extension.getURL("img/icon/icon_48.png");
-					/*var notification = webkitNotifications.createNotification( 
-					  icon,
-					  'ÄúÓÐÐÂÎ¢²©£¡',  // notification title
-					  ''  // notification body text
-					);*/
 					var notification = webkitNotifications.createHTMLNotification(
 					  notification 
 					);
