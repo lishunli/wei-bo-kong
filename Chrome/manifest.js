@@ -25,7 +25,6 @@ this.manifest = {
             ]
         },
 		
-		/*
 		{
             "tab": "基本设置",
             "group": "实用功能",
@@ -33,7 +32,6 @@ this.manifest = {
             "type": "checkbox",
             "label": "自动展开新微博"
         },
-		*/
 		
 		{
             "tab": "顶端导航条",

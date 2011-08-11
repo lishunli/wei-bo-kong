@@ -349,14 +349,9 @@ function checkNew(notified1,notified2,notified3,notified4,notified5,options) {
 			if ( notified1 == false ) {
 				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'post'}, function(){});
 				notified1 = true;
-					/*
-					 *自动打开新微薄
-					 *
-					if ( options['enable_autonew'] == true ) {
+				if ( options['enable_autonew'] == true ) {
 					$(".newMblog_ts1").click();
-					alert("new");
-					}
-					*/
+				}
 			}
 		}
 		if ( flag == false ) notified1 = false;
