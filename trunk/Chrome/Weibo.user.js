@@ -314,7 +314,7 @@ function filter(options) {
 			var keywords = options['filter_keyword'].toString().split(",");
 			$(".MIB_assign").each(function (index){
 				var html = $(this).html();
-				
+					
 				for (var k in keywords) {
 					if ( html.search( keywords[k] ) != -1 ) {
 						$(this).parent().parent().hide();
@@ -340,7 +340,7 @@ function checkUpdate() {
 	}
 }
 
-function checkNew(notified1,notified2,notified3,notified4,options) {
+function checkNew(notified1,notified2,notified3,notified4,notified5,options) {
     //mainboard(options);
 	var flag = false;
 	if ( options['notification_post'] == true ) {
@@ -383,7 +383,6 @@ function checkNew(notified1,notified2,notified3,notified4,options) {
 		}
 		if ( flag == false ) notified3 = false;
 	}
-	
 	flag = false;
 	if ( options['notification_msg']  == true ) {
 		if ( $(".yInfo p:first-child").next().next().css("display") != "none" && $(".yInfo p:first-child").next().next().html() != "" ) {
@@ -395,18 +394,29 @@ function checkNew(notified1,notified2,notified3,notified4,options) {
 		}
 		if ( flag == false ) notified4 = false;
 	}
+	flag = false;
+	if ( options['notification_atme']  == true ) {
+		if ( $(".yInfo p:first-child").next().next().next().css("display") != "none" && $(".yInfo p:first-child").next().next().next().html() != "" ) {
+			flag = true;
+			if ( notified5 == false ) {
+				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'atme'}, function(){});
+				notified5 = true;
+			}
+		}
+		if ( flag == false ) notified5 = false;
+	}
 	
 	
 	var intervals = options['notification_intervals'];
 	if ( intervals < 10 ) intervals = 10;
-	t = setTimeout(function(){checkNew(notified1,notified2,notified3,notified4,options);}, intervals * 1000 );
+	t = setTimeout(function(){checkNew(notified1,notified2,notified3,notified4,notified5,options);}, intervals * 1000 );
 }
 
 function notification(options) {
 	if ( options['enable_notification'] == false ) {
 		return;
 	}
-	checkNew(false,false,false,false,options);
+	checkNew(false,false,false,false,false,options);
 }
 
 function friendpage(options) {
