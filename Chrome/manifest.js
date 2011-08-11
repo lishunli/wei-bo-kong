@@ -598,6 +598,14 @@ this.manifest = {
         },
 		
 		{
+            "tab": "桌面提醒",
+            "group": "详细设置",
+            "name": "notification_atme",
+            "type": "checkbox",
+            "label": "有新@时提醒"
+        },
+		
+		{
             "tab": "关于",
             "group": "关于微博控",
             "name": "thx",
