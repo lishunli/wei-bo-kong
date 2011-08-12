@@ -110,7 +110,7 @@ this.manifest = {
             "group": "全局设置",
             "name": "hide_right_ads",
             "type": "checkbox",
-            "label": "隐藏广告(共3处)"
+            "label": "隐藏广告(共4处)"
         },
 		
 		{
