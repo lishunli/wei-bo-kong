@@ -59,6 +59,7 @@ function rightside(options) {
 			$("#ads_35").hide();
 			$("#ads_36").hide();
 			$("#ads_37").hide();
+			$("#ads_47").hide();
 		}
 		if ( options['hide_right_info'] == true ) {
 			$(".userinfo").hide();
