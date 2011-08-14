@@ -10,17 +10,17 @@
   },
   
   "appVersion": {
-	"message": "1.0.0", 
+	"message": "1.0.1", 
     "description":"App version."
   },
   
   "appChangelog": {
-	"message": "*优化了部分代码<br>*压缩了部分介绍图片<br>-暂时禁用了过滤用户功能<br>", 
+	"message": "+隐藏右侧边栏'推荐活动'<br>+自动展开新微博条目<br>+增加了桌面提醒的声音提示<br>+增加了@我的桌面提醒<br>+可以通过桌面提醒打开评论私信<br>*修正了没法关闭桌面提醒的bug", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2011-08-06", 
+	"message": "2011-08-14", 
     "description":"App release date."
   }
 }
