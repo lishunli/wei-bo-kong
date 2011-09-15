@@ -565,7 +565,7 @@ function doit(options) {
 	checkUpdate();
 	if ( options['enable_all'] == false ) return;
 	
-	if ( $(document).attr('title').match("我的首页") ){
+	if ( $(document).attr('title').match("我的首页") || $(document).attr('title').match("我的首頁") ){
 		$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
 		topnav(options);
 		secondnav(options);
@@ -575,7 +575,7 @@ function doit(options) {
 		filter(options);
 		notification(options);
 	}
-	else if ( $(document).attr('title').match("微博搜索") ){
+	else if ( $(document).attr('title').match("微博搜索") || $(document).attr('title').match("微博搜尋") ){
 		searchpage(options)
 	}
 	else {
