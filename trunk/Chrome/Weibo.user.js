@@ -520,6 +520,47 @@ function friendpage(options) {
 	}
 }
 
+function searchpage(options) {
+	if ( options['hide_top_search'] == true ) {
+		$(".tsina_gnbarea").hide();
+	} else {
+		if ( options['hide_top_left_search'] == true ) {
+			$(".gnb_l").hide();
+		}
+		if ( options['hide_top_right_search'] == true ) {
+			$(".gnb_r").hide();
+		}
+	}
+	if ( options['hide_search_logo'] == true ) {
+		$(".newlogo").hide();
+	}
+	if ( options['hide_search_bottom'] == true ) {
+		$("#bottomborder").hide();
+	}
+	if ( options['hide_search_hot'] == true ) {
+		t = setTimeout(function(){$(".srch_hotWrap").hide();}, 2 * 1000 );
+	}
+	if ( options['hide_search_order'] == true ) {
+		$(".tab_top_new").hide();
+	}
+	if ( options['hide_search_topic'] == true ) {
+		$(".srch_link").hide();
+	}
+	if ( options['hide_search_toptitle'] == true ) {
+		$("#list_topic_box").hide();
+	}
+	if ( options['hide_search_top10'] == true ) {
+		$(".top10.hotTipS").hide();
+	}
+	if ( options['hide_search_related'] == true ) {
+		$(".top10.hotTipS").next().hide();
+		$(".related_topic").hide();
+	}
+	if ( options['hide_search_feedback'] == true ) {
+		$(".sdbar_opt").hide();
+	}
+}
+
 function doit(options) {
 	checkUpdate();
 	if ( options['enable_all'] == false ) return;
@@ -532,8 +573,10 @@ function doit(options) {
 		mainboard(options);
 		others(options);
 		filter(options);
-		
 		notification(options);
+	}
+	else if ( $(document).attr('title').match("微博搜索") ){
+		searchpage(options)
 	}
 	else {
 		if ( options['enable_friend'] == false ) return;
