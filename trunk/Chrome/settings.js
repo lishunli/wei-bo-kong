@@ -288,7 +288,7 @@ function hover(img) {
 	hover.style.position = "fixed";
 	hover.style.top = "55px";
 	hover.style.left = "550px";
-	hover.innerHTML = "<img src=img/" + img + ".png />";
+	hover.innerHTML = "<img src=img/" + img + ".jpg />";
 	hover.style.display = "block";
 }
 
