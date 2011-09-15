@@ -10,17 +10,17 @@
   },
   
   "appVersion": {
-	"message": "1.0.1", 
+	"message": "1.0.2", 
     "description":"App version."
   },
   
   "appChangelog": {
-	"message": "+隐藏右侧边栏'推荐活动'<br>+自动展开新微博条目<br>+增加了桌面提醒的声音提示<br>+增加了@我的桌面提醒<br>+可以通过桌面提醒打开评论私信<br>*修正了没法关闭桌面提醒的bug", 
+	"message": "*修复关键字过滤，现可以过滤所有内容！<br>+自定义屏蔽搜索界面多余元素(COOL)<br>+支持繁体版新浪微薄<br>*压缩了扩展体积(1.6MB -> 1.0MB)", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2011-08-14", 
+	"message": "2011-09-15", 
     "description":"App release date."
   }
 }
