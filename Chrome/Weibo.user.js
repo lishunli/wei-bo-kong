@@ -1,6 +1,6 @@
 ﻿// WeiboKong
-// version 1.0.1
-// 2011-08-14
+// version 1.0.2
+// 2011-09-15
 //
 // ==UserScript==
 // @name          WeiboKong
@@ -308,6 +308,17 @@ function filter(options) {
 					}
 				}
 			});
+			var keywords = options['filter_keyword'].toString().split("，");
+			$(".sms").each(function (index){
+				var html = $(this).html();
+				
+				for (var k in keywords) {
+					if ( html.search( keywords[k] ) != -1 ) {
+						$(this).parent().parent().hide();
+						break;
+					}
+				}
+			});
 		}
 	}
 	if ( options['enable_filter_keyword_forward'] == true ) {
@@ -323,8 +334,20 @@ function filter(options) {
 					}
 				}
 			});
+			var keywords = options['filter_keyword'].toString().split("，");
+			$(".MIB_assign").each(function (index){
+				var html = $(this).html();
+					
+				for (var k in keywords) {
+					if ( html.search( keywords[k] ) != -1 ) {
+						$(this).parent().parent().hide();
+						break;
+					}
+				}
+			});
 		}
 	}
+	t = setTimeout(function(){filter(options);}, 2000 );
 }
 
 function checkUpdate() {
@@ -500,6 +523,7 @@ function friendpage(options) {
 function doit(options) {
 	checkUpdate();
 	if ( options['enable_all'] == false ) return;
+	
 	if ( $(document).attr('title').match("我的首页") ){
 		$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
 		topnav(options);
@@ -508,6 +532,7 @@ function doit(options) {
 		mainboard(options);
 		others(options);
 		filter(options);
+		
 		notification(options);
 	}
 	else {
