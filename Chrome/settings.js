@@ -1,4 +1,4 @@
-window.addEvent("domready", function () {
+	window.addEvent("domready", function () {
     new FancySettings.initWithManifest(function (settings) {
 	
 		document.getElementById("settings-label").innerHTML = "Œ¢≤©øÿ…Ë÷√";
@@ -224,6 +224,54 @@ window.addEvent("domready", function () {
 		
 		me = settings.manifest.hide_main_micro_friend.label;
 		me.addEventListener("mouseover", function(){hover("hide_main_micro");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_top_search.label;
+		me.addEventListener("mouseover", function(){hover("hide_top");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_top_left_search.label;
+		me.addEventListener("mouseover", function(){hover("hide_top_left");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_top_right_search.label;
+		me.addEventListener("mouseover", function(){hover("hide_top_right");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_search_logo.label;
+		me.addEventListener("mouseover", function(){hover("hide_secondnav_logo");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_search_bottom.label;
+		me.addEventListener("mouseover", function(){hover("hide_other_bot");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_search_hot.label;
+		me.addEventListener("mouseover", function(){hover("hide_search_hot");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_search_order.label;
+		me.addEventListener("mouseover", function(){hover("hide_search_order");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_search_topic.label;
+		me.addEventListener("mouseover", function(){hover("hide_search_topic");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_search_toptitle.label;
+		me.addEventListener("mouseover", function(){hover("hide_search_toptitle");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_search_top10.label;
+		me.addEventListener("mouseover", function(){hover("hide_search_top10");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_search_related.label;
+		me.addEventListener("mouseover", function(){hover("hide_search_related");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_search_feedback.label;
+		me.addEventListener("mouseover", function(){hover("hide_search_feedback");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
 		me = settings.manifest.filter.label;

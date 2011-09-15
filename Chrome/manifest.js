@@ -481,6 +481,102 @@ this.manifest = {
             "label": "隐藏底部链接"
         },
 		
+		{
+            "tab": "搜索页面",
+            "group": "框架设置",
+            "name": "hide_top_search",
+            "type": "checkbox",
+            "label": "隐藏顶部导航条"
+        },
+		
+		{
+            "tab": "搜索页面",
+            "group": "框架设置",
+            "name": "hide_top_left_search",
+            "type": "checkbox",
+            "label": "隐藏顶部导航条（左侧）"
+        },
+		
+		{
+            "tab": "搜索页面",
+            "group": "框架设置",
+            "name": "hide_top_right_search",
+            "type": "checkbox",
+            "label": "隐藏顶部导航条（右侧）"
+        },
+		
+		{
+            "tab": "搜索页面",
+            "group": "框架设置",
+            "name": "hide_search_logo",
+            "type": "checkbox",
+            "label": "隐藏新浪logo"
+        },
+		
+		{
+            "tab": "搜索页面",
+            "group": "框架设置",
+            "name": "hide_search_bottom",
+            "type": "checkbox",
+            "label": "隐藏底部链接"
+        },
+		
+		{
+            "tab": "搜索页面",
+            "group": "详细设置",
+            "name": "hide_search_hot",
+            "type": "checkbox",
+            "label": "隐藏热门用户"
+        },
+		
+		{
+            "tab": "搜索页面",
+            "group": "详细设置",
+            "name": "hide_search_order",
+            "type": "checkbox",
+            "label": "隐藏搜索排序"
+        },
+		
+		{
+            "tab": "搜索页面",
+            "group": "详细设置",
+            "name": "hide_search_topic",
+            "type": "checkbox",
+            "label": "隐藏话题选项"
+        },
+		
+		{
+            "tab": "搜索页面",
+            "group": "详细设置",
+            "name": "hide_search_toptitle",
+            "type": "checkbox",
+            "label": "隐藏关注的话题"
+        },
+		
+		{
+            "tab": "搜索页面",
+            "group": "详细设置",
+            "name": "hide_search_top10",
+            "type": "checkbox",
+            "label": "隐藏1小时话题榜"
+        },
+		
+		{
+            "tab": "搜索页面",
+            "group": "详细设置",
+            "name": "hide_search_related",
+            "type": "checkbox",
+            "label": "隐藏相关话题"
+        },
+		
+		{
+            "tab": "搜索页面",
+            "group": "详细设置",
+            "name": "hide_search_feedback",
+            "type": "checkbox",
+            "label": "隐藏意见反馈"
+        },
+		
 		/*
 		{
             "tab": "消息过滤",
