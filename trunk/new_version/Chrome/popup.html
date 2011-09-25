@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="gbk">
+	<script type="text/javascript" src="lib/store.js"></script> 
+	<script type="text/javascript">
+		function option() {
+			chrome.tabs.create({url:chrome.extension.getURL("options.html")});
+		}
+		function enable() {
+			var settings = new Store("settings", {});
+			settings.set("enable_all", true );
+			refresh();
+		}
+		function disable() {
+			var settings = new Store("settings", {});
+			settings.set("enable_all", false );
+			refresh();
+		}
+		function refresh() {
+			chrome.extension.sendRequest( {action: 'refresh'}, function(){} );
+		}
+    </script>
+  </head>
+  <body>
+	<input id="op" type="button" value="设置" onClick="option()" />
+	<input id="en" type="button" value="启用" onClick="enable()" />
+	<input id="di" type="button" value="禁用" onClick="disable()" />
+   
+		
+  </body>
+</html>
