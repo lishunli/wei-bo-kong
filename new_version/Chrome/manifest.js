@@ -44,6 +44,14 @@ this.manifest = {
 		{
             "tab": "顶端导航条",
             "group": "详细设置",
+            "name": "hide_top_logo",
+            "type": "checkbox",
+            "label": "隐藏新浪logo"
+        },
+		
+		{
+            "tab": "顶端导航条",
+            "group": "详细设置",
             "name": "hide_top_left",
             "type": "checkbox",
             "label": "隐藏左侧链接"
@@ -60,33 +68,9 @@ this.manifest = {
 		{
             "tab": "顶端导航条",
             "group": "详细设置",
-            "name": "hide_top_tip",
+            "name": "hide_top_search",
             "type": "checkbox",	
-            "label": "隐藏小提示"
-        },
-		
-		{
-            "tab": "二级导航条",
-            "group": "全局设置",
-            "name": "hide_secondnav",
-            "type": "checkbox",
-            "label": "隐藏所有元素"
-        },
-		
-		{
-            "tab": "二级导航条",
-            "group": "详细设置",
-            "name": "hide_secondnav_logo",
-            "type": "checkbox",
-            "label": "隐藏新浪Logo"
-        },
-		
-		{
-            "tab": "二级导航条",
-            "group": "详细设置",
-            "name": "hide_secondnav_nav",
-            "type": "checkbox",
-            "label": "隐藏右侧导航条"
+            "label": "隐藏搜索栏"
         },
 		
 		{
