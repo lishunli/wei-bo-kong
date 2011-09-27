@@ -138,6 +138,12 @@
 	cursor:pointer;
 }
 
+.kong_parent_hover {
+	filter:alpha(opacity=30);
+	-moz-opacity:0.3;
+	opacity: 0.3;
+}
+
 .kong_button_hover {
 	background-image: -webkit-gradient(linear,left top,left bottom,from(#4d90fe),to(#357ae8));
 	border-color: #2f5bb7!important;

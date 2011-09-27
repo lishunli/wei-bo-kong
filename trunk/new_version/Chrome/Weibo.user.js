@@ -16,40 +16,28 @@ var DATE = chrome.i18n.getMessage("appReleaseDate");
 
 function topnav(options) {
 	if ( options['hide_top'] == true ) {
-		$(".tsina_gnbarea").hide();
-		$(".eventTip").hide();
+		$("div.global_header").hide();
 	} else {
+		if ( options['hide_top_logo'] == true ) {
+			$("div.logo").hide();
+		}
 		if ( options['hide_top_left'] == true ) {
-			$(".gnb_l").hide();
+			$("ul.list").hide();
 		}
 		if ( options['hide_top_right'] == true ) {
-			$(".gnb_r").hide();
+			$("div.right").hide();
 		}
-		if ( options['hide_top_tip'] == true ) {
-			$(".eventTip").hide();
+		if ( options['hide_top_search'] == true ) {
+			$("div.search").hide();
 		}
-	}
-}
-
-function secondnav(options) {
-	if ( options['hide_secondnav'] == true ) {
-		$(".head_menu").hide();
-		$(".newlogo.festival").hide();
-	} else {
-		if ( options['hide_secondnav_logo'] == true ) {
-			$(".newlogo.festival").hide();
-		}
-		if ( options['hide_secondnav_nav'] == true ) {
-			$(".head_menu").hide();
-		}
+		//.layer_message_box
 	}
 }
 
 function rightside(options) {
 	if ( options['hide_right'] == true ) {
-		$(".mainR.MIB_200.MIB_txtar.MIB_linkar").hide();
-		$(".PopLayer").hide();
-		$(".MIB_mblogbgr ").css("width", "600px");	
+		$(".W_main_r").hide();
+		//#pl_content_versionTip
 	}
 	else {
 		if ( options['hide_right_widgets'] ) {
@@ -562,13 +550,38 @@ function searchpage(options) {
 }
 
 function doit(options) {
+	/*
+		test
+	*/
+	var html = $(".W_main_r").html();
+	var add = "<div id='kong_close' style='position:absolute; right:10px; top: 10px;'><img id='kong_close_img' /></div>";
+	$(".W_main_r").html( html + add );
+	var imgURL = chrome.extension.getURL("img/icon/close.png");
+	$("#kong_close_img").attr("src", imgURL);
+	var kong_close_div = $("#kong_close");
+	$(kong_close_div).hover(function() {
+		$(kong_close_div).parent().addClass("kong_parent_hover");
+	}, function() {
+		$(kong_close_div).parent().removeClass("kong_parent_hover");
+	});
+	$(kong_close_div).hover(function() {
+		$(kong_close_div).parent().addClass("kong_parent_hover");
+	}, function() {
+		$(kong_close_div).parent().removeClass("kong_parent_hover");
+	});
+	$(kong_close_div).click(function() {
+		$(kong_close_div).parent().hide();
+	});
+	
+	/*
+		test
+	*/
 	checkUpdate();
 	if ( options['enable_all'] == false ) return;
 	
 	if ( $(document).attr('title').match("我的首页") || $(document).attr('title').match("我的首頁") ){
 		$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
 		topnav(options);
-		secondnav(options);
 		rightside(options);
 		mainboard(options);
 		others(options);
