@@ -553,26 +553,37 @@ function doit(options) {
 	/*
 		test
 	*/
-	var html = $(".W_main_r").html();
-	var add = "<div id='kong_close' style='position:absolute; right:10px; top: 10px;'><img id='kong_close_img' /></div>";
-	$(".W_main_r").html( html + add );
-	var imgURL = chrome.extension.getURL("img/icon/close.png");
-	$("#kong_close_img").attr("src", imgURL);
-	var kong_close_div = $("#kong_close");
-	$(kong_close_div).hover(function() {
-		$(kong_close_div).parent().addClass("kong_parent_hover");
-	}, function() {
-		$(kong_close_div).parent().removeClass("kong_parent_hover");
-	});
-	$(kong_close_div).hover(function() {
-		$(kong_close_div).parent().addClass("kong_parent_hover");
-	}, function() {
-		$(kong_close_div).parent().removeClass("kong_parent_hover");
-	});
-	$(kong_close_div).click(function() {
-		$(kong_close_div).parent().hide();
-	});
-	
+	var element_list = new Array();
+	init(element_list);
+	for (i = 0;i < element_list.length;i++) {
+		//var select_string = element_list[i][0];
+		//select_string += '[' + element_list[i][1] + '=\"' + element_list[i][2] + '\"]';
+		if (element_list[i][3] == true) {
+			var close_id = 'kong_close_' + i;
+			
+			var html = $(element_list[i][0] + '[' + element_list[i][1] + '=\"' + element_list[i][2] + '\"]').html();
+			var add = "<div id='" + close_id + "' style='position: absolute; z-index: 9999; height: 16px; width: 16px; display: block; '><img class='kong_close_img' width='16px' height='16px' /></div>";
+			$(element_list[i][0] + '[' + element_list[i][1] + '=\"' + element_list[i][2] + '\"]').html( html + add );
+			var imgURL = chrome.extension.getURL("img/icon/close.png");
+			$(".kong_close_img").attr("src", imgURL);
+			$("#" + close_id).hover(function() {
+				$(this).parent().addClass("kong_parent_hover");
+			}, function() {
+				$(this).parent().removeClass("kong_parent_hover");
+			});
+			$("#" + close_id).hover(function() {
+				$(this).parent().addClass("kong_parent_hover");
+			}, function() {
+				$(this).parent().removeClass("kong_parent_hover");
+			});
+			$("#" + close_id).click(function() {
+				$(this).parent().hide();
+			});
+		}
+		else {
+			$(element_list[i][0] + '[' + element_list[i][1] + '=\"' + element_list[i][2] + '\"]').hide();
+		}
+	}
 	/*
 		test
 	*/
@@ -609,6 +620,56 @@ function getTheme( theme )
 		default:
 		return '_original';
 	}
+}
+
+function init(element_list)
+{
+	// 1 id; 2 class;
+	element = ['div', 'id', 'pl_content_top', true];
+	element_list.push(element);
+	element = ['div', 'class', 'logo', true];
+	element_list.push(element);
+	/*
+	element_list[0][0] = 'div';
+	element_list[0][1] = 'id';
+	element_list[0][2] = 'pl_content_top';
+	element_list[0][3] = true;
+	element_list[1] = new Array();
+	element_list[1][0] = 'div';
+	element_list[1][1] = 'class';
+	element_list[1][2] = 'logo';
+	element_list[1][3] = true;
+	element_list[2] = new Array();
+	element_list[2][0] = 'ul';
+	element_list[2][1] = 'class';
+	element_list[2][2] = 'list';
+	element_list[2][3] = true;
+	element_list[3] = new Array();
+	element_list[3][0] = 'div';
+	element_list[3][1] = 'class';
+	element_list[3][2] = 'search';
+	element_list[3][3] = true;
+	element_list[4] = new Array();
+	element_list[4][0] = 'div';
+	element_list[4][1] = 'class';
+	element_list[4][2] = 'right';
+	element_list[4][3] = true;
+	element_list[5] = new Array();
+	element_list[5][0] = 'div';
+	element_list[5][1] = 'class';
+	element_list[5][2] = 'W_main_r';
+	element_list[5][3] = true;
+	element_list[6] = new Array();
+	element_list[6][0] = 'div';
+	element_list[6][1] = 'id';
+	element_list[6][2] = 'pl_content_liteFacePersonInfo';
+	element_list[6][3] = true;
+	element_list[7] = new Array();
+	element_list[7][0] = 'div';
+	element_list[7][1] = 'id';
+	element_list[7][2] = 'pl_content_medal';
+	element_list[7][3] = true;
+	*/
 }
 
 chrome.extension.sendRequest({'action' : 'getOptions'}, doit);
