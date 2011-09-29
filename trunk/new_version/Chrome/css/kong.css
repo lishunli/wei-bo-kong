@@ -139,9 +139,15 @@
 }
 
 .kong_parent_hover {
+/*
 	filter:alpha(opacity=30);
 	-moz-opacity:0.3;
 	opacity: 0.3;
+*/
+	border-color: red;
+	border-style: dashed;
+	border-width: 3px;
+	display: block;
 }
 
 .kong_button_hover {
