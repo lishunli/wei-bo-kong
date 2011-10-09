@@ -148,6 +148,7 @@
 	border-style: dashed;
 	border-width: 3px;
 	display: block;
+	z-index: 9999;
 }
 
 .kong_button_hover {
