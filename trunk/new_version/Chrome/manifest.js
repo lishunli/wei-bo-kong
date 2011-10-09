@@ -7,7 +7,7 @@ this.manifest = {
 		{
             "tab": "基本设置",
             "group": "全局设置",
-            "name": "enable_all",
+            "name": "set|enable_all",
             "type": "checkbox",
             "label": "启用微博控"
         },
@@ -15,7 +15,7 @@ this.manifest = {
 		{
             "tab": "基本设置",
             "group": "微博控主题",
-            "name": "global_theme",
+            "name": "set|global_theme",
             "type": "popupButton",
             "label": "请选择按钮配色",
             "options": [
@@ -28,7 +28,7 @@ this.manifest = {
 		{
             "tab": "基本设置",
             "group": "实用功能",
-            "name": "enable_autonew",
+            "name": "set|enable_autonew",
             "type": "checkbox",
             "label": "自动展开新微博"
         },
@@ -36,7 +36,7 @@ this.manifest = {
 		{
             "tab": "顶端导航条",
             "group": "全局设置",
-            "name": "hide_top",	
+            "name": "div|id|pl_content_top",	
             "type": "checkbox",
             "label": "隐藏所有元素"
         },
@@ -44,7 +44,7 @@ this.manifest = {
 		{
             "tab": "顶端导航条",
             "group": "详细设置",
-            "name": "hide_top_logo",
+            "name": "div|class|logo",
             "type": "checkbox",
             "label": "隐藏新浪logo"
         },
@@ -52,7 +52,7 @@ this.manifest = {
 		{
             "tab": "顶端导航条",
             "group": "详细设置",
-            "name": "hide_top_left",
+            "name": "ul|class|list",
             "type": "checkbox",
             "label": "隐藏左侧链接"
         },
@@ -60,35 +60,21 @@ this.manifest = {
 		{
             "tab": "顶端导航条",
             "group": "详细设置",
-            "name": "hide_top_right",
-            "type": "checkbox",	
-            "label": "隐藏右侧链接"
-        },
-		
-		{
-            "tab": "顶端导航条",
-            "group": "详细设置",
-            "name": "hide_top_search",
+            "name": "div|class|search",
             "type": "checkbox",	
             "label": "隐藏搜索栏"
         },
 		
 		{
-            "tab": "右侧边栏",
-            "group": "全局设置",
-            "name": "hide_right",
-            "type": "checkbox",
-            "label": "隐藏所有元素"
+            "tab": "顶端导航条",
+            "group": "详细设置",
+            "name": "div|class|right",
+            "type": "checkbox",	
+            "label": "隐藏右侧链接"
         },
 		
-		{
-            "tab": "右侧边栏",
-            "group": "全局设置",
-            "name": "hide_right_widgets",
-            "type": "checkbox",
-            "label": "隐藏所有模块"
-        },
 		
+		/*
 		{
             "tab": "右侧边栏",
             "group": "全局设置",
@@ -104,11 +90,18 @@ this.manifest = {
             "type": "checkbox",
             "label": "隐藏小提示"
         },
-		
 		{
             "tab": "右侧边栏",
-            "group": "详细设置",
-            "name": "hide_right_info",
+            "group": "全局设置",
+            "name": "div|class|W_main_r",
+            "type": "checkbox",
+            "label": "隐藏所有元素"
+        },
+		*/
+		{
+            "tab": "右侧边栏",
+            "group": "全局设置",
+            "name": "div|id|pl_content_liteFacePersonInfo",
             "type": "checkbox",
             "label": "隐藏个人资料"
         },
@@ -116,39 +109,23 @@ this.manifest = {
 		{
             "tab": "右侧边栏",
             "group": "详细设置",
-            "name": "hide_right_app",
+            "name": "div|id|pl_content_medal",
             "type": "checkbox",
-            "label": "隐藏推荐应用"
+            "label": "隐藏勋章"
         },
 		
 		{
             "tab": "右侧边栏",
             "group": "详细设置",
-            "name": "hide_right_nav",
+            "name": "div|id|pl_nav_outlookBar",
             "type": "checkbox",
             "label": "隐藏右侧导航"
         },
 		
 		{
             "tab": "右侧边栏",
-            "group": "详细设置",
-            "name": "hide_right_cf",
-            "type": "checkbox",
-            "label": "隐藏手机新浪,意见反馈"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "详细设置",
-            "name": "hide_right_report",
-            "type": "checkbox",
-            "label": "隐藏举报"
-        },
-		
-		{
-            "tab": "右侧边栏",
             "group": "模块设置",
-            "name": "hide_right_topic",
+            "name": "div|id|pl_content_promotetopic",
             "type": "checkbox",
             "label": "隐藏热门话题"
         },
@@ -156,7 +133,7 @@ this.manifest = {
 		{
             "tab": "右侧边栏",
             "group": "模块设置",
-            "name": "hide_right_people",
+            "name": "div|id|pl_content_homeInterest",
             "type": "checkbox",
             "label": "隐藏可能感兴趣的人"
         },
@@ -164,7 +141,31 @@ this.manifest = {
 		{
             "tab": "右侧边栏",
             "group": "模块设置",
-            "name": "hide_right_alltopic",
+            "name": "div|id|pl_relation_recommendPopularUsers",
+            "type": "checkbox",
+            "label": "隐藏人气用户推荐"
+        },
+		
+		{
+            "tab": "右侧边栏",
+            "group": "模块设置",
+            "name": "div|id|pl_content_allInOne",
+            "type": "checkbox",
+            "label": "隐藏All in one模块"
+        },
+		
+		{
+            "tab": "右侧边栏",
+            "group": "模块设置",
+            "name": "div|id|ads_36",
+            "type": "checkbox",
+            "label": "隐藏广告"
+        },
+		
+		{
+            "tab": "右侧边栏",
+            "group": "模块设置",
+            "name": "div|id|pl_content_topic",
             "type": "checkbox",
             "label": "隐藏关注的话题"
         },
@@ -172,18 +173,27 @@ this.manifest = {
 		{
             "tab": "右侧边栏",
             "group": "模块设置",
-            "name": "hide_right_group",
+            "name": "div|id|pl_common_noticeboard",
             "type": "checkbox",
-            "label": "隐藏我加入的群"
+            "label": "隐藏公告栏"
         },
 		
 		{
             "tab": "右侧边栏",
             "group": "模块设置",
-            "name": "hide_right_popuser",
+            "name": "div|id|pl_common_help",
             "type": "checkbox",
-            "label": "隐藏人气用户"
+            "label": "隐藏帮助"
         },
+		
+		{
+            "tab": "右侧边栏",
+            "group": "详细设置",
+            "name": "div|id|pl_common_feedback",
+            "type": "checkbox",
+            "label": "隐藏意见反馈"
+        }/*,
+		
 
 		{
             "tab": "主面板",
@@ -561,7 +571,7 @@ this.manifest = {
             "label": "隐藏意见反馈"
         },
 		
-		/*
+		
 		{
             "tab": "消息过滤",
             "group": "过滤用户",
@@ -587,7 +597,7 @@ this.manifest = {
             "type": "description",
             "text": "*目前只能过滤第一页内容,请以半角逗号分隔多个用户名"
         },
-		*/
+		
 		
 		{
             "tab": "消息过滤",
@@ -722,5 +732,6 @@ this.manifest = {
             "type": "description",
             "text": "关于Bug和建议:请发送邮件至ye111111ow@gmail.com 非常感谢!"
         },
+		*/
 	]
 }

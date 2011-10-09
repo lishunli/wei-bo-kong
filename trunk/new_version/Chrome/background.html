@@ -6,6 +6,7 @@
   <body>
 	<script type="text/javascript" src="lib/store.js"></script> 
 	<script type="text/javascript" src="jquery.min.js"></script> 
+	<script type="text/javascript" src="manifest.js"></script> 
     <script>
 		/* Google Analysis */
 		var _gaq = _gaq || [];
@@ -25,11 +26,16 @@
 			}
 		};
 		
-		/* Send Options to GreeseMonkey */
+		/* Send Options */
 		function getOptions(callback) {
 			var settings = new Store("settings", {});
 			var options = settings.toObject();
 			callback(options);
+		};
+		
+		/* Send Modules */
+		function getModules(callback) {
+			callback(manifest);
 		};
 		
 		/* Process the Requests */
@@ -37,6 +43,10 @@
 			if (request.action == 'getOptions') {
 				getOptions(callback);
 			}
+			if (request.action == 'getModules') {
+				getModules(callback);
+			}
+			
 			else if (request.action == 'refresh') {
 				chrome.windows.getCurrent(function(win) {
 					var cwin = win.id;
