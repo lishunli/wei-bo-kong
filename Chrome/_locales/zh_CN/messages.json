@@ -10,17 +10,17 @@
   },
   
   "appVersion": {
-	"message": "1.0.2", 
+	"message": "1.0.3", 
     "description":"App version."
   },
   
   "appChangelog": {
-	"message": "*修复关键字过滤，现可以过滤所有内容！<br>+自定义屏蔽搜索界面多余元素(COOL)<br>+支持繁体版新浪微薄<br>*压缩了扩展体积(1.6MB -> 1.0MB)", 
+	"message": "*修复URL匹配,现可正常改造www.weibo.com<br>+添加隐藏升级新版微博提示<br>*即将发布针对新版微博的微博控!<br>+重新支持过滤指定用户!(Cool)<br>", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2011-09-15", 
+	"message": "2011-11-02", 
     "description":"App release date."
   }
 }

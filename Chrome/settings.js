@@ -4,8 +4,6 @@
 		document.getElementById("settings-label").innerHTML = "Î¢²©¿ØÉèÖÃ";
 		document.getElementById("search").placeholder = "ËÑË÷ÉèÖÃÑ¡Ïî...";
 		document.getElementById("search-label").innerHTML = "ËÑË÷";
-		
-		
 		var me = settings.manifest.hide_top.label;
 		me.addEventListener("mouseover", function(){hover("hide_top");}, false);
 		me.addEventListener("mouseout", unhover, false);

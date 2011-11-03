@@ -1,12 +1,13 @@
 ﻿// WeiboKong
-// version 1.0.2
-// 2011-09-15
+// version 1.0.3
+// 2011-11-02
 //
 // ==UserScript==
 // @name          WeiboKong
 // @namespace     
 // @description   
 // @include       http://weibo.com/*
+// @include		  http://www.weibo.com/*
 // @include		  http://t.sina.com.cn/*
 // ==/UserScript==
 
@@ -271,30 +272,17 @@ function others(options) {
 }
 
 function filter(options) {
-	/*
+	
 	if ( options['enable_filter'] == true ) {
 		if ( options['filter'] != "" ) {
 			var names = options['filter'].toString().split(",");
 			for (var i in names) {
-			
-				allDivs = document.evaluate(
-					"//a[@title='" + names[i] + "']",
-					document,
-					null,
-					XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-					null);
-				for (var i = 0; i < allDivs.snapshotLength; i++) {
-					thisDiv = allDivs.snapshotItem(i);
-					thisDiv = thisDiv.parentNode;
-					thisDiv = thisDiv.parentNode;
-					thisDiv = thisDiv.parentNode;
-					thisDiv.parentNode.removeChild(thisDiv);
-				}
+				$('a[title=\"' + names[i] + '\"]').parent().parent().parent().hide();
 				
 			}
 		}
 	}
-	*/
+	
 	if ( options['enable_filter_keyword_origin'] == true ) {
 		if ( options['filter_keyword'] != "" ) {
 			var keywords = options['filter_keyword'].toString().split(",");
@@ -566,6 +554,9 @@ function doit(options) {
 	if ( options['enable_all'] == false ) return;
 	
 	if ( $(document).attr('title').match("我的首页") || $(document).attr('title').match("我的首頁") ){
+		if ( options['hide_newweibo'] == true ) {
+			$(".MIB_topNotice").hide();
+		}
 		$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
 		topnav(options);
 		secondnav(options);
