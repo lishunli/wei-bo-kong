@@ -1,0 +1,26 @@
+﻿{
+  "appName": {
+    "message": "微博控",
+    "description": "App name."
+  },
+  
+  "appDesc": {
+    "message": "自定义你的新浪微博,去除多余的界面元素,让微博变得更干净简洁!", 
+    "description":"App description."
+  },
+  
+  "appVersion": {
+	"message": "1.0.2", 
+    "description":"App version."
+  },
+  
+  "appChangelog": {
+	"message": "*修复关键字过滤，现可以过滤所有内容！<br>+自定义屏蔽搜索界面多余元素(COOL)<br>+支持繁体版新浪微薄<br>*压缩了扩展体积(1.6MB -> 1.0MB)", 
+    "description":"App changelog."
+  },
+  
+  "appReleaseDate": {
+	"message": "2011-09-15", 
+    "description":"App release date."
+  }
+}
