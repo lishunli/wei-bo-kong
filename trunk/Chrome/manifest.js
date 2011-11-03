@@ -34,6 +34,14 @@ this.manifest = {
         },
 		
 		{
+            "tab": "基本设置",
+            "group": "实用功能",
+            "name": "hide_newweibo",
+            "type": "checkbox",
+            "label": "隐藏新版微博升级提示"
+        },
+		
+		{
             "tab": "顶端导航条",
             "group": "全局设置",
             "name": "hide_top",	
@@ -577,7 +585,7 @@ this.manifest = {
             "label": "隐藏意见反馈"
         },
 		
-		/*
+		
 		{
             "tab": "消息过滤",
             "group": "过滤用户",
@@ -601,9 +609,9 @@ this.manifest = {
             "group": "过滤用户",
             "name": "bugs",
             "type": "description",
-            "text": "*目前只能过滤第一页内容,请以半角逗号分隔多个用户名"
+            "text": "*请以半角逗号分隔多个用户名"
         },
-		*/
+		
 		
 		{
             "tab": "消息过滤",
@@ -738,5 +746,30 @@ this.manifest = {
             "type": "description",
             "text": "关于Bug和建议:请发送邮件至ye111111ow@gmail.com 非常感谢!"
         },
+		
+		{
+            "tab": "关于新版微博的支持",
+            "group": "何时支持新版微博？",
+            "name": "newweibo",
+            "type": "description",
+            "text": "针对新版微博的微博控将在11月10日前作为单独扩展发布，到时新/老微博控会共存，分别支持新/老版新浪微博"
+        },
+		
+		{
+            "tab": "关于新版微博的支持",
+            "group": "新版微博控有何改动？",
+            "name": "newweibo",
+            "type": "description",
+            "text": "新版微博控基本保留老版功能，将对页面各元素进行自定义，最初版本可能功能偏少，将来会慢慢增加"
+        },
+		
+		{
+            "tab": "关于新版微博的支持",
+            "group": "为什么要将微博控分为两个版本？",
+            "name": "newweibo",
+            "type": "description",
+            "text": "因为新版微博和老版差距很大，很多代码和设定都是不相同的，分为两版可以减小插件体积。考虑到以升级新版微博的用户没法降级到老版，所以决定将微博控也分为两个版本发布。"
+        }
+
 	]
 }
