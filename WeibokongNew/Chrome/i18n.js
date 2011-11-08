@@ -1,68 +1,71 @@
+// SAMPLE
 this.i18n = {
-
-//Tab
-	"basicsettings": {
-        "en": "Basic Settings",
-        "zh-cn": "基础设置"
+    "settings": {
+        "en": "Settings",
+        "de": "Optionen"
     },
-	"topnav": {
-        "en": "Top Navigator",
-        "zh-cn": "顶端导航"
+    "search": {
+        "en": "Search",
+        "de": "Suche"
     },
-	"secondnav": {
-        "en": "Second Navigator",
-        "zh-cn": "二级导航"
+    "nothing-found": {
+        "en": "No matches were found.",
+        "de": "Keine Übereinstimmungen gefunden."
     },
-    "widget": {
-        "en": "Right Widget",
-        "zh-cn": "右侧面板"
+    
+    
+    
+    "information": {
+        "en": "Information",
+        "de": "Information"
     },
-    "mainboard": {
-        "en": "Main Board",
-        "zh-cn": "主面板"
+    "login": {
+        "en": "Login",
+        "de": "Anmeldung"
     },
-	"others": {
-        "en": "Others",
-        "zh-cn": "其它"
+    "username": {
+        "en": "Username:",
+        "de": "Benutzername:"
     },
-	"about": {
-        "en": "About",
-        "zh-cn": "关于"
+    "password": {
+        "en": "Password:",
+        "de": "Passwort:"
     },
-	
-//Group
-	"globalsettings": {
-        "en": "Global Settings",
-        "zh-cn": "全局设置"
+    "x-characters": {
+        "en": "6 - 12 characters",
+        "de": "6 - 12 Zeichen"
     },
-	"detailssettings": {
-        "en": "Details Settings",
-        "zh-cn": "详细设置"
+    "x-characters-pw": {
+        "en": "10 - 18 characters",
+        "de": "10 - 18 Zeichen"
     },
-
-	"enableall": {
-        "en": "Enable All",
-        "zh-cn": "启用所有功能"
+    "description": {
+        "en": "This is a description. You can write any text inside of this.<br>\
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut\
+        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores\
+        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem\
+        ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et\
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\
+        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+        
+        "de": "Das ist eine Beschreibung. Du kannst hier beliebigen Text einfügen.<br>\
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut\
+        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores\
+        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem\
+        ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et\
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\
+        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
     },
-	"hideall": {
-        "en": "Hide All",
-        "zh-cn": "全部隐藏"
+    "logout": {
+        "en": "Logout",
+        "de": "Abmeldung"
     },
-	"hideall1": {
-        "en": "Hide All",
-        "zh-cn": "全部隐藏"
+    "enable": {
+        "en": "Enable",
+        "de": "Aktivieren"
     },
-	
-	
-	
-	"": {
-        "en": "",
-        "zh-cn": ""
-    },
-
-    "": {
-        "en": "",
-        "zh-cn": ""
+    "disconnect": {
+        "en": "Disconnect:",
+        "de": "Trennen:"
     }
-	
 };

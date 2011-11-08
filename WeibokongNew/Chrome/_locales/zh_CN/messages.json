@@ -1,6 +1,6 @@
 ﻿{
   "appName": {
-    "message": "微博控",
+    "message": "微博新控",
     "description": "App name."
   },
   
@@ -10,17 +10,17 @@
   },
   
   "appVersion": {
-	"message": "1.0.3", 
+	"message": "2.0.0", 
     "description":"App version."
   },
   
   "appChangelog": {
-	"message": "*修复URL匹配,现可正常改造www.weibo.com<br>+添加隐藏升级新版微博提示<br>*即将发布针对新版微博的微博控!<br>+重新支持过滤指定用户!(Cool)<br>", 
+	"message": "+第一版!(Cool)<br>", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2011-11-02", 
+	"message": "2011-11-09", 
     "description":"App release date."
   }
 }

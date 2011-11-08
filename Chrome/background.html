@@ -20,7 +20,7 @@
 		
 		/* Show Page Actoin */
 		function checkForValidUrl(tabId, changeInfo, tab) {
-			if (tab.url.search("weibo.com") > -1) {
+			if (tab.url.search("weibo.com") > -1 || tab.url.search("www.weibo.com") > -1) {
 			  chrome.pageAction.show(tabId);
 			}
 		};

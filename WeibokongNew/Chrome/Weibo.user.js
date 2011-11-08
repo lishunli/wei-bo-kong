@@ -1,9 +1,9 @@
 ﻿// WeiboKong
-// version 1.0.3
-// 2011-11-02
+// version 2.0.0
+// 2011-11-09
 //
 // ==UserScript==
-// @name          WeiboKong
+// @name          WeiboKong For New Weibo
 // @namespace     
 // @description   
 // @include       http://weibo.com/*
@@ -17,40 +17,31 @@ var DATE = chrome.i18n.getMessage("appReleaseDate");
 
 function topnav(options) {
 	if ( options['hide_top'] == true ) {
-		$(".tsina_gnbarea").hide();
-		$(".eventTip").hide();
+		$(".global_header").hide();
+		$(".layer_message_box").hide();
 	} else {
+		if ( options['hide_top_logo'] == true ) {
+			$(".logo").hide();
+		}
 		if ( options['hide_top_left'] == true ) {
-			$(".gnb_l").hide();
+			$(".logo").next().hide();
+		}
+		if ( options['hide_top_search'] == true ) {
+			$(".search").hide();
 		}
 		if ( options['hide_top_right'] == true ) {
-			$(".gnb_r").hide();
+			$(".right").hide();
 		}
-		if ( options['hide_top_tip'] == true ) {
-			$(".eventTip").hide();
-		}
-	}
-}
-
-function secondnav(options) {
-	if ( options['hide_secondnav'] == true ) {
-		$(".head_menu").hide();
-		$(".newlogo.festival").hide();
-	} else {
-		if ( options['hide_secondnav_logo'] == true ) {
-			$(".newlogo.festival").hide();
-		}
-		if ( options['hide_secondnav_nav'] == true ) {
-			$(".head_menu").hide();
+		if ( options['hide_top_tips'] == true ) {
+			$(".layer_message_box").hide();
 		}
 	}
 }
 
 function rightside(options) {
 	if ( options['hide_right'] == true ) {
-		$(".mainR.MIB_200.MIB_txtar.MIB_linkar").hide();
-		$(".PopLayer").hide();
-		$(".MIB_mblogbgr ").css("width", "600px");	
+		$(".W_main_r").hide();
+		$(".W_main_narrow_bg.clearfix ").css("width", "600px");	
 	}
 	else {
 		if ( options['hide_right_widgets'] ) {
@@ -58,62 +49,68 @@ function rightside(options) {
 		}
 		if ( options['hide_right_ads'] == true ) {
 			$("#ads_35").hide();
-			$("#ads_36").hide();
-			$("#ads_37").hide();
 			$("#ads_47").hide();
+			$("#ads_37").hide();
+			$("#ads_36").hide();
+		}
+		if ( options['hide_right_tips'] == true ) {
+			$("#pl_content_userTips").hide();
 		}
 		if ( options['hide_right_info'] == true ) {
-			$(".userinfo").hide();
+			$("#pl_content_liteFacePersonInfo").hide();
 		}
-		if ( options['hide_right_app'] == true ) {
-			$(".widgetIntroduce.widgetH2").hide();
+		if ( options['hide_right_medals'] == true ) {
+			$("#pl_content_medal").hide();
 		}
 		if ( options['hide_right_nav'] == true ) {
-			$(".right_nav").hide();
+			$("#pl_nav_outlookBar").hide();
 		}
 		if ( options['hide_right_topic'] == true ) {
-			$('div[name="app4"]').hide();
+			$('#pl_content_promotetopic').hide();
 		}
 		if ( options['hide_right_people'] == true ) {
-			$('div[name="app20"]').hide();
-		}
-		if ( options['hide_right_alltopic'] == true ) {
-			$('div[name="app5"]').hide();
-		}
-		
-		if ( options['hide_right_group'] == true ) {
-			$('div[name="app10003"]').hide();
-		}
-		if ( options['hide_right_cf'] == true ) {
-			$(".f_pro").hide();
-		}
-		if ( options['hide_right_report'] == true ) {
-			$(".rightTxtList").hide();
+			$('#pl_content_homeInterest').hide();
 		}
 		if ( options['hide_right_popuser'] == true ) {
-			$('div[name="app6"]').hide();
+			$('#pl_relation_recommendPopularUsers').hide();
 		}
-		if ( options['hide_right_tip'] == true ) {
-			$(".PopLayer").hide();
+		if ( options['hide_right_allinone'] == true ) {
+			$('#pl_content_allInOne').hide();
+		}
+		
+		if ( options['hide_right_alltopic'] == true ) {
+			$('#pl_content_topic').hide();
+		}
+		if ( options['hide_right_notice'] == true ) {
+			$("#pl_common_noticeboard").hide();
+		}
+		if ( options['hide_right_help'] == true ) {
+			$("#pl_common_help").hide();
+		}
+		
+		if ( options['hide_right_feedback'] == true ) {
+			$("#pl_common_feedback").hide();
 		}
 	}
 }
 
 function mainboard(options) {
-	var theme = "kong_button" + getTheme( options['global_theme'] );
-	var theme_hover = "kong_button_hover" + getTheme( options['global_theme'] );
+	//var theme = "kong_button" + getTheme( options['global_theme'] );
+	//var theme_hover = "kong_button_hover" + getTheme( options['global_theme'] );
 	if ( options['hide_main_post'] == true ) {
-		$(".MIB_mbloghead").hide();
+		$("#pl_content_publisherTop").hide();
 	}
 	if ( options['hide_main_tips'] == true ) {
-		$("#pully_list").hide();
+		$("#pl_content_pullylist").hide();
 	}
-	if ( options['hide_main_sort'] == true ) {
-		$("#MIB_newFilter").hide();
+	if ( options['hide_main_nav'] == true ) {
+		$('div[node-type="feed_nav"]').hide();
 	}
+	
 	if ( options['hide_main_micro'] == true ) {
-		$(".feed_att.MIB_linkbl.MIB_txtbl").hide();
+		$(".info.W_linkb.W_textb").hide();
 	}
+	/*
 	if ( options['hide_main_forward'] == true ) {
 		$(".sms").each(function (index){
 			var html = $(this).html();
@@ -257,17 +254,16 @@ function mainboard(options) {
 		});
 	}
 	
+	*/
+	
 }
 
 function others(options) {
-	if ( options['hide_other_nav'] == true ) {
-		$(".cmn_nav.cn_away").hide();
-	}
 	if ( options['hide_other_ads'] == true ) {
 		$("#ads_bottom_1").hide();
 	}
 	if ( options['hide_other_bot'] == true ) {
-		$("#bottomborder").hide();
+		$(".global_footer.global_footer_narrow").hide();
 	}
 }
 
@@ -277,12 +273,11 @@ function filter(options) {
 		if ( options['filter'] != "" ) {
 			var names = options['filter'].toString().split(",");
 			for (var i in names) {
-				$('a[title=\"' + names[i] + '\"]').parent().parent().parent().hide();
-				
+				$('a[title=\"' + names[i] + '\"]').parent().parent().hide();
 			}
 		}
 	}
-	
+	/*
 	if ( options['enable_filter_keyword_origin'] == true ) {
 		if ( options['filter_keyword'] != "" ) {
 			var keywords = options['filter_keyword'].toString().split(",");
@@ -335,6 +330,7 @@ function filter(options) {
 			});
 		}
 	}
+	*/
 	t = setTimeout(function(){filter(options);}, 2000 );
 }
 
@@ -351,9 +347,8 @@ function checkUpdate() {
 		var timer = setTimeout("document.getElementById('kong_update').style.display = 'none';", 10000);
 	}
 }
-
+/*
 function checkNew(notified1,notified2,notified3,notified4,notified5,options) {
-    //mainboard(options);
 	var flag = false;
 	if ( options['notification_post'] == true ) {
 		if ( $(".newMblog_ts1").css("display") != "none" ) {
@@ -425,86 +420,83 @@ function notification(options) {
 	}
 	checkNew(false,false,false,false,false,options);
 }
-
+*/
 function friendpage(options) {
 	if ( options['hide_top_friend'] == true ) {
-		$(".tsina_gnbarea").hide();
+		$(".global_header").hide();
+		$(".layer_message_box").hide();
 	} else {
+		if ( options['hide_top_logo_friend'] == true ) {
+			$(".logo").hide();
+		}
 		if ( options['hide_top_left_friend'] == true ) {
-			$(".gnb_l").hide();
+			$(".logo").next().hide();
+		}
+		if ( options['hide_top_search_friend'] == true ) {
+			$(".search").hide();
 		}
 		if ( options['hide_top_right_friend'] == true ) {
-			$(".gnb_r").hide();
+			$(".right").hide();
 		}
-	}
-	if ( options['hide_secondnav_friend'] == true ) {
-		$(".head_menu").hide();
-		$(".newlogo.festival").hide();
-	} else {
-		if ( options['hide_secondnav_logo_friend'] == true ) {
-			$(".newlogo.festival").hide();
+		if ( options['hide_top_tips_friend'] == true ) {
+			$(".layer_message_box").hide();
 		}
-		if ( options['hide_secondnav_nav_friend'] == true ) {
-			$(".head_menu").hide();
-		}
-	}
-	if ( options['hide_right_info_friend'] == true ) {
-		$(".user_atten.MIB_linedot").hide();
-	}
-	if ( options['hide_right_medal_friend'] == true ) {
-		$(".medal_show1").hide();
-	}
-	if ( options['hide_right_follow_friend'] == true ) {
-		$('div[name="app43"]').hide();
-	}
-	if ( options['hide_right_bothfollow_friend'] == true ) {
-		$('div[name="app41"]').hide();
-	}
-	if ( options['hide_right_profile_friend'] == true ) {
-		$('div[name="app15"]').hide();
-	}
-	if ( options['hide_right_tag_friend'] == true ) {
-		$('div[name="app11"]').hide();
-	}
-	if ( options['hide_right_topic_friend'] == true ) {
-		$('div[name="app5"]').hide();
-	}
-	if ( options['hide_right_fan_friend'] == true ) {
-		$('div[name="app9"]').hide();
-	}
-	if ( options['hide_right_group_friend'] == true ) {
-		$('div[name="app10003"]').hide();
-	}
-	if ( options['hide_right_feedback_friend'] == true ) {
-		$('.MIB_dot').parent().parent().hide();
-	}
-	if ( options['hide_right_report_friend'] == true ) {
-		$(".rightTxtList").hide();
-	}
-	if ( options['hide_main_relation_friend'] == true ) {
-		$(".MIB_btn_inter.lf").hide();
-	}
-	if ( options['hide_main_handle_friend'] == true ) {
-		$(".more_handle").hide();
-	}
-	if ( options['hide_main_tab_friend'] == true ) {
-		$(".nfTagB.nfTagOff").hide();
-	}
-	if ( options['hide_main_filter_friend'] == true ) {
-		$(".nfBox").hide();
-	}
-	if ( options['hide_main_micro_friend'] == true ) {
-		$(".feed_att.MIB_linkbl.MIB_txtbl").hide();
 	}
 	
-	if ( options['hide_other_nav_friend'] == true ) {
-		$(".cmn_nav.cn_away").hide();
+	if ( options['hide_right_info_friend'] == true ) {
+		$("#pl_content_litePersonInfo").hide();
 	}
-	if ( options['hide_other_ads_friend'] == true ) {
-		$("#ads_bottom_1").hide();
+	if ( options['hide_right_medal_friend'] == true ) {
+		$("#pl_content_medal").hide();
+	}
+	if ( options['hide_right_follow_friend'] == true ) {
+		$('#pl_relation_recommendAttUsers').hide();
+	}
+	if ( options['hide_right_bothfollow_friend'] == true ) {
+		$('#pl_content_chainFollowers').hide();
+	}
+	if ( options['hide_right_same_friend'] == true ) {
+		$('#pl_content_sameFriends').hide();
+	}
+	if ( options['hide_right_userinfo_friend'] == true ) {
+		$('#pl_content_userInfo').hide();
+	}
+	
+	if ( options['hide_right_tag_friend'] == true ) {
+		$('#pl_content_hisTags').hide();
+	}
+	if ( options['hide_right_topic_friend'] == true ) {
+		$('#pl_content_topic').hide();
+	}
+	if ( options['hide_right_fan_friend'] == true ) {
+		$('#pl_content_hisFans').hide();
+	}
+	if ( options['hide_right_feedback_friend'] == true ) {
+		$('#pl_common_feedback').hide();
+	}
+	if ( options['hide_right_report_friend'] == true ) {
+		$("#pl_content_hisOperationPlate").hide();
+	}
+	if ( options['hide_main_relation_friend'] == true ) {
+		$(".handle_btn").hide();
+	}
+	if ( options['hide_main_handle_friend'] == true ) {
+		$(".handle_more").hide();
+	}
+	if ( options['hide_main_album_friend'] == true ) {
+		$("#pl_content_album").hide();
+	}
+	if ( options['hide_main_tab_friend'] == true ) {
+		$(".nfTagB.clearfix").hide();
+	}
+	if ( options['hide_main_filter_friend'] == true ) {
+		$(".newFilter.W_texta").hide();
+	}
+	if ( options['hide_main_micro_friend'] == true ) {
+		$(".info.W_linkb.W_textb").hide();
 	}
 	if ( options['hide_other_bot_friend'] == true ) {
-		$("#bottomborder").hide();
+		$("#global_footer global_footer_narrow").hide();
 	}
 }
 
@@ -554,20 +546,16 @@ function doit(options) {
 	if ( options['enable_all'] == false ) return;
 	
 	if ( $(document).attr('title').match("我的首页") || $(document).attr('title').match("我的首頁") ){
-		if ( options['hide_newweibo'] == true ) {
-			$(".MIB_topNotice").hide();
-		}
 		$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
 		topnav(options);
-		secondnav(options);
 		rightside(options);
 		mainboard(options);
 		others(options);
 		filter(options);
-		notification(options);
+		//notification(options);
 	}
 	else if ( $(document).attr('title').match("微博搜索") || $(document).attr('title').match("微博搜尋") ){
-		searchpage(options)
+		searchpage(options);
 	}
 	else {
 		if ( options['enable_friend'] == false ) return;
@@ -575,6 +563,7 @@ function doit(options) {
 	}
 }
 
+/*
 function getTheme( theme )
 {
 	switch (theme) {
@@ -588,5 +577,5 @@ function getTheme( theme )
 		return '_original';
 	}
 }
-
+*/
 chrome.extension.sendRequest({'action' : 'getOptions'}, doit);
