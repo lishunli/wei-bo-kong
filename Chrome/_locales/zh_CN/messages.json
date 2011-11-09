@@ -5,22 +5,22 @@
   },
   
   "appDesc": {
-    "message": "自定义你的新浪微博,去除多余的界面元素,让微博变得更干净简洁!", 
+    "message": "自定义你的新浪微博界面. 可以根据需要去除页面上大部分元素, 内容过滤系统帮助屏蔽指定用户, 桌面提醒功能让你不错过任何好友更新, 让你的新浪微博变得更加简洁!", 
     "description":"App description."
   },
   
   "appVersion": {
-	"message": "1.0.3", 
+	"message": "1.0.4", 
     "description":"App version."
   },
   
   "appChangelog": {
-	"message": "*修复URL匹配,现可正常改造www.weibo.com<br>+添加隐藏升级新版微博提示<br>*即将发布针对新版微博的微博控!<br>+重新支持过滤指定用户!(Cool)<br>", 
+	"message": "*更改微博控图标", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2011-11-02", 
+	"message": "2011-11-09", 
     "description":"App release date."
   }
 }
