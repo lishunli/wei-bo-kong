@@ -9,7 +9,7 @@
     <script>
 		/* Google Analysis */
 		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-8606948-8']);
+		_gaq.push(['_setAccount', 'UA-8606948-10']);
 		_gaq.push(['_trackPageview']);
 
 		(function() {
@@ -20,7 +20,7 @@
 		
 		/* Show Page Actoin */
 		function checkForValidUrl(tabId, changeInfo, tab) {
-			if (tab.url.search("weibo.com") > -1) {
+			if (tab.url.search("weibo.com") > -1 || tab.url.search("www.weibo.com") > -1) {
 			  chrome.pageAction.show(tabId);
 			}
 		};
@@ -43,7 +43,7 @@
 					chrome.tabs.getAllInWindow(cwin, function(tabs) {
 						for (var i = 0; i < tabs.length; i++) {
 							var t = tabs[i].url;
-							if (t.match('weibo.com')) {
+							if (t.match('weibo.com') || t.match('www.weibo.com')) {
 								var tab = tabs[i];
 								chrome.tabs.update(tab.id, {url: tab.url, selected: tab.selected}, null);
 							}

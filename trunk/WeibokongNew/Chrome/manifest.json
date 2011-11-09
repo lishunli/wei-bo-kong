@@ -11,6 +11,7 @@
 	"icons": {
 		"16": "img/icon/icon_16.png",
 		"48": "img/icon/icon_48.png",
+		"96": "img/icon/icon_96.png",
 		"128": "img/icon/icon_128.png"
 	},
 	"permissions": [
