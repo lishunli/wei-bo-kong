@@ -1,6 +1,6 @@
 ﻿// WeiboKong
-// version 1.0.3
-// 2011-11-02
+// version 1.0.4
+// 2011-11-09
 //
 // ==UserScript==
 // @name          WeiboKong
