@@ -1,9 +1,9 @@
-﻿// WeiboKong
+﻿// WeiboKongNew
 // version 2.0.0
 // 2011-11-09
 //
 // ==UserScript==
-// @name          WeiboKong For New Weibo
+// @name          WeiboKongNew
 // @namespace     
 // @description   
 // @include       http://weibo.com/*
@@ -555,7 +555,7 @@ function doit(options) {
 		//notification(options);
 	}
 	else if ( $(document).attr('title').match("微博搜索") || $(document).attr('title').match("微博搜尋") ){
-		searchpage(options);
+		//searchpage(options);
 	}
 	else {
 		if ( options['enable_friend'] == false ) return;

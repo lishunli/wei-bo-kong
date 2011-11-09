@@ -3,7 +3,6 @@ this.manifest = {
     "icon": "icon.png",
 	
     "settings": [
-		
 		{
             "tab": "基本设置",
             "group": "全局设置",
@@ -12,7 +11,9 @@ this.manifest = {
             "label": "启用微博控"
         },
 		
-		
+		/*
+			Top
+		*/
 		{
             "tab": "顶端导航条",
             "group": "全局设置",
@@ -20,8 +21,6 @@ this.manifest = {
             "type": "checkbox",
             "label": "隐藏所有元素"
         },
-		
-		
 		{
             "tab": "顶端导航条",
             "group": "详细设置",
@@ -29,7 +28,6 @@ this.manifest = {
             "type": "checkbox",
             "label": "隐藏新浪图标"
         },
-		
 		{
             "tab": "顶端导航条",
             "group": "详细设置",
@@ -37,7 +35,6 @@ this.manifest = {
             "type": "checkbox",	
             "label": "隐藏左侧链接"
         },
-		
 		{
             "tab": "顶端导航条",
             "group": "详细设置",
@@ -45,7 +42,6 @@ this.manifest = {
             "type": "checkbox",	
             "label": "隐藏搜索栏"
         },
-		
 		{
             "tab": "顶端导航条",
             "group": "详细设置",
@@ -53,7 +49,6 @@ this.manifest = {
             "type": "checkbox",	
             "label": "隐藏右侧链接"
         },
-		
 		{
             "tab": "顶端导航条",
             "group": "详细设置",
@@ -62,6 +57,9 @@ this.manifest = {
             "label": "隐藏小提示"
         },
 		
+		/*
+			Right
+		*/
 		{
             "tab": "右侧边栏",
             "group": "全局设置",
@@ -112,7 +110,7 @@ this.manifest = {
 		
 		{
             "tab": "右侧边栏",
-            "group": "模块设置",
+            "group": "详细设置",
             "name": "hide_right_topic",
             "type": "checkbox",
             "label": "隐藏热门话题"
@@ -120,7 +118,7 @@ this.manifest = {
 		
 		{
             "tab": "右侧边栏",
-            "group": "模块设置",
+            "group": "详细设置",
             "name": "hide_right_people",
             "type": "checkbox",
             "label": "隐藏感兴趣的人"
@@ -128,7 +126,7 @@ this.manifest = {
 		
 		{
             "tab": "右侧边栏",
-            "group": "模块设置",
+            "group": "详细设置",
             "name": "hide_right_popuser",
             "type": "checkbox",
             "label": "隐藏人气用户"
@@ -136,7 +134,7 @@ this.manifest = {
 		
 		{
             "tab": "右侧边栏",
-            "group": "模块设置",
+            "group": "详细设置",
             "name": "hide_right_allinone",
             "type": "checkbox",
             "label": "隐藏其他推荐"
@@ -144,7 +142,7 @@ this.manifest = {
 		
 		{
             "tab": "右侧边栏",
-            "group": "模块设置",
+            "group": "详细设置",
             "name": "hide_right_alltopic",
             "type": "checkbox",
             "label": "隐藏关注的话题"
@@ -152,7 +150,7 @@ this.manifest = {
 		
 		{
             "tab": "右侧边栏",
-            "group": "模块设置",
+            "group": "详细设置",
             "name": "hide_right_notice",
             "type": "checkbox",
             "label": "隐藏公告栏"
@@ -160,7 +158,7 @@ this.manifest = {
 		
 		{
             "tab": "右侧边栏",
-            "group": "模块设置",
+            "group": "详细设置",
             "name": "hide_right_help",
             "type": "checkbox",
             "label": "隐藏帮助"
@@ -168,12 +166,15 @@ this.manifest = {
 		
 		{
             "tab": "右侧边栏",
-            "group": "模块设置",
+            "group": "详细设置",
             "name": "hide_right_feedback",
             "type": "checkbox",
             "label": "隐藏意见反馈"
         },
-
+		
+		/*
+			Main
+		*/
 		{
             "tab": "主面板",
             "group": "详细设置",
@@ -207,25 +208,8 @@ this.manifest = {
         },
 		
 		/*
-		{
-            "tab": "主面板",
-            "group": "详细设置",
-            "name": "hide_main_forward",
-            "type": "checkbox",
-            "label": "隐藏转发内容(仅显示好友消息，单击\"展开\"后显示全部内容)"
-        },
-		
-		{
-            "tab": "主面板",
-            "group": "详细设置",
-            "name": "hide_main_image",
-            "type": "checkbox",
-            "label": "隐藏图片(鼠标悬停至‘展开图片’即可自动显示图片)"
-        },
+			Other
 		*/
-		
-		
-		
 		{
             "tab": "其它",
             "group": "详细设置",
@@ -242,6 +226,9 @@ this.manifest = {
             "label": "隐藏底部链接"
         },
 		
+		/*
+			Friend
+		*/
 		{
             "tab": "好友页面",
             "group": "全局设置",
@@ -250,6 +237,9 @@ this.manifest = {
             "label": "启用好友页面优化"
         },
 		
+		/*
+			Top
+		*/
 		{
             "tab": "好友页面",
             "group": "顶端导航条",
@@ -291,7 +281,9 @@ this.manifest = {
             "label": "隐藏右侧链接"
         },
 		
-		
+		/*
+			Right
+		*/
 		{
             "tab": "好友页面",
             "group": "右侧边栏",
@@ -380,6 +372,9 @@ this.manifest = {
             "label": "隐藏举报"
         },
 		
+		/*
+			Main
+		*/
 		{
             "tab": "好友页面",
             "group": "主面板",
@@ -403,7 +398,6 @@ this.manifest = {
             "type": "checkbox",
             "label": "隐藏好友相册"
         },
-		
 		
 		{
             "tab": "好友页面",
@@ -429,6 +423,9 @@ this.manifest = {
             "label": "精简模式(仅显示微博正文,隐藏转发,收藏,评论等功能)"
         },
 		
+		/*
+			Other
+		*/
 		{
             "tab": "好友页面",
             "group": "其它设置",
@@ -436,104 +433,6 @@ this.manifest = {
             "type": "checkbox",
             "label": "隐藏底部链接"
         },
-		/*
-		{
-            "tab": "搜索页面",
-            "group": "框架设置",
-            "name": "hide_top_search",
-            "type": "checkbox",
-            "label": "隐藏顶部导航条"
-        },
-		
-		{
-            "tab": "搜索页面",
-            "group": "框架设置",
-            "name": "hide_top_left_search",
-            "type": "checkbox",
-            "label": "隐藏顶部导航条（左侧）"
-        },
-		
-		{
-            "tab": "搜索页面",
-            "group": "框架设置",
-            "name": "hide_top_right_search",
-            "type": "checkbox",
-            "label": "隐藏顶部导航条（右侧）"
-        },
-		
-		{
-            "tab": "搜索页面",
-            "group": "框架设置",
-            "name": "hide_search_logo",
-            "type": "checkbox",
-            "label": "隐藏新浪logo"
-        },
-		
-		{
-            "tab": "搜索页面",
-            "group": "框架设置",
-            "name": "hide_search_bottom",
-            "type": "checkbox",
-            "label": "隐藏底部链接"
-        },
-		
-		{
-            "tab": "搜索页面",
-            "group": "详细设置",
-            "name": "hide_search_hot",
-            "type": "checkbox",
-            "label": "隐藏热门用户"
-        },
-		
-		{
-            "tab": "搜索页面",
-            "group": "详细设置",
-            "name": "hide_search_order",
-            "type": "checkbox",
-            "label": "隐藏搜索排序"
-        },
-		
-		{
-            "tab": "搜索页面",
-            "group": "详细设置",
-            "name": "hide_search_topic",
-            "type": "checkbox",
-            "label": "隐藏话题选项"
-        },
-		
-		{
-            "tab": "搜索页面",
-            "group": "详细设置",
-            "name": "hide_search_toptitle",
-            "type": "checkbox",
-            "label": "隐藏关注的话题"
-        },
-		
-		{
-            "tab": "搜索页面",
-            "group": "详细设置",
-            "name": "hide_search_top10",
-            "type": "checkbox",
-            "label": "隐藏1小时话题榜"
-        },
-		
-		{
-            "tab": "搜索页面",
-            "group": "详细设置",
-            "name": "hide_search_related",
-            "type": "checkbox",
-            "label": "隐藏相关话题"
-        },
-		
-		{
-            "tab": "搜索页面",
-            "group": "详细设置",
-            "name": "hide_search_feedback",
-            "type": "checkbox",
-            "label": "隐藏意见反馈"
-        },
-		*/
-		
 		
 		{
             "tab": "消息过滤",
@@ -560,102 +459,7 @@ this.manifest = {
             "type": "description",
             "text": "*请以半角逗号分隔多个用户名"
         },
-		/*
-		
-		{
-            "tab": "消息过滤",
-            "group": "过滤关键字",
-            "name": "enable_filter_keyword_origin",
-            "type": "checkbox",
-            "label": "过滤原创内容",
-        },
-		
-		{
-            "tab": "消息过滤",
-            "group": "过滤关键字",
-            "name": "enable_filter_keyword_forward",
-            "type": "checkbox",
-            "label": "过滤转发内容",
-        },
-		
-		{
-            "tab": "消息过滤",
-            "group": "过滤关键字",
-            "name": "filter_keyword",
-            "type": "text",
-            "label": "请输入想屏蔽的关键字",
-			"text": "以半角逗号,分隔关键字",
-			"masked": "false"
-        },
-		
-		{
-            "tab": "消息过滤",
-            "group": "过滤关键字",
-            "name": "bugs",
-            "type": "description",
-            "text": "*目前只能过滤第一页内容,请以半角逗号分隔多个关键字"
-        },
-		
-		{
-            "tab": "桌面提醒",
-            "group": "全局设置",
-            "name": "enable_notification",
-            "type": "checkbox",
-            "label": "启用桌面提醒"
-        },
-		
-		{
-            "tab": "桌面提醒",
-            "group": "全局设置",
-            "name": "notification_intervals",
-            "type": "slider",
-			"min": 10,
-			"max": 600,
-			"step": 10,
-			"display": true,
-            "label": "检查间隔(秒)"
-        },
-		
-		{
-            "tab": "桌面提醒",
-            "group": "详细设置",
-            "name": "notification_post",
-            "type": "checkbox",
-            "label": "有新微博时提醒"
-        },
-		
-		{
-            "tab": "桌面提醒",
-            "group": "详细设置",
-            "name": "notification_comment",
-            "type": "checkbox",
-            "label": "有新评论时提醒"
-        },
-		
-		{
-            "tab": "桌面提醒",
-            "group": "详细设置",
-            "name": "notification_fan",
-            "type": "checkbox",
-            "label": "有新粉丝时提醒"
-        },
-		
-		{
-            "tab": "桌面提醒",
-            "group": "详细设置",
-            "name": "notification_msg",
-            "type": "checkbox",
-            "label": "有新私信时提醒"
-        },
-		
-		{
-            "tab": "桌面提醒",
-            "group": "详细设置",
-            "name": "notification_atme",
-            "type": "checkbox",
-            "label": "有新@时提醒"
-        },
-		*/
+	
 		{
             "tab": "关于",
             "group": "关于微博控",
