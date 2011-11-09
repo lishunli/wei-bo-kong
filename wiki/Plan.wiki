@@ -1,4 +1,4 @@
-#summary 更新计划 For 微薄控
+#summary 更新计划 For 微博控
 #labels Phase-Requirements
 
 
