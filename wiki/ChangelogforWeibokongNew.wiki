@@ -1,2 +1,5 @@
 #summary 历史更新详情 For 微博新控
 #labels Phase-Requirements
+
+== v2.0.0 2011-11-10 ==
+  * 微博新控第一版
