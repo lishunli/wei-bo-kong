@@ -748,27 +748,35 @@ this.manifest = {
         },
 		
 		{
-            "tab": "关于新版微博的支持",
-            "group": "何时支持新版微博？",
+            "tab": "微博控For新版微博已发布!",
+            "group": "微博新控 介绍",
             "name": "newweibo",
             "type": "description",
-            "text": "针对新版微博的微博控将在11月10日前作为单独扩展发布，到时新/老微博控会共存，分别支持新/老版新浪微博"
+            "text": "新版微博的微博控将重命名为【微博新控】，作为单独的扩展发布。如果您使用的是新版微博，请卸载【微博控】，安装【微博新控】。"
         },
 		
 		{
-            "tab": "关于新版微博的支持",
-            "group": "新版微博控有何改动？",
+            "tab": "微博控For新版微博已发布!",
+            "group": "下载地址",
             "name": "newweibo",
             "type": "description",
-            "text": "新版微博控基本保留老版功能，将对页面各元素进行自定义，最初版本可能功能偏少，将来会慢慢增加"
+            "text": "<a href=http://chrome.google.com/webstore/detail/pimgjnopcjhodkapdnhlmgnjeaegdfam?hl=zh-CN>前往Chrome商店</a>"
         },
 		
 		{
-            "tab": "关于新版微博的支持",
+            "tab": "微博控For新版微博已发布!",
             "group": "为什么要将微博控分为两个版本？",
             "name": "newweibo",
             "type": "description",
             "text": "因为新版微博和老版差距很大，很多代码和设定都是不相同的，分为两版可以减小插件体积。考虑到以升级新版微博的用户没法降级到老版，所以决定将微博控也分为两个版本发布。"
+        },
+		
+		{
+            "tab": "微博控For新版微博已发布!",
+            "group": "为什么叫【微博新控】这么没有意义的名字？",
+            "name": "newweibo",
+            "type": "description",
+            "text": "因为我想不到其他好的名字 :-(<br>如果您有好的建议，请发邮件给我，非常感谢"
         }
 
 	]
