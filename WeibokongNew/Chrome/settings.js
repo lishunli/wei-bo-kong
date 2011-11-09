@@ -87,6 +87,10 @@
 		me.addEventListener("mouseover", function(){hover("hide_main_post");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
+		me = settings.manifest.hide_main_title.label;
+		me.addEventListener("mouseover", function(){hover("hide_main_title");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
 		me = settings.manifest.hide_main_tips.label;
 		me.addEventListener("mouseover", function(){hover("hide_main_tips");}, false);
 		me.addEventListener("mouseout", unhover, false);
