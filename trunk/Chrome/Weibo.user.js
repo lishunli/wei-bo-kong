@@ -567,7 +567,7 @@ function doit(options) {
 		notification(options);
 	}
 	else if ( $(document).attr('title').match("微博搜索") || $(document).attr('title').match("微博搜尋") ){
-		searchpage(options)
+		searchpage(options);
 	}
 	else {
 		if ( options['enable_friend'] == false ) return;
