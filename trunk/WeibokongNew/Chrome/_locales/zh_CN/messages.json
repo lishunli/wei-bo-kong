@@ -15,7 +15,7 @@
   },
   
   "appChangelog": {
-	"message": "+第一版!(Cool)<br>", 
+	"message": "+添加对'@提到我的'，'我的评论'，'我的私信'，'我的收藏'等页面的支持<br>+添加主面板'隐藏发布器标题'<br>+添加用户、关键字过滤系统<br>", 
     "description":"App changelog."
   },
   

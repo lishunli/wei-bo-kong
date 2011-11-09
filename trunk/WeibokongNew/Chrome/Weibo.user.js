@@ -82,6 +82,7 @@ function rightside(options) {
 			$('#pl_content_topic').hide();
 		}
 		if ( options['hide_right_notice'] == true ) {
+			$("#pl_common_reportentry").hide();
 			$("#pl_common_noticeboard").hide();
 		}
 		if ( options['hide_right_help'] == true ) {
@@ -99,6 +100,9 @@ function mainboard(options) {
 	//var theme_hover = "kong_button_hover" + getTheme( options['global_theme'] );
 	if ( options['hide_main_post'] == true ) {
 		$("#pl_content_publisherTop").hide();
+	}
+	if ( options['hide_main_recommend'] == true ) {
+		$(".title").hide();
 	}
 	if ( options['hide_main_tips'] == true ) {
 		$("#pl_content_pullylist").hide();
@@ -268,7 +272,6 @@ function others(options) {
 }
 
 function filter(options) {
-	
 	if ( options['enable_filter'] == true ) {
 		if ( options['filter'] != "" ) {
 			var names = options['filter'].toString().split(",");
@@ -277,24 +280,12 @@ function filter(options) {
 			}
 		}
 	}
-	/*
+	
 	if ( options['enable_filter_keyword_origin'] == true ) {
 		if ( options['filter_keyword'] != "" ) {
 			var keywords = options['filter_keyword'].toString().split(",");
-			$(".sms").each(function (index){
+			$("p[node-type='feed_list_content']").each(function (index){
 				var html = $(this).html();
-				
-				for (var k in keywords) {
-					if ( html.search( keywords[k] ) != -1 ) {
-						$(this).parent().parent().hide();
-						break;
-					}
-				}
-			});
-			var keywords = options['filter_keyword'].toString().split("，");
-			$(".sms").each(function (index){
-				var html = $(this).html();
-				
 				for (var k in keywords) {
 					if ( html.search( keywords[k] ) != -1 ) {
 						$(this).parent().parent().hide();
@@ -307,30 +298,17 @@ function filter(options) {
 	if ( options['enable_filter_keyword_forward'] == true ) {
 		if ( options['filter_keyword'] != "" ) {
 			var keywords = options['filter_keyword'].toString().split(",");
-			$(".MIB_assign").each(function (index){
+			$("dt[node-type='feed_list_forwardContent']").each(function (index){
 				var html = $(this).html();
-					
 				for (var k in keywords) {
 					if ( html.search( keywords[k] ) != -1 ) {
-						$(this).parent().parent().hide();
-						break;
-					}
-				}
-			});
-			var keywords = options['filter_keyword'].toString().split("，");
-			$(".MIB_assign").each(function (index){
-				var html = $(this).html();
-					
-				for (var k in keywords) {
-					if ( html.search( keywords[k] ) != -1 ) {
-						$(this).parent().parent().hide();
+						$(this).parent().parent().parent().hide();
 						break;
 					}
 				}
 			});
 		}
 	}
-	*/
 	t = setTimeout(function(){filter(options);}, 2000 );
 }
 
@@ -499,7 +477,7 @@ function friendpage(options) {
 		$("#global_footer global_footer_narrow").hide();
 	}
 }
-
+/*
 function searchpage(options) {
 	if ( options['hide_top_search'] == true ) {
 		$(".tsina_gnbarea").hide();
@@ -540,12 +518,19 @@ function searchpage(options) {
 		$(".sdbar_opt").hide();
 	}
 }
-
+*/
 function doit(options) {
 	checkUpdate();
 	if ( options['enable_all'] == false ) return;
 	
-	if ( $(document).attr('title').match("我的首页") || $(document).attr('title').match("我的首頁") ){
+	if ( $(document).attr('title').match("我的首页") || $(document).attr('title').match("我的首頁") ||
+		 $(document).attr('title').match("@我的微博") || $(document).attr('title').match("@我的微博") ||
+		 $(document).attr('title').match("@我的评论") || $(document).attr('title').match("@我的評論") ||
+		 $(document).attr('title').match("收到的评论") || $(document).attr('title').match("我的評論") ||
+		 $(document).attr('title').match("发出的评论") || $(document).attr('title').match("我的評論") ||
+		 $(document).attr('title').match("我的私信") || $(document).attr('title').match("我的私人訊息") ||
+		 $(document).attr('title').match("我的收藏") || $(document).attr('title').match("我的收藏")
+	){
 		$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
 		topnav(options);
 		rightside(options);

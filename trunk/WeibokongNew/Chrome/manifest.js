@@ -186,6 +186,16 @@ this.manifest = {
 		{
             "tab": "主面板",
             "group": "详细设置",
+            "name": "hide_main_title",
+            "type": "checkbox",
+            "label": "隐藏发布器标题 "
+        },
+		
+		
+		
+		{
+            "tab": "主面板",
+            "group": "详细设置",
             "name": "hide_main_tips",
             "type": "checkbox",
             "label": "隐藏推荐"
@@ -434,6 +444,9 @@ this.manifest = {
             "label": "隐藏底部链接"
         },
 		
+		/*
+			Filter
+		*/
 		{
             "tab": "消息过滤",
             "group": "过滤用户",
@@ -459,7 +472,44 @@ this.manifest = {
             "type": "description",
             "text": "*请以半角逗号分隔多个用户名"
         },
-	
+		
+		{
+            "tab": "消息过滤",
+            "group": "过滤关键字",
+            "name": "enable_filter_keyword_origin",
+            "type": "checkbox",
+            "label": "过滤原创内容",
+        },
+		
+		{
+            "tab": "消息过滤",
+            "group": "过滤关键字",
+            "name": "enable_filter_keyword_forward",
+            "type": "checkbox",
+            "label": "过滤转发内容",
+        },
+		
+		{
+            "tab": "消息过滤",
+            "group": "过滤关键字",
+            "name": "bugs",
+            "type": "checkbox",
+            "label": "*请以半角逗号分隔多个关键字，建议关键字大于三个汉字。",
+        },
+		
+		{
+            "tab": "消息过滤",
+            "group": "过滤关键字",
+            "name": "filter_keyword",
+            "type": "text",
+            "label": "请输入想屏蔽的关键字",
+			"text": "以半角逗号,分隔关键字",
+			"masked": "false"
+        },
+		
+		/*
+			About
+		*/
 		{
             "tab": "关于",
             "group": "关于微博控",
