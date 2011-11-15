@@ -2,7 +2,7 @@
     new FancySettings.initWithManifest(function (settings) {
 	
 		document.getElementById("settings-label").innerHTML = "微博新控设置";
-		document.getElementById("search").placeholder = "搜索设置选项...";
+		document.getElementById("search").placeholder = "在此输入\"New\"试试";
 		document.getElementById("search-label").innerHTML = "搜索";
 		/*
 			Top
