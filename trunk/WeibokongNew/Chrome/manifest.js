@@ -188,10 +188,8 @@ this.manifest = {
             "group": "详细设置",
             "name": "hide_main_title",
             "type": "checkbox",
-            "label": "隐藏发布器标题 "
+            "label": "隐藏发布器标题[New]"
         },
-		
-		
 		
 		{
             "tab": "主面板",
@@ -448,7 +446,7 @@ this.manifest = {
 			Filter
 		*/
 		{
-            "tab": "消息过滤",
+            "tab": "消息过滤[New]",
             "group": "过滤用户",
             "name": "enable_filter",
             "type": "checkbox",
@@ -456,7 +454,7 @@ this.manifest = {
         },
 		
 		{
-            "tab": "消息过滤",
+            "tab": "消息过滤[New]",
             "group": "过滤用户",
             "name": "filter",
             "type": "text",
@@ -466,7 +464,7 @@ this.manifest = {
         },
 		
 		{
-            "tab": "消息过滤",
+            "tab": "消息过滤[New]",
             "group": "过滤用户",
             "name": "bugs",
             "type": "description",
@@ -474,7 +472,7 @@ this.manifest = {
         },
 		
 		{
-            "tab": "消息过滤",
+            "tab": "消息过滤[New]",
             "group": "过滤关键字",
             "name": "enable_filter_keyword_origin",
             "type": "checkbox",
@@ -482,7 +480,7 @@ this.manifest = {
         },
 		
 		{
-            "tab": "消息过滤",
+            "tab": "消息过滤[New]",
             "group": "过滤关键字",
             "name": "enable_filter_keyword_forward",
             "type": "checkbox",
@@ -490,15 +488,7 @@ this.manifest = {
         },
 		
 		{
-            "tab": "消息过滤",
-            "group": "过滤关键字",
-            "name": "bugs",
-            "type": "checkbox",
-            "label": "*请以半角逗号分隔多个关键字，建议关键字大于三个汉字。",
-        },
-		
-		{
-            "tab": "消息过滤",
+            "tab": "消息过滤[New]",
             "group": "过滤关键字",
             "name": "filter_keyword",
             "type": "text",
@@ -540,6 +530,22 @@ this.manifest = {
             "name": "version",
             "type": "description",
             "text": chrome.i18n.getMessage("appChangelog")
+        },
+		
+		{
+            "tab": "关于",
+            "group": "历史更新[New]",
+            "name": "version",
+            "type": "description",
+            "text": "<a href=\"http://code.google.com/p/wei-bo-kong/wiki/ChangelogforWeibokongNew\" target=\"blank\">点此访问历史更新记录</a>"
+        },
+		
+		{
+            "tab": "关于",
+            "group": "访问Chrome商店[New]",
+            "name": "version",
+            "type": "description",
+            "text": "<a href=\"http://chrome.google.com/webstore/detail/pimgjnopcjhodkapdnhlmgnjeaegdfam\" target=\"blank\">点此访问微博新控@Chrome商店</a>"
         },
 		
 		{

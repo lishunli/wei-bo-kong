@@ -1,6 +1,6 @@
 ﻿// WeiboKongNew
-// version 2.0.0
-// 2011-11-09
+// version 2.0.1
+// 2011-11-15
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -101,7 +101,7 @@ function mainboard(options) {
 	if ( options['hide_main_post'] == true ) {
 		$("#pl_content_publisherTop").hide();
 	}
-	if ( options['hide_main_recommend'] == true ) {
+	if ( options['hide_main_title'] == true ) {
 		$(".title").hide();
 	}
 	if ( options['hide_main_tips'] == true ) {
