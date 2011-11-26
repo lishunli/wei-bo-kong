@@ -10,17 +10,17 @@
   },
   
   "appVersion": {
-	"message": "2.0.1", 
+	"message": "2.0.2", 
     "description":"App version."
   },
   
   "appChangelog": {
-	"message": "+添加对'@提到我的'，'我的评论'，'我的私信'，'我的收藏'等页面的支持<br>+添加主面板'隐藏发布器标题'<br>+添加用户、关键字过滤系统<br>+在左上角搜索栏输入\"New\"即可查看微博新控最新功能<br>+在'关于'页面添加快捷链接<br>", 
+	"message": "+可隐藏\"可能感兴趣的微群\"<br>+鼠标悬浮显示缩略图功能<br>", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2011-11-15", 
+	"message": "2011-11-25", 
     "description":"App release date."
   }
 }

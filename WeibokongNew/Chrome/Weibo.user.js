@@ -1,6 +1,6 @@
 ﻿// WeiboKongNew
-// version 2.0.1
-// 2011-11-15
+// version 2.0.2
+// 2011-11-25
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -74,6 +74,9 @@ function rightside(options) {
 		if ( options['hide_right_popuser'] == true ) {
 			$('#pl_relation_recommendPopularUsers').hide();
 		}
+		if ( options['hide_right_interestgroup'] == true ) {
+			$('#pl_content_interestgroup').hide();
+		}
 		if ( options['hide_right_allinone'] == true ) {
 			$('#pl_content_allInOne').hide();
 		}
@@ -95,9 +98,32 @@ function rightside(options) {
 	}
 }
 
+function hoverimg()
+{
+	$(".bigcursor").each( function (){
+		$(this).hover(function(){
+			var x = event.clientX + document.body.scrollLeft;
+			var y = event.clientY + document.body.scrollTop;
+				
+			$("#kong_hover_img").attr( "src", $(this).attr( "src" ).replace( "thumbnail", "bmiddle"  ) );
+			$("#kong_hover_img").css( "top", y - 50 );
+			$("#kong_hover_img").css( "left", x + 150 );
+			$("#kong_hover_img").css( "position", "absolute" );
+			$("#kong_hover_img").css( "border", "1px solid red" );
+			$("#kong_hover_img").show();
+		},function(){
+			$("#kong_hover_img").hide();
+		});
+	});
+	t = setTimeout(function(){hoverimg();}, 2000 );
+}
+
 function mainboard(options) {
 	//var theme = "kong_button" + getTheme( options['global_theme'] );
 	//var theme_hover = "kong_button_hover" + getTheme( options['global_theme'] );
+	if ( options['hover_main_img'] == true ) {
+		hoverimg();
+	}
 	if ( options['hide_main_post'] == true ) {
 		$("#pl_content_publisherTop").hide();
 	}
@@ -532,6 +558,7 @@ function doit(options) {
 		 $(document).attr('title').match("我的收藏") || $(document).attr('title').match("我的收藏")
 	){
 		$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
+		$("<img id=\"kong_hover_img\" />").appendTo("body");
 		topnav(options);
 		rightside(options);
 		mainboard(options);
@@ -546,6 +573,20 @@ function doit(options) {
 		if ( options['enable_friend'] == false ) return;
 		friendpage(options);
 	}
+}
+
+function hover(img,x,y) {
+	var hover = document.getElementById("hover");
+	hover.style.position = "fixed";
+	hover.style.top = x;
+	hover.style.left = y;
+	hover.innerHTML = "<img src=img/" + img + ".jpg />";
+	hover.style.display = "block";
+}
+
+function unhover() {
+	var hover = document.getElementById("hover");
+	hover.style.display = "none";
 }
 
 /*
