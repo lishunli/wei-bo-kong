@@ -135,6 +135,14 @@ this.manifest = {
 		{
             "tab": "右侧边栏",
             "group": "详细设置",
+            "name": "hide_right_interestgroup",
+            "type": "checkbox",
+            "label": "隐藏可能感兴趣的微群[New]"
+        },
+		
+		{
+            "tab": "右侧边栏",
+            "group": "详细设置",
             "name": "hide_right_allinone",
             "type": "checkbox",
             "label": "隐藏其他推荐"
@@ -177,6 +185,14 @@ this.manifest = {
 		*/
 		{
             "tab": "主面板",
+            "group": "优化功能",
+            "name": "hover_main_img",
+            "type": "checkbox",
+            "label": "鼠标悬浮显示大图[New]"
+        },
+		
+		{
+            "tab": "主面板",
             "group": "详细设置",
             "name": "hide_main_post",
             "type": "checkbox",
@@ -188,7 +204,7 @@ this.manifest = {
             "group": "详细设置",
             "name": "hide_main_title",
             "type": "checkbox",
-            "label": "隐藏发布器标题[New]"
+            "label": "隐藏发布器标题"
         },
 		
 		{
@@ -446,7 +462,7 @@ this.manifest = {
 			Filter
 		*/
 		{
-            "tab": "消息过滤[New]",
+            "tab": "消息过滤",
             "group": "过滤用户",
             "name": "enable_filter",
             "type": "checkbox",
@@ -454,7 +470,7 @@ this.manifest = {
         },
 		
 		{
-            "tab": "消息过滤[New]",
+            "tab": "消息过滤",
             "group": "过滤用户",
             "name": "filter",
             "type": "text",
@@ -464,7 +480,7 @@ this.manifest = {
         },
 		
 		{
-            "tab": "消息过滤[New]",
+            "tab": "消息过滤",
             "group": "过滤用户",
             "name": "bugs",
             "type": "description",
@@ -472,7 +488,7 @@ this.manifest = {
         },
 		
 		{
-            "tab": "消息过滤[New]",
+            "tab": "消息过滤",
             "group": "过滤关键字",
             "name": "enable_filter_keyword_origin",
             "type": "checkbox",
@@ -480,7 +496,7 @@ this.manifest = {
         },
 		
 		{
-            "tab": "消息过滤[New]",
+            "tab": "消息过滤",
             "group": "过滤关键字",
             "name": "enable_filter_keyword_forward",
             "type": "checkbox",
@@ -488,7 +504,7 @@ this.manifest = {
         },
 		
 		{
-            "tab": "消息过滤[New]",
+            "tab": "消息过滤",
             "group": "过滤关键字",
             "name": "filter_keyword",
             "type": "text",

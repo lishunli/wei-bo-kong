@@ -59,6 +59,10 @@
 		me.addEventListener("mouseover", function(){hover("hide_right_popuser");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
+		me = settings.manifest.hide_right_interestgroup.label;
+		me.addEventListener("mouseover", function(){hover("hide_right_interestgroup");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
 		me = settings.manifest.hide_right_allinone.label;
 		me.addEventListener("mouseover", function(){hover("hide_right_allinone");}, false);
 		me.addEventListener("mouseout", unhover, false);
@@ -83,6 +87,10 @@
 		/*
 			Main
 		*/
+		me = settings.manifest.hover_main_img.label;
+		me.addEventListener("mouseover", function(){hover("hover_main_img");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
 		me = settings.manifest.hide_main_post.label;
 		me.addEventListener("mouseover", function(){hover("hide_main_post");}, false);
 		me.addEventListener("mouseout", unhover, false);
