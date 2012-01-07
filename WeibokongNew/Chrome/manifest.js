@@ -58,6 +58,46 @@ this.manifest = {
         },
 		
 		/*
+			Left
+		*/
+		{
+            "tab": "体验版左侧边栏",
+            "group": "详细设置",
+            "name": "hide_left_info",
+            "type": "checkbox",
+            "label": "隐藏用户信息<a style='color:red'>[New]</a>"
+        },
+		{
+            "tab": "体验版左侧边栏",
+            "group": "详细设置",
+            "name": "hide_left_nav",
+            "type": "checkbox",
+            "label": "隐藏导航栏<a style='color:red'>[New]</a>"
+        },
+		{
+            "tab": "体验版左侧边栏",
+            "group": "详细设置",
+            "name": "hide_left_link",
+            "type": "checkbox",
+            "label": "隐藏其余链接<a style='color:red'>[New]</a>"
+        },
+		{
+            "tab": "体验版左侧边栏",
+            "group": "详细设置",
+            "name": "hide_left_game",
+            "type": "checkbox",
+            "label": "隐藏微博游戏<a style='color:red'>[New]</a>"
+        },
+		{
+            "tab": "体验版左侧边栏",
+            "group": "详细设置",
+            "name": "hide_left_app",
+            "type": "checkbox",
+            "label": "隐藏微博应用<a style='color:red'>[New]</a>"
+        },
+		
+		
+		/*
 			Right
 		*/
 		{
@@ -95,6 +135,14 @@ this.manifest = {
 		{
             "tab": "右侧边栏",
             "group": "详细设置",
+            "name": "hide_right_mood",
+            "type": "checkbox",
+            "label": "隐藏写心情<a style='color:red'>[New]</a>"
+        },
+		
+		{
+            "tab": "右侧边栏",
+            "group": "详细设置",
             "name": "hide_right_medals",
             "type": "checkbox",
             "label": "隐藏勋章"
@@ -106,6 +154,14 @@ this.manifest = {
             "name": "hide_right_nav",
             "type": "checkbox",
             "label": "隐藏右侧导航"
+        },
+		
+		{
+            "tab": "右侧边栏",
+            "group": "详细设置",
+            "name": "hide_right_game",
+            "type": "checkbox",
+            "label": "隐藏微游戏<a style='color:red'>[New]</a>"
         },
 		
 		{
@@ -137,7 +193,7 @@ this.manifest = {
             "group": "详细设置",
             "name": "hide_right_interestgroup",
             "type": "checkbox",
-            "label": "隐藏可能感兴趣的微群[New]"
+            "label": "隐藏可能感兴趣的微群"
         },
 		
 		{
@@ -188,7 +244,15 @@ this.manifest = {
             "group": "优化功能",
             "name": "hover_main_img",
             "type": "checkbox",
-            "label": "鼠标悬浮显示大图[New]"
+            "label": "鼠标悬浮显示大图"
+        },
+		
+		{
+            "tab": "主面板",
+            "group": "详细设置",
+            "name": "enlarge_main_post",
+            "type": "checkbox",
+            "label": "增大发布栏<a style='color:red'>[New]</a>"
         },
 		
 		{
@@ -550,7 +614,7 @@ this.manifest = {
 		
 		{
             "tab": "关于",
-            "group": "历史更新[New]",
+            "group": "历史更新",
             "name": "version",
             "type": "description",
             "text": "<a href=\"http://code.google.com/p/wei-bo-kong/wiki/ChangelogforWeibokongNew\" target=\"blank\">点此访问历史更新记录</a>"
@@ -558,7 +622,7 @@ this.manifest = {
 		
 		{
             "tab": "关于",
-            "group": "访问Chrome商店[New]",
+            "group": "访问Chrome商店",
             "name": "version",
             "type": "description",
             "text": "<a href=\"http://chrome.google.com/webstore/detail/pimgjnopcjhodkapdnhlmgnjeaegdfam\" target=\"blank\">点此访问微博新控@Chrome商店</a>"
@@ -569,7 +633,7 @@ this.manifest = {
             "group": "关于微博控",
             "name": "bug",
             "type": "description",
-            "text": "关于Bug和建议:请发送邮件至ye111111ow@gmail.com 非常感谢!"
+            "text": "关于Bug和建议:请发送邮件至ye111111ow (at) gmail.com 非常感谢!"
         },
 		
 
