@@ -27,10 +27,41 @@
 		me.addEventListener("mouseover", function(){hover("hide_top_right");}, false);
 		me.addEventListener("mouseout", unhover, false);
 		
+		/*
+			Left
+		*/
+		me = settings.manifest.hide_left_info.label;
+		me.addEventListener("mouseover", function(){hover("hide_left_info");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_left_nav.label;
+		me.addEventListener("mouseover", function(){hover("hide_left_nav");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_left_link.label;
+		me.addEventListener("mouseover", function(){hover("hide_left_link");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_left_game.label;
+		me.addEventListener("mouseover", function(){hover("hide_left_game");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_left_app.label;
+		me.addEventListener("mouseover", function(){hover("hide_left_app");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
 		
 		/*
 			Right
 		*/
+		me = settings.manifest.hide_right_game.label;
+		me.addEventListener("mouseover", function(){hover("hide_right_game");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
+		me = settings.manifest.hide_right_mood.label;
+		me.addEventListener("mouseover", function(){hover("hide_right_mood");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
 		me = settings.manifest.hide_right_ads.label;
 		me.addEventListener("mouseover", function(){hover("hide_right_ads");}, false);
 		me.addEventListener("mouseout", unhover, false);
@@ -87,6 +118,10 @@
 		/*
 			Main
 		*/
+		me = settings.manifest.enlarge_main_post.label;
+		me.addEventListener("mouseover", function(){hover("enlarge_main_post");}, false);
+		me.addEventListener("mouseout", unhover, false);
+		
 		me = settings.manifest.hover_main_img.label;
 		me.addEventListener("mouseover", function(){hover("hover_main_img");}, false);
 		me.addEventListener("mouseout", unhover, false);

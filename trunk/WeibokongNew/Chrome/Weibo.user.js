@@ -1,6 +1,6 @@
 ﻿// WeiboKongNew
-// version 2.0.2
-// 2011-11-25
+// version 2.0.3
+// 2012-01-07
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -38,6 +38,28 @@ function topnav(options) {
 	}
 }
 
+function leftside(options) {
+	if ( false ) {
+	}
+	else {
+		if ( options['hide_left_info'] == true ) {
+			$("#pl_leftNav_common div:first-child").hide();
+		}
+		if ( options['hide_left_nav'] == true ) {
+			$("#pl_leftNav_common div:first-child").next().hide();
+		}
+		if ( options['hide_left_link'] == true ) {
+			$("#pl_leftNav_common div:first-child").next().next().hide();
+		}
+		if ( options['hide_left_game'] == true ) {
+			$("#pl_leftNav_game").hide();
+		}
+		if ( options['hide_left_app'] == true ) {
+			$("#pl_leftNav_app").hide();
+		}
+	}
+}
+
 function rightside(options) {
 	if ( options['hide_right'] == true ) {
 		$(".W_main_r").hide();
@@ -57,13 +79,19 @@ function rightside(options) {
 			$("#pl_content_userTips").hide();
 		}
 		if ( options['hide_right_info'] == true ) {
-			$("#pl_content_liteFacePersonInfo").hide();
+			$("#pl_content_personInfo").hide();
+		}
+		if ( options['hide_right_mood'] == true ) {
+			$("#pl_content_mood").hide();
 		}
 		if ( options['hide_right_medals'] == true ) {
 			$("#pl_content_medal").hide();
 		}
 		if ( options['hide_right_nav'] == true ) {
 			$("#pl_nav_outlookBar").hide();
+		}
+		if ( options['hide_right_game'] == true ) {
+			$('#pl_common_fun').hide();
 		}
 		if ( options['hide_right_topic'] == true ) {
 			$('#pl_content_promotetopic').hide();
@@ -74,6 +102,7 @@ function rightside(options) {
 		if ( options['hide_right_popuser'] == true ) {
 			$('#pl_relation_recommendPopularUsers').hide();
 		}
+		
 		if ( options['hide_right_interestgroup'] == true ) {
 			$('#pl_content_interestgroup').hide();
 		}
@@ -109,7 +138,7 @@ function hoverimg()
 			$("#kong_hover_img").css( "top", y - 50 );
 			$("#kong_hover_img").css( "left", x + 150 );
 			$("#kong_hover_img").css( "position", "absolute" );
-			$("#kong_hover_img").css( "border", "1px solid red" );
+			$("#kong_hover_img").css( "border", "3px solid white" );
 			$("#kong_hover_img").show();
 		},function(){
 			$("#kong_hover_img").hide();
@@ -124,11 +153,14 @@ function mainboard(options) {
 	if ( options['hover_main_img'] == true ) {
 		hoverimg();
 	}
+	if ( options['enlarge_main_post'] == true ) {
+		$('textarea[title=\"微博输入框"]').css( "height", "150px" );
+	}
 	if ( options['hide_main_post'] == true ) {
 		$("#pl_content_publisherTop").hide();
 	}
 	if ( options['hide_main_title'] == true ) {
-		$(".title").hide();
+		$(".key.W_textb").hide();
 	}
 	if ( options['hide_main_tips'] == true ) {
 		$("#pl_content_pullylist").hide();
@@ -136,6 +168,7 @@ function mainboard(options) {
 	if ( options['hide_main_nav'] == true ) {
 		$('div[node-type="feed_nav"]').hide();
 	}
+	
 	
 	if ( options['hide_main_micro'] == true ) {
 		$(".info.W_linkb.W_textb").hide();
@@ -558,8 +591,9 @@ function doit(options) {
 		 $(document).attr('title').match("我的收藏") || $(document).attr('title').match("我的收藏")
 	){
 		$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
-		$("<img id=\"kong_hover_img\" />").appendTo("body");
+		$("<div><img id=\"kong_hover_img\" /></div>").appendTo("body");
 		topnav(options);
+		leftside(options);
 		rightside(options);
 		mainboard(options);
 		others(options);
