@@ -33,7 +33,7 @@ this.manifest = {
             "group": "详细设置",
             "name": "hide_top_left",
             "type": "checkbox",	
-            "label": "隐藏左侧链接"
+            "label": "隐藏左侧链接<a style='color:red'>[Fixed]</a>"
         },
 		{
             "tab": "顶端导航条",
@@ -65,35 +65,35 @@ this.manifest = {
             "group": "详细设置",
             "name": "hide_left_info",
             "type": "checkbox",
-            "label": "隐藏用户信息<a style='color:red'>[New]</a>"
+            "label": "隐藏用户信息"
         },
 		{
             "tab": "体验版左侧边栏",
             "group": "详细设置",
             "name": "hide_left_nav",
             "type": "checkbox",
-            "label": "隐藏导航栏<a style='color:red'>[New]</a>"
+            "label": "隐藏导航栏"
         },
 		{
             "tab": "体验版左侧边栏",
             "group": "详细设置",
             "name": "hide_left_link",
             "type": "checkbox",
-            "label": "隐藏其余链接<a style='color:red'>[New]</a>"
+            "label": "隐藏其余链接"
         },
 		{
             "tab": "体验版左侧边栏",
             "group": "详细设置",
             "name": "hide_left_game",
             "type": "checkbox",
-            "label": "隐藏微博游戏<a style='color:red'>[New]</a>"
+            "label": "隐藏微博游戏"
         },
 		{
             "tab": "体验版左侧边栏",
             "group": "详细设置",
             "name": "hide_left_app",
             "type": "checkbox",
-            "label": "隐藏微博应用<a style='color:red'>[New]</a>"
+            "label": "隐藏微博应用"
         },
 		
 		
@@ -137,7 +137,7 @@ this.manifest = {
             "group": "详细设置",
             "name": "hide_right_mood",
             "type": "checkbox",
-            "label": "隐藏写心情<a style='color:red'>[New]</a>"
+            "label": "隐藏写心情"
         },
 		
 		{
@@ -161,7 +161,7 @@ this.manifest = {
             "group": "详细设置",
             "name": "hide_right_game",
             "type": "checkbox",
-            "label": "隐藏微游戏<a style='color:red'>[New]</a>"
+            "label": "隐藏微游戏"
         },
 		
 		{
@@ -193,7 +193,7 @@ this.manifest = {
             "group": "详细设置",
             "name": "hide_right_interestgroup",
             "type": "checkbox",
-            "label": "隐藏可能感兴趣的微群"
+            "label": "隐藏可能感兴趣的微群<a style='color:red'>[Fixed]</a>"
         },
 		
 		{
@@ -252,7 +252,7 @@ this.manifest = {
             "group": "详细设置",
             "name": "enlarge_main_post",
             "type": "checkbox",
-            "label": "增大发布栏<a style='color:red'>[New]</a>"
+            "label": "增大发布栏"
         },
 		
 		{
@@ -521,34 +521,58 @@ this.manifest = {
             "type": "checkbox",
             "label": "隐藏底部链接"
         },
-		
 		/*
-			Filter
+			Notification
 		*/
 		{
-            "tab": "消息过滤",
-            "group": "过滤用户",
-            "name": "enable_filter",
+            "tab": "消息提醒",
+            "group": "全局设置",
+            "name": "enable_notification",
             "type": "checkbox",
-            "label": "启用过滤用户",
+            "label": "启用消息提醒<a style='color:red'>[New]</a>"
+        },
+		{
+            "tab": "消息提醒",
+            "group": "桌面提醒",
+            "name": "notification_post",
+            "type": "checkbox",
+            "label": "有新微博时<a style='color:red'>[New]</a>"
+        },
+		{
+            "tab": "消息提醒",
+            "group": "桌面提醒",
+            "name": "notification_comment",
+            "type": "checkbox",
+            "label": "有新评论时<a style='color:red'>[New]</a>"
+        },
+		{
+            "tab": "消息提醒",
+            "group": "桌面提醒",
+            "name": "notification_atme",
+            "type": "checkbox",
+            "label": "有新@时<a style='color:red'>[New]</a>"
         },
 		
 		{
-            "tab": "消息过滤",
-            "group": "过滤用户",
-            "name": "filter",
-            "type": "text",
-            "label": "请输入想屏蔽用户名",
-			"text": "以半角逗号,分隔用户名",
-			"masked": "false"
+            "tab": "消息提醒",
+            "group": "标题闪烁",
+            "name": "notification_post_title",
+            "type": "checkbox",
+            "label": "有新微博时<a style='color:red'>[New]</a>"
         },
-		
 		{
-            "tab": "消息过滤",
-            "group": "过滤用户",
-            "name": "bugs",
-            "type": "description",
-            "text": "*请以半角逗号分隔多个用户名"
+            "tab": "消息提醒",
+            "group": "标题闪烁",
+            "name": "notification_comment_title",
+            "type": "checkbox",
+            "label": "有新评论时<a style='color:red'>[New]</a>"
+        },
+		{
+            "tab": "消息提醒",
+            "group": "标题闪烁",
+            "name": "notification_atme_title",
+            "type": "checkbox",
+            "label": "有新@时<a style='color:red'>[New]</a>"
         },
 		
 		{

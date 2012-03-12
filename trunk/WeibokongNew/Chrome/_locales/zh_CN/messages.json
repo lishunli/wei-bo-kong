@@ -10,17 +10,17 @@
   },
   
   "appVersion": {
-	"message": "2.0.3", 
+	"message": "2.0.4", 
     "description":"App version."
   },
   
   "appChangelog": {
-	"message": "*修复无法隐藏个人资料的问题<br>+添加\"隐藏微游戏\",\"隐藏写心情\"<br>+更好的支持三栏模板<br>*调整\"隐藏发布器标题\"<br>", 
+	"message": "+新增消息提醒功能！(COOL)<br>*修复无法隐藏[可能感兴趣的微群]的问题<br>*修复[顶端导航条]-[隐藏左侧链接]引起的界面错误<br>-移除了[过滤用户]功能(新浪微博已有内置屏蔽功能，在[帐号设置]-[隐私设置]-[屏蔽设置])<br>", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2012-01-07", 
+	"message": "2012-03-11", 
     "description":"App release date."
   }
 }

@@ -1,6 +1,6 @@
 ﻿// WeiboKongNew
-// version 2.0.3
-// 2012-01-07
+// version 2.0.4
+// 2012-03-11
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -11,10 +11,14 @@
 // @include		  http://t.sina.com.cn/*
 // ==/UserScript==
 
+7
+/*define global extension variables*/
 var VERSION = chrome.i18n.getMessage("appVersion");
 var UPDATE = chrome.i18n.getMessage("appChangelog");
 var DATE = chrome.i18n.getMessage("appReleaseDate");
 
+
+/*operations for navigation bar on top*/
 function topnav(options) {
 	if ( options['hide_top'] == true ) {
 		$(".global_header").hide();
@@ -25,6 +29,7 @@ function topnav(options) {
 		}
 		if ( options['hide_top_left'] == true ) {
 			$(".logo").next().hide();
+			$(".search").css("margin-left", "150px");
 		}
 		if ( options['hide_top_search'] == true ) {
 			$(".search").hide();
@@ -38,6 +43,7 @@ function topnav(options) {
 	}
 }
 
+/*operations for navigation bar on lelf, only avaiable for 体验版*/
 function leftside(options) {
 	if ( false ) {
 	}
@@ -60,6 +66,7 @@ function leftside(options) {
 	}
 }
 
+/*operations for navigation bar on right*/
 function rightside(options) {
 	if ( options['hide_right'] == true ) {
 		$(".W_main_r").hide();
@@ -104,7 +111,7 @@ function rightside(options) {
 		}
 		
 		if ( options['hide_right_interestgroup'] == true ) {
-			$('#pl_content_interestgroup').hide();
+			$('#pl_common_thirdmodule_1005').hide();
 		}
 		if ( options['hide_right_allinone'] == true ) {
 			$('#pl_content_allInOne').hide();
@@ -127,6 +134,7 @@ function rightside(options) {
 	}
 }
 
+/*popup images*/
 function hoverimg()
 {
 	$(".bigcursor").each( function (){
@@ -147,6 +155,21 @@ function hoverimg()
 	t = setTimeout(function(){hoverimg();}, 2000 );
 }
 
+function hover(img,x,y) {
+	var hover = document.getElementById("hover");
+	hover.style.position = "fixed";
+	hover.style.top = x;
+	hover.style.left = y;
+	hover.innerHTML = "<img src=img/" + img + ".jpg />";
+	hover.style.display = "block";
+}
+
+function unhover() {
+	var hover = document.getElementById("hover");
+	hover.style.display = "none";
+}
+
+/*operations for main contents*/
 function mainboard(options) {
 	//var theme = "kong_button" + getTheme( options['global_theme'] );
 	//var theme_hover = "kong_button_hover" + getTheme( options['global_theme'] );
@@ -321,6 +344,7 @@ function mainboard(options) {
 	
 }
 
+/*other operations*/
 function others(options) {
 	if ( options['hide_other_ads'] == true ) {
 		$("#ads_bottom_1").hide();
@@ -330,7 +354,10 @@ function others(options) {
 	}
 }
 
+
+/*filter functions*/
 function filter(options) {
+/*
 	if ( options['enable_filter'] == true ) {
 		if ( options['filter'] != "" ) {
 			var names = options['filter'].toString().split(",");
@@ -339,7 +366,7 @@ function filter(options) {
 			}
 		}
 	}
-	
+*/	
 	if ( options['enable_filter_keyword_origin'] == true ) {
 		if ( options['filter_keyword'] != "" ) {
 			var keywords = options['filter_keyword'].toString().split(",");
@@ -371,6 +398,7 @@ function filter(options) {
 	t = setTimeout(function(){filter(options);}, 2000 );
 }
 
+/* auto updater */
 function checkUpdate() {
 	if ( localStorage["version"] == undefined || VERSION > localStorage["version"] ) {
 		localStorage["version"] = VERSION;
@@ -384,25 +412,36 @@ function checkUpdate() {
 		var timer = setTimeout("document.getElementById('kong_update').style.display = 'none';", 10000);
 	}
 }
-/*
-function checkNew(notified1,notified2,notified3,notified4,notified5,options) {
+
+/* blink title */
+function blink_info(msg) {
+	var timeoutId = setInterval(function() {
+        document.title = document.title == msg ? '【您有新消息】' : msg;
+    }, 1000);
+}
+
+/* notification */
+function checkNew(notified1,notified2,notified3,options) {
+	var html = $("a[action-type='feed_list_newBar']").html();
 	var flag = false;
-	if ( options['notification_post'] == true ) {
-		if ( $(".newMblog_ts1").css("display") != "none" ) {
+	if ( html != null && html.indexOf("点击查看") != -1 ) {
+		if ( options['notification_post'] == true ) {
 			flag = true;
 			if ( notified1 == false ) {
 				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'post'}, function(){});
 				notified1 = true;
-				if ( options['enable_autonew'] == true ) {
-					$(".newMblog_ts1").click();
-				}
 			}
 		}
 		if ( flag == false ) notified1 = false;
+		if ( options['notification_post_title'] == true ) {
+			blink_info("【新微博！】");
+		}
 	}
-	flag = false;
-	if ( options['notification_comment']  == true ) {
-		if ( $(".yInfo p:first-child").css("display") != "none" && $(".yInfo p:first-child").html() != "" ) {
+
+	html = $(".layer_message_box").html();
+	if ( html != null ) {
+		flag = false;
+		if ( options['notification_comment'] == true && html.indexOf("查看评论") != -1 ) {
 			flag = true;
 			if ( notified2 == false ) {
 				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'comment'}, function(){});
@@ -410,54 +449,36 @@ function checkNew(notified1,notified2,notified3,notified4,notified5,options) {
 			}
 		}
 		if ( flag == false ) notified2 = false;
-	}
-	flag = false;
-	if ( options['notification_fan']  == true ) {
-		if ( $(".yInfo p:first-child").next().css("display") != "none" && $(".yInfo p:first-child").next().html() != "" ) {
+		flag = false;
+		if ( options['notification_atme'] == true && html.indexOf("查看@我") != -1 ) {
 			flag = true;
 			if ( notified3 == false ) {
-				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'fan'}, function(){});
+				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'atme'}, function(){});
 				notified3 = true;
 			}
 		}
 		if ( flag == false ) notified3 = false;
-	}
-	flag = false;
-	if ( options['notification_msg']  == true ) {
-		if ( $(".yInfo p:first-child").next().next().css("display") != "none" && $(".yInfo p:first-child").next().next().html() != "" ) {
-			flag = true;
-			if ( notified4 == false ) {
-				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'msg'}, function(){});
-				notified4 = true;
-			}
+		if ( options['notification_comment_title']  == true && html.indexOf("查看评论") != -1 ) {
+			blink_info("【新评论！】");
 		}
-		if ( flag == false ) notified4 = false;
-	}
-	flag = false;
-	if ( options['notification_atme']  == true ) {
-		if ( $(".yInfo p:first-child").next().next().next().css("display") != "none" && $(".yInfo p:first-child").next().next().next().html() != "" ) {
-			flag = true;
-			if ( notified5 == false ) {
-				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'atme'}, function(){});
-				notified5 = true;
-			}
+		if ( options['notification_atme_title']  == true && html.indexOf("查看@我") != -1 ) {
+			blink_info("【新@提到我！】");
 		}
-		if ( flag == false ) notified5 = false;
 	}
-	
-	
-	var intervals = options['notification_intervals'];
-	if ( intervals < 10 ) intervals = 10;
-	t = setTimeout(function(){checkNew(notified1,notified2,notified3,notified4,notified5,options);}, intervals * 1000 );
+	//var intervals = options['notification_intervals'];
+	//if ( intervals < 10 ) intervals = 10;
+	var intervals = 10;
+	t = setTimeout(function(){checkNew(notified1,notified2,notified3,options);}, intervals * 1000 );
 }
 
 function notification(options) {
 	if ( options['enable_notification'] == false ) {
 		return;
 	}
-	checkNew(false,false,false,false,false,options);
+	checkNew(false,false,false,options);
 }
-*/
+
+/* */
 function friendpage(options) {
 	if ( options['hide_top_friend'] == true ) {
 		$(".global_header").hide();
@@ -536,6 +557,7 @@ function friendpage(options) {
 		$("#global_footer global_footer_narrow").hide();
 	}
 }
+
 /*
 function searchpage(options) {
 	if ( options['hide_top_search'] == true ) {
@@ -578,6 +600,7 @@ function searchpage(options) {
 	}
 }
 */
+
 function doit(options) {
 	checkUpdate();
 	if ( options['enable_all'] == false ) return;
@@ -598,7 +621,7 @@ function doit(options) {
 		mainboard(options);
 		others(options);
 		filter(options);
-		//notification(options);
+		notification(options);
 	}
 	else if ( $(document).attr('title').match("微博搜索") || $(document).attr('title').match("微博搜尋") ){
 		//searchpage(options);
@@ -609,19 +632,7 @@ function doit(options) {
 	}
 }
 
-function hover(img,x,y) {
-	var hover = document.getElementById("hover");
-	hover.style.position = "fixed";
-	hover.style.top = x;
-	hover.style.left = y;
-	hover.innerHTML = "<img src=img/" + img + ".jpg />";
-	hover.style.display = "block";
-}
 
-function unhover() {
-	var hover = document.getElementById("hover");
-	hover.style.display = "none";
-}
 
 /*
 function getTheme( theme )
@@ -638,4 +649,6 @@ function getTheme( theme )
 	}
 }
 */
+
+/*get settings*/
 chrome.extension.sendRequest({'action' : 'getOptions'}, doit);

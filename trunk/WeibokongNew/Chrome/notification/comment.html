@@ -1,3 +1,27 @@
+<<<<<<< .mine
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="gbk">
+	<script type="text/javascript">
+		function load() {
+			document.getElementById('icon').src = chrome.extension.getURL("img/icon/icon_16.png");
+			var timer = setTimeout(function() {window.close();}, 10000);
+		}
+		function closeWin() {
+			window.close();
+		}
+		function openWin() {
+			chrome.tabs.create( {url: "http://weibo.com/comments"} );
+			window.close();
+		}
+    </script>
+  </head>
+  <body onload='load()' style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; background-color:#FDFFEA">
+	<p><img id="icon" style="margin-right: 10px" />您有新评论! <a href="#" onclick="openWin(); return;" style="color: #399fd6">查看评论</a></p>
+	<a href="#" onclick="closeWin(); return;" style="color: #399fd6">关闭窗口</a>
+  </body>
+</html>=======
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,4 +45,4 @@
 	<a href="#" onclick="closeWin(); return;" style="color: #399fd6">关闭窗口</a>
 	<embed src="notify.mp3" width="0" height="0" ></embed>	
   </body>
-</html>
+</html>>>>>>>> .r139
