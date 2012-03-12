@@ -258,6 +258,33 @@
 		me.addEventListener("mouseover", function(){hover("hide_other_bot");}, false);
 		me.addEventListener("mouseout", unhover, false);
 
+		/*
+			Notification
+		*/
+		me = settings.manifest.notification_post.label;
+		me.addEventListener("mouseover", function(){hover("notification");}, false);
+		me.addEventListener("mouseout", unhover, false);
+
+		me = settings.manifest.notification_comment.label;
+		me.addEventListener("mouseover", function(){hover("notification");}, false);
+		me.addEventListener("mouseout", unhover, false);
+
+		me = settings.manifest.notification_atme.label;
+		me.addEventListener("mouseover", function(){hover("notification");}, false);
+		me.addEventListener("mouseout", unhover, false);
+
+		me = settings.manifest.notification_post_title.label;
+		me.addEventListener("mouseover", function(){hover("notification_title");}, false);
+		me.addEventListener("mouseout", unhover, false);
+
+		me = settings.manifest.notification_comment_title.label;
+		me.addEventListener("mouseover", function(){hover("notification_title");}, false);
+		me.addEventListener("mouseout", unhover, false);
+
+		me = settings.manifest.notification_atme_title.label;
+		me.addEventListener("mouseover", function(){hover("notification_title");}, false);
+		me.addEventListener("mouseout", unhover, false);
+
     });
 
 });

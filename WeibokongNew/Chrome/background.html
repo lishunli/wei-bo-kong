@@ -17,22 +17,23 @@
 			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
-		
-		/* Show Page Actoin */
-		function checkForValidUrl(tabId, changeInfo, tab) {
+	</script> 
+	<script>
+		/* show page action */
+		function showPageAction(tabId, changeInfo, tab) {
 			if (tab.url.search("weibo.com") > -1 || tab.url.search("www.weibo.com") > -1) {
 			  chrome.pageAction.show(tabId);
 			}
 		};
 		
-		/* Send Options to GreeseMonkey */
+		/* send options*/
 		function getOptions(callback) {
 			var settings = new Store("settings", {});
 			var options = settings.toObject();
 			callback(options);
 		};
 		
-		/* Process the Requests */
+		/* process the requests */
 		function onRequest(request, sender, callback) {
 			if (request.action == 'getOptions') {
 				getOptions(callback);
@@ -62,20 +63,6 @@
 					);
 					notification.show();
 				}
-				else if ( request.type == 'msg') {
-					var notification = chrome.extension.getURL("notification/msg.html");
-					var notification = webkitNotifications.createHTMLNotification(
-					  notification 
-					);
-					notification.show();
-				}
-				else if ( request.type == 'fan') {
-					var notification = chrome.extension.getURL("notification/fan.html");
-					var notification = webkitNotifications.createHTMLNotification(
-					  notification 
-					);
-					notification.show();
-				}
 				else if ( request.type == 'comment') {
 					var notification = chrome.extension.getURL("notification/comment.html");
 					var notification = webkitNotifications.createHTMLNotification(
@@ -93,7 +80,7 @@
 			}
 		};
 		chrome.extension.onRequest.addListener(onRequest);
-		chrome.tabs.onUpdated.addListener(checkForValidUrl);
+		chrome.tabs.onUpdated.addListener(showPageAction);
     </script>
   </body>
 </html>
