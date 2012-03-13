@@ -12,6 +12,7 @@
   * 鼠标悬停在图片时，显示预览大图
   * 有新微博、评论、@时，标题栏闪动提醒或弹出桌面提醒
   * 屏蔽特定关键字，如“星座”等
+  * 该扩展不含任何广告
 
 = 使用说明 =
 
@@ -54,8 +55,19 @@ http://i.imgur.com/fAmNi.png
   * 你也可以在微博新控设置页面“关于”选项卡中，查看当前版本的更新历史
   * 可以在http://code.google.com/p/wei-bo-kong/wiki/ChangelogforWeibokongNew 查看完整的更新记录。
 
+= 支持作者 =
+该扩展是我一个人业余时间制作，疗效好而不含任何广告。开始于2011年5月底，更新了10多个版本，将来也会继续更新。如果你想支持我，你可以：
+  # 向好友推荐该扩展
+  # 提出你的建议、反馈
+  # 在Chrome商店给扩展评分、Google+1
+  # 贡献代码（html, jQuery, javascript）
+  # 我一直有计划将该插件移植到Firefox，如果你有Firefox扩展开发经验，希望你能加入。
+  # 谢谢
 
 = 下载地址 =
 你可以直接在Chrome商店安装扩展，或者从项目主页下载编译好的.crx文件，再用Google Chrome打开。
   * Chrome商店链接: http://chrome.google.com/webstore/detail/pimgjnopcjhodkapdnhlmgnjeaegdfam
   * 项目主页：http://code.google.com/p/wei-bo-kong/
+
+= 我的微博 =
+http://weibo.com/ye11ow
