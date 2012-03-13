@@ -41,7 +41,7 @@ http://i.imgur.com/fAmNi.png
 
 ==B. 微博控如何开源？ ==
 
-  # 本扩展采用LGPL 2.1开源
+  # 本扩展采用LGPL 2.1开源，任何人可以在http://code.google.com/p/wei-bo-kong/查看、下载、编译源码
 
 ==C. 如何反馈Bug意见与建议？ ==
 
