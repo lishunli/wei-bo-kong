@@ -1,6 +1,6 @@
 {
 	"name": "__MSG_appName__",
-	"version": "2.0.4",
+	"version": "2.0.5",
 	"description": "__MSG_appDesc__",
 	"default_locale": "zh_CN",
 	"options_page": "options.html",
@@ -16,7 +16,6 @@
 	},
 	"permissions": [
 		"http://weibo.com/",
-		"http://t.sina.com.cn/",
 		"http://www.weibo.com/",
 		"tabs",
 		"notifications"
@@ -24,7 +23,7 @@
 	"background_page": "background.html",
 	"content_scripts": [
     {
-      "matches": ["http://weibo.com/*", "http://t.sina.com.cn/*", "http://www.weibo.com/*"],
+      "matches": ["http://weibo.com/*", "http://www.weibo.com/*"],
 	  "css": ["css/kong.css"],
       "js": ["jquery.min.js", "Weibo.user.js"],
 	  "run_at": "document_idle",

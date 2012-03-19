@@ -638,6 +638,14 @@ this.manifest = {
 		
 		{
             "tab": "关于",
+            "group": "已知Bug",
+            "name": "version",
+            "type": "description",
+            "text": "有人反应在【顶端导航条】中只【隐藏左侧链接】，会导致搜索框遮住微博图标。我测试暂时没有发现这个问题(微博新控 v2.0.4 + Chrome v17.0.963.79 + 新浪微博标准版、体验版)"
+        },
+		
+		{
+            "tab": "关于",
             "group": "历史更新",
             "name": "version",
             "type": "description",
