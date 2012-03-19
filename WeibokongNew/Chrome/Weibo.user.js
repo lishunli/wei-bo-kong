@@ -1,6 +1,6 @@
 ﻿// WeiboKongNew
-// version 2.0.4
-// 2012-03-11
+// version 2.0.5
+// 2012-03-20
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -8,10 +8,9 @@
 // @description   
 // @include       http://weibo.com/*
 // @include		  http://www.weibo.com/*
-// @include		  http://t.sina.com.cn/*
 // ==/UserScript==
 
-7
+
 /*define global extension variables*/
 var VERSION = chrome.i18n.getMessage("appVersion");
 var UPDATE = chrome.i18n.getMessage("appChangelog");
@@ -81,6 +80,8 @@ function rightside(options) {
 			$("#ads_47").hide();
 			$("#ads_37").hide();
 			$("#ads_36").hide();
+			$('div[ad-data]').hide();
+
 		}
 		if ( options['hide_right_tips'] == true ) {
 			$("#pl_content_userTips").hide();
@@ -191,8 +192,6 @@ function mainboard(options) {
 	if ( options['hide_main_nav'] == true ) {
 		$('div[node-type="feed_nav"]').hide();
 	}
-	
-	
 	if ( options['hide_main_micro'] == true ) {
 		$(".info.W_linkb.W_textb").hide();
 	}
@@ -351,6 +350,7 @@ function others(options) {
 	}
 	if ( options['hide_other_bot'] == true ) {
 		$(".global_footer.global_footer_narrow").hide();
+		$(".global_footer").hide();
 	}
 }
 

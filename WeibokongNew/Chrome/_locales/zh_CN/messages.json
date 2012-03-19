@@ -5,22 +5,22 @@
   },
   
   "appDesc": {
-    "message": "自定义你的新浪微博界面. 可以根据需要去除页面上大部分元素, 内容过滤系统帮助屏蔽指定用户, 桌面提醒功能让你不错过任何好友更新, 让你的新浪微博变得更加简洁!", 
+    "message": "自定义你的新浪微博界面. 可以根据需要去除页面上大部分元素, 内容过滤系统帮助屏蔽指定用户, 桌面提醒功能让你不错过任何好友更新, 微博新控让你的新浪微博变得更加简洁!", 
     "description":"App description."
   },
   
   "appVersion": {
-	"message": "2.0.4", 
+	"message": "2.0.5", 
     "description":"App version."
   },
   
   "appChangelog": {
-	"message": "+新增消息提醒功能！(COOL)<br>*修复无法隐藏[可能感兴趣的微群]的问题<br>*修复[顶端导航条]-[隐藏左侧链接]引起的界面错误<br>-移除了[过滤用户]功能(新浪微博已有内置屏蔽功能，在[帐号设置]-[隐私设置]-[屏蔽设置])<br>", 
+	"message": "+隐藏右侧边栏偶尔会出现的天猫广告<br>-禁用了桌面提醒的音效<br>*修复了桌面提示乱码<br>-移出了对t.sina.com.cn这一域名的支持<br>-移出了一些不必要文件，减小了扩展体积<br>", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2012-03-11", 
+	"message": "2012-03-20", 
     "description":"App release date."
   }
 }
