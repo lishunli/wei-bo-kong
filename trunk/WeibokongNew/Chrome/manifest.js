@@ -1,99 +1,99 @@
-this.manifest = {
-    "name": "Î¢²©¿Ø",
+ï»¿this.manifest = {
+    "name": "å¾®åšæ§",
     "icon": "icon.png",
 	
     "settings": [
 		{
-            "tab": "»ù±¾ÉèÖÃ",
-            "group": "È«¾ÖÉèÖÃ",
+            "tab": "åŸºæœ¬è®¾ç½®",
+            "group": "å…¨å±€è®¾ç½®",
             "name": "enable_all",
             "type": "checkbox",
-            "label": "ÆôÓÃÎ¢²©¿Ø"
+            "label": "å¯ç”¨å¾®åšæ§"
         },
 		
 		/*
 			Top
 		*/
 		{
-            "tab": "¶¥¶Ëµ¼º½Ìõ",
-            "group": "È«¾ÖÉèÖÃ",
+            "tab": "é¡¶ç«¯å¯¼èˆªæ¡",
+            "group": "å…¨å±€è®¾ç½®",
             "name": "hide_top",	
             "type": "checkbox",
-            "label": "Òş²ØËùÓĞÔªËØ"
+            "label": "éšè—æ‰€æœ‰å…ƒç´ "
         },
 		{
-            "tab": "¶¥¶Ëµ¼º½Ìõ",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "é¡¶ç«¯å¯¼èˆªæ¡",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_top_logo",
             "type": "checkbox",
-            "label": "Òş²ØĞÂÀËÍ¼±ê"
+            "label": "éšè—æ–°æµªå›¾æ ‡"
         },
 		{
-            "tab": "¶¥¶Ëµ¼º½Ìõ",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "é¡¶ç«¯å¯¼èˆªæ¡",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_top_left",
             "type": "checkbox",	
-            "label": "Òş²Ø×ó²àÁ´½Ó<a style='color:red'>[Fixed]</a>"
+            "label": "éšè—å·¦ä¾§é“¾æ¥"
         },
 		{
-            "tab": "¶¥¶Ëµ¼º½Ìõ",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "é¡¶ç«¯å¯¼èˆªæ¡",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_top_search",
             "type": "checkbox",	
-            "label": "Òş²ØËÑË÷À¸"
+            "label": "éšè—æœç´¢æ "
         },
 		{
-            "tab": "¶¥¶Ëµ¼º½Ìõ",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "é¡¶ç«¯å¯¼èˆªæ¡",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_top_right",
             "type": "checkbox",	
-            "label": "Òş²ØÓÒ²àÁ´½Ó"
+            "label": "éšè—å³ä¾§é“¾æ¥"
         },
 		{
-            "tab": "¶¥¶Ëµ¼º½Ìõ",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "é¡¶ç«¯å¯¼èˆªæ¡",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_top_tips",
             "type": "checkbox",	
-            "label": "Òş²ØĞ¡ÌáÊ¾"
+            "label": "éšè—å°æç¤º"
         },
 		
 		/*
 			Left
 		*/
 		{
-            "tab": "ÌåÑé°æ×ó²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "ä½“éªŒç‰ˆå·¦ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_left_info",
             "type": "checkbox",
-            "label": "Òş²ØÓÃ»§ĞÅÏ¢"
+            "label": "éšè—ç”¨æˆ·ä¿¡æ¯"
         },
 		{
-            "tab": "ÌåÑé°æ×ó²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "ä½“éªŒç‰ˆå·¦ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_left_nav",
             "type": "checkbox",
-            "label": "Òş²Øµ¼º½À¸"
+            "label": "éšè—å¯¼èˆªæ "
         },
 		{
-            "tab": "ÌåÑé°æ×ó²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "ä½“éªŒç‰ˆå·¦ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_left_link",
             "type": "checkbox",
-            "label": "Òş²ØÆäÓàÁ´½Ó"
+            "label": "éšè—å…¶ä½™é“¾æ¥"
         },
 		{
-            "tab": "ÌåÑé°æ×ó²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "ä½“éªŒç‰ˆå·¦ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_left_game",
             "type": "checkbox",
-            "label": "Òş²ØÎ¢²©ÓÎÏ·"
+            "label": "éšè—å¾®åšæ¸¸æˆ"
         },
 		{
-            "tab": "ÌåÑé°æ×ó²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "ä½“éªŒç‰ˆå·¦ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_left_app",
             "type": "checkbox",
-            "label": "Òş²ØÎ¢²©Ó¦ÓÃ"
+            "label": "éšè—å¾®åšåº”ç”¨"
         },
 		
 		
@@ -101,503 +101,503 @@ this.manifest = {
 			Right
 		*/
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "È«¾ÖÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "å…¨å±€è®¾ç½®",
             "name": "hide_right",
             "type": "checkbox",
-            "label": "Òş²ØËùÓĞÔªËØ"
+            "label": "éšè—æ‰€æœ‰å…ƒç´ "
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "È«¾ÖÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "å…¨å±€è®¾ç½®",
             "name": "hide_right_ads",
             "type": "checkbox",
-            "label": "Òş²Ø¹ã¸æ"
+            "label": "éšè—å¹¿å‘Š<a style='color:red'>[Fixed]</a>"
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_tips",
             "type": "checkbox",
-            "label": "Òş²ØĞ¡ÌáÊ¾"
+            "label": "éšè—å°æç¤º"
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_info",
             "type": "checkbox",
-            "label": "Òş²Ø¸öÈË×ÊÁÏ"
+            "label": "éšè—ä¸ªäººèµ„æ–™"
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_mood",
             "type": "checkbox",
-            "label": "Òş²ØĞ´ĞÄÇé"
+            "label": "éšè—å†™å¿ƒæƒ…"
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_medals",
             "type": "checkbox",
-            "label": "Òş²ØÑ«ÕÂ"
+            "label": "éšè—å‹‹ç« "
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_nav",
             "type": "checkbox",
-            "label": "Òş²ØÓÒ²àµ¼º½"
+            "label": "éšè—å³ä¾§å¯¼èˆª"
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_game",
             "type": "checkbox",
-            "label": "Òş²ØÎ¢ÓÎÏ·"
+            "label": "éšè—å¾®æ¸¸æˆ"
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_topic",
             "type": "checkbox",
-            "label": "Òş²ØÈÈÃÅ»°Ìâ"
+            "label": "éšè—çƒ­é—¨è¯é¢˜"
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_people",
             "type": "checkbox",
-            "label": "Òş²Ø¸ĞĞËÈ¤µÄÈË"
+            "label": "éšè—æ„Ÿå…´è¶£çš„äºº"
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_popuser",
             "type": "checkbox",
-            "label": "Òş²ØÈËÆøÓÃ»§"
+            "label": "éšè—äººæ°”ç”¨æˆ·"
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_interestgroup",
             "type": "checkbox",
-            "label": "Òş²Ø¿ÉÄÜ¸ĞĞËÈ¤µÄÎ¢Èº<a style='color:red'>[Fixed]</a>"
+            "label": "éšè—å¯èƒ½æ„Ÿå…´è¶£çš„å¾®ç¾¤"
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_allinone",
             "type": "checkbox",
-            "label": "Òş²ØÆäËûÍÆ¼ö"
+            "label": "éšè—å…¶ä»–æ¨è"
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_alltopic",
             "type": "checkbox",
-            "label": "Òş²Ø¹Ø×¢µÄ»°Ìâ"
+            "label": "éšè—å…³æ³¨çš„è¯é¢˜"
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_notice",
             "type": "checkbox",
-            "label": "Òş²Ø¹«¸æÀ¸"
+            "label": "éšè—å…¬å‘Šæ "
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_help",
             "type": "checkbox",
-            "label": "Òş²Ø°ïÖú"
+            "label": "éšè—å¸®åŠ©"
         },
 		
 		{
-            "tab": "ÓÒ²à±ßÀ¸",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å³ä¾§è¾¹æ ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_right_feedback",
             "type": "checkbox",
-            "label": "Òş²ØÒâ¼û·´À¡"
+            "label": "éšè—æ„è§åé¦ˆ"
         },
 		
 		/*
 			Main
 		*/
 		{
-            "tab": "Ö÷Ãæ°å",
-            "group": "ÓÅ»¯¹¦ÄÜ",
+            "tab": "ä¸»é¢æ¿",
+            "group": "ä¼˜åŒ–åŠŸèƒ½",
             "name": "hover_main_img",
             "type": "checkbox",
-            "label": "Êó±êĞü¸¡ÏÔÊ¾´óÍ¼"
+            "label": "é¼ æ ‡æ‚¬æµ®æ˜¾ç¤ºå¤§å›¾"
         },
 		
 		{
-            "tab": "Ö÷Ãæ°å",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "ä¸»é¢æ¿",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "enlarge_main_post",
             "type": "checkbox",
-            "label": "Ôö´ó·¢²¼À¸"
+            "label": "å¢å¤§å‘å¸ƒæ "
         },
 		
 		{
-            "tab": "Ö÷Ãæ°å",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "ä¸»é¢æ¿",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_main_post",
             "type": "checkbox",
-            "label": "Òş²Ø·¢²¼À¸"
+            "label": "éšè—å‘å¸ƒæ "
         },
 		
 		{
-            "tab": "Ö÷Ãæ°å",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "ä¸»é¢æ¿",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_main_title",
             "type": "checkbox",
-            "label": "Òş²Ø·¢²¼Æ÷±êÌâ"
+            "label": "éšè—å‘å¸ƒå™¨æ ‡é¢˜"
         },
 		
 		{
-            "tab": "Ö÷Ãæ°å",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "ä¸»é¢æ¿",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_main_tips",
             "type": "checkbox",
-            "label": "Òş²ØÍÆ¼ö"
+            "label": "éšè—æ¨è"
         },
 		
 		{
-            "tab": "Ö÷Ãæ°å",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "ä¸»é¢æ¿",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_main_nav",
             "type": "checkbox",
-            "label": "Òş²Ø·Ö×éµ¼º½"
+            "label": "éšè—åˆ†ç»„å¯¼èˆª"
         },
 		
 		{
-            "tab": "Ö÷Ãæ°å",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "ä¸»é¢æ¿",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_main_micro",
             "type": "checkbox",
-            "label": "¾«¼òÄ£Ê½(½öÏÔÊ¾Î¢²©ÕıÎÄ,Òş²Ø×ª·¢,ÊÕ²Ø,ÆÀÂÛµÈ¹¦ÄÜ)"
+            "label": "ç²¾ç®€æ¨¡å¼(ä»…æ˜¾ç¤ºå¾®åšæ­£æ–‡,éšè—è½¬å‘,æ”¶è—,è¯„è®ºç­‰åŠŸèƒ½)"
         },
 		
 		/*
 			Other
 		*/
 		{
-            "tab": "ÆäËü",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å…¶å®ƒ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_other_ads",
             "type": "checkbox",
-            "label": "Òş²Øµ×²¿¹ã¸æ"
+            "label": "éšè—åº•éƒ¨å¹¿å‘Š"
         },
 		
 		{
-            "tab": "ÆäËü",
-            "group": "ÏêÏ¸ÉèÖÃ",
+            "tab": "å…¶å®ƒ",
+            "group": "è¯¦ç»†è®¾ç½®",
             "name": "hide_other_bot",
             "type": "checkbox",
-            "label": "Òş²Øµ×²¿Á´½Ó"
+            "label": "éšè—åº•éƒ¨é“¾æ¥"
         },
 		
 		/*
 			Friend
 		*/
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "È«¾ÖÉèÖÃ",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "å…¨å±€è®¾ç½®",
             "name": "enable_friend",
             "type": "checkbox",
-            "label": "ÆôÓÃºÃÓÑÒ³ÃæÓÅ»¯"
+            "label": "å¯ç”¨å¥½å‹é¡µé¢ä¼˜åŒ–"
         },
 		
 		/*
 			Top
 		*/
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "¶¥¶Ëµ¼º½Ìõ",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "é¡¶ç«¯å¯¼èˆªæ¡",
             "name": "hide_top_friend",	
             "type": "checkbox",
-            "label": "Òş²ØËùÓĞÔªËØ"
+            "label": "éšè—æ‰€æœ‰å…ƒç´ "
         },
 		
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "¶¥¶Ëµ¼º½Ìõ",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "é¡¶ç«¯å¯¼èˆªæ¡",
             "name": "hide_top_logo_friend",
             "type": "checkbox",
-            "label": "Òş²ØĞÂÀËÍ¼±ê"
+            "label": "éšè—æ–°æµªå›¾æ ‡"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "¶¥¶Ëµ¼º½Ìõ",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "é¡¶ç«¯å¯¼èˆªæ¡",
             "name": "hide_top_left_friend",
             "type": "checkbox",	
-            "label": "Òş²Ø×ó²àÁ´½Ó"
+            "label": "éšè—å·¦ä¾§é“¾æ¥"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "¶¥¶Ëµ¼º½Ìõ",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "é¡¶ç«¯å¯¼èˆªæ¡",
             "name": "hide_top_search_friend",
             "type": "checkbox",	
-            "label": "Òş²ØËÑË÷À¸"
+            "label": "éšè—æœç´¢æ "
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "¶¥¶Ëµ¼º½Ìõ",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "é¡¶ç«¯å¯¼èˆªæ¡",
             "name": "hide_top_right_friend",
             "type": "checkbox",	
-            "label": "Òş²ØÓÒ²àÁ´½Ó"
+            "label": "éšè—å³ä¾§é“¾æ¥"
         },
 		
 		/*
 			Right
 		*/
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "ÓÒ²à±ßÀ¸",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "å³ä¾§è¾¹æ ",
             "name": "hide_right_info_friend",
             "type": "checkbox",
-            "label": "Òş²Ø¸öÈËĞÅÏ¢"
+            "label": "éšè—ä¸ªäººä¿¡æ¯"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "ÓÒ²à±ßÀ¸",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "å³ä¾§è¾¹æ ",
             "name": "hide_right_medal_friend",
             "type": "checkbox",
-            "label": "Òş²ØºÃÓÑ»ÕÕÂ"
+            "label": "éšè—å¥½å‹å¾½ç« "
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "ÓÒ²à±ßÀ¸",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "å³ä¾§è¾¹æ ",
             "name": "hide_right_follow_friend",
             "type": "checkbox",
-            "label": "Òş²Ø'¹Ø×¢TaµÄÈËÍ¬Ê±¹Ø×¢'"
+            "label": "éšè—'å…³æ³¨Taçš„äººåŒæ—¶å…³æ³¨'"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "ÓÒ²à±ßÀ¸",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "å³ä¾§è¾¹æ ",
             "name": "hide_right_bothfollow_friend",
             "type": "checkbox",
-            "label": "Òş²Ø'ÕâĞ©ÈËÒ²¹Ø×¢Ta'"
+            "label": "éšè—'è¿™äº›äººä¹Ÿå…³æ³¨Ta'"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "ÓÒ²à±ßÀ¸",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "å³ä¾§è¾¹æ ",
             "name": "hide_right_same_friend",
             "type": "checkbox",
-            "label": "Òş²Ø¹²Í¬ºÃÓÑ"
+            "label": "éšè—å…±åŒå¥½å‹"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "ÓÒ²à±ßÀ¸",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "å³ä¾§è¾¹æ ",
             "name": "hide_right_userinfo_friend",
             "type": "checkbox",
-            "label": "Òş²ØºÃÓÑĞÅÏ¢"
+            "label": "éšè—å¥½å‹ä¿¡æ¯"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "ÓÒ²à±ßÀ¸",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "å³ä¾§è¾¹æ ",
             "name": "hide_right_tag_friend",
             "type": "checkbox",
-            "label": "Òş²ØºÃÓÑ±êÇ©"
+            "label": "éšè—å¥½å‹æ ‡ç­¾"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "ÓÒ²à±ßÀ¸",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "å³ä¾§è¾¹æ ",
             "name": "hide_right_topic_friend",
             "type": "checkbox",
-            "label": "Òş²ØºÃÓÑ¹Ø×¢µÄ»°Ìâ"
+            "label": "éšè—å¥½å‹å…³æ³¨çš„è¯é¢˜"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "ÓÒ²à±ßÀ¸",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "å³ä¾§è¾¹æ ",
             "name": "hide_right_fan_friend",
             "type": "checkbox",
-            "label": "Òş²ØºÃÓÑ·ÛË¿"
+            "label": "éšè—å¥½å‹ç²‰ä¸"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "ÓÒ²à±ßÀ¸",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "å³ä¾§è¾¹æ ",
             "name": "hide_right_feedback_friend",
             "type": "checkbox",
-            "label": "Òş²ØÒâ¼û·´À¡"
+            "label": "éšè—æ„è§åé¦ˆ"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "ÓÒ²à±ßÀ¸",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "å³ä¾§è¾¹æ ",
             "name": "hide_right_report_friend",
             "type": "checkbox",
-            "label": "Òş²Ø¾Ù±¨"
+            "label": "éšè—ä¸¾æŠ¥"
         },
 		
 		/*
 			Main
 		*/
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "Ö÷Ãæ°å",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "ä¸»é¢æ¿",
             "name": "hide_main_relation_friend",
             "type": "checkbox",
-            "label": "Òş²Ø¹Ø×¢Çé¿ö"
+            "label": "éšè—å…³æ³¨æƒ…å†µ"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "Ö÷Ãæ°å",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "ä¸»é¢æ¿",
             "name": "hide_main_handle_friend",
             "type": "checkbox",
-            "label": "Òş²ØºÃÓÑ²Ù×÷"
+            "label": "éšè—å¥½å‹æ“ä½œ"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "Ö÷Ãæ°å",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "ä¸»é¢æ¿",
             "name": "hide_main_album_friend",
             "type": "checkbox",
-            "label": "Òş²ØºÃÓÑÏà²á"
+            "label": "éšè—å¥½å‹ç›¸å†Œ"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "Ö÷Ãæ°å",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "ä¸»é¢æ¿",
             "name": "hide_main_tab_friend",
             "type": "checkbox",
-            "label": "Òş²ØÎ¢²©/TAµÄ×ÊÁÏ"
+            "label": "éšè—å¾®åš/TAçš„èµ„æ–™"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "Ö÷Ãæ°å",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "ä¸»é¢æ¿",
             "name": "hide_main_filter_friend",
             "type": "checkbox",
-            "label": "Òş²ØÉ¸Ñ¡"
+            "label": "éšè—ç­›é€‰"
         },
 		
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "Ö÷Ãæ°å",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "ä¸»é¢æ¿",
             "name": "hide_main_micro_friend",
             "type": "checkbox",
-            "label": "¾«¼òÄ£Ê½(½öÏÔÊ¾Î¢²©ÕıÎÄ,Òş²Ø×ª·¢,ÊÕ²Ø,ÆÀÂÛµÈ¹¦ÄÜ)"
+            "label": "ç²¾ç®€æ¨¡å¼(ä»…æ˜¾ç¤ºå¾®åšæ­£æ–‡,éšè—è½¬å‘,æ”¶è—,è¯„è®ºç­‰åŠŸèƒ½)"
         },
 		
 		/*
 			Other
 		*/
 		{
-            "tab": "ºÃÓÑÒ³Ãæ",
-            "group": "ÆäËüÉèÖÃ",
+            "tab": "å¥½å‹é¡µé¢",
+            "group": "å…¶å®ƒè®¾ç½®",
             "name": "hide_other_bot_friend",
             "type": "checkbox",
-            "label": "Òş²Øµ×²¿Á´½Ó"
+            "label": "éšè—åº•éƒ¨é“¾æ¥"
         },
 		/*
 			Notification
 		*/
 		{
-            "tab": "ÏûÏ¢ÌáĞÑ",
-            "group": "È«¾ÖÉèÖÃ",
+            "tab": "æ¶ˆæ¯æé†’",
+            "group": "å…¨å±€è®¾ç½®",
             "name": "enable_notification",
             "type": "checkbox",
-            "label": "ÆôÓÃÏûÏ¢ÌáĞÑ<a style='color:red'>[New]</a>"
+            "label": "å¯ç”¨æ¶ˆæ¯æé†’"
         },
 		{
-            "tab": "ÏûÏ¢ÌáĞÑ",
-            "group": "×ÀÃæÌáĞÑ",
+            "tab": "æ¶ˆæ¯æé†’",
+            "group": "æ¡Œé¢æé†’",
             "name": "notification_post",
             "type": "checkbox",
-            "label": "ÓĞĞÂÎ¢²©Ê±<a style='color:red'>[New]</a>"
+            "label": "æœ‰æ–°å¾®åšæ—¶<a style='color:red'>[Fixed]</a>"
         },
 		{
-            "tab": "ÏûÏ¢ÌáĞÑ",
-            "group": "×ÀÃæÌáĞÑ",
+            "tab": "æ¶ˆæ¯æé†’",
+            "group": "æ¡Œé¢æé†’",
             "name": "notification_comment",
             "type": "checkbox",
-            "label": "ÓĞĞÂÆÀÂÛÊ±<a style='color:red'>[New]</a>"
+            "label": "æœ‰æ–°è¯„è®ºæ—¶<a style='color:red'>[Fixed]</a>"
         },
 		{
-            "tab": "ÏûÏ¢ÌáĞÑ",
-            "group": "×ÀÃæÌáĞÑ",
+            "tab": "æ¶ˆæ¯æé†’",
+            "group": "æ¡Œé¢æé†’",
             "name": "notification_atme",
             "type": "checkbox",
-            "label": "ÓĞĞÂ@Ê±<a style='color:red'>[New]</a>"
+            "label": "æœ‰æ–°@æ—¶<a style='color:red'>[Fixed]</a>"
         },
 		
 		{
-            "tab": "ÏûÏ¢ÌáĞÑ",
-            "group": "±êÌâÉÁË¸",
+            "tab": "æ¶ˆæ¯æé†’",
+            "group": "æ ‡é¢˜é—ªçƒ",
             "name": "notification_post_title",
             "type": "checkbox",
-            "label": "ÓĞĞÂÎ¢²©Ê±<a style='color:red'>[New]</a>"
+            "label": "æœ‰æ–°å¾®åšæ—¶"
         },
 		{
-            "tab": "ÏûÏ¢ÌáĞÑ",
-            "group": "±êÌâÉÁË¸",
+            "tab": "æ¶ˆæ¯æé†’",
+            "group": "æ ‡é¢˜é—ªçƒ",
             "name": "notification_comment_title",
             "type": "checkbox",
-            "label": "ÓĞĞÂÆÀÂÛÊ±<a style='color:red'>[New]</a>"
+            "label": "æœ‰æ–°è¯„è®ºæ—¶"
         },
 		{
-            "tab": "ÏûÏ¢ÌáĞÑ",
-            "group": "±êÌâÉÁË¸",
+            "tab": "æ¶ˆæ¯æé†’",
+            "group": "æ ‡é¢˜é—ªçƒ",
             "name": "notification_atme_title",
             "type": "checkbox",
-            "label": "ÓĞĞÂ@Ê±<a style='color:red'>[New]</a>"
+            "label": "æœ‰æ–°@æ—¶"
         },
 		
 		{
-            "tab": "ÏûÏ¢¹ıÂË",
-            "group": "¹ıÂË¹Ø¼ü×Ö",
+            "tab": "æ¶ˆæ¯è¿‡æ»¤",
+            "group": "è¿‡æ»¤å…³é”®å­—",
             "name": "enable_filter_keyword_origin",
             "type": "checkbox",
-            "label": "¹ıÂËÔ­´´ÄÚÈİ",
+            "label": "è¿‡æ»¤åŸåˆ›å†…å®¹",
         },
 		
 		{
-            "tab": "ÏûÏ¢¹ıÂË",
-            "group": "¹ıÂË¹Ø¼ü×Ö",
+            "tab": "æ¶ˆæ¯è¿‡æ»¤",
+            "group": "è¿‡æ»¤å…³é”®å­—",
             "name": "enable_filter_keyword_forward",
             "type": "checkbox",
-            "label": "¹ıÂË×ª·¢ÄÚÈİ",
+            "label": "è¿‡æ»¤è½¬å‘å†…å®¹",
         },
 		
 		{
-            "tab": "ÏûÏ¢¹ıÂË",
-            "group": "¹ıÂË¹Ø¼ü×Ö",
+            "tab": "æ¶ˆæ¯è¿‡æ»¤",
+            "group": "è¿‡æ»¤å…³é”®å­—",
             "name": "filter_keyword",
             "type": "text",
-            "label": "ÇëÊäÈëÏëÆÁ±ÎµÄ¹Ø¼ü×Ö",
-			"text": "ÒÔ°ë½Ç¶ººÅ,·Ö¸ô¹Ø¼ü×Ö",
+            "label": "è¯·è¾“å…¥æƒ³å±è”½çš„å…³é”®å­—",
+			"text": "ä»¥åŠè§’é€—å·,åˆ†éš”å…³é”®å­—",
 			"masked": "false"
         },
 		
@@ -605,67 +605,59 @@ this.manifest = {
 			About
 		*/
 		{
-            "tab": "¹ØÓÚ",
-            "group": "¹ØÓÚÎ¢²©¿Ø",
+            "tab": "å…³äº",
+            "group": "å…³äºå¾®åšæ§",
             "name": "thx",
             "type": "description",
-            "text": "·Ç³£¸ĞĞ»ÄúµÄÊ¹ÓÃ!"
+            "text": "éå¸¸æ„Ÿè°¢æ‚¨çš„ä½¿ç”¨!"
         },
 		
 		{
-            "tab": "¹ØÓÚ",
-            "group": "°æ±¾ĞÅÏ¢",
+            "tab": "å…³äº",
+            "group": "ç‰ˆæœ¬ä¿¡æ¯",
             "name": "version",
             "type": "description",
             "text": chrome.i18n.getMessage("appVersion")
         },
 		
 		{
-            "tab": "¹ØÓÚ",
-            "group": "·¢²¼Ê±¼ä",
+            "tab": "å…³äº",
+            "group": "å‘å¸ƒæ—¶é—´",
             "name": "version",
             "type": "description",
             "text": chrome.i18n.getMessage("appReleaseDate")
         },
 		
 		{
-            "tab": "¹ØÓÚ",
-            "group": "¸üĞÂÏêÇé",
+            "tab": "å…³äº",
+            "group": "æ›´æ–°è¯¦æƒ…",
             "name": "version",
             "type": "description",
             "text": chrome.i18n.getMessage("appChangelog")
         },
 		
 		{
-            "tab": "¹ØÓÚ",
-            "group": "ÒÑÖªBug",
+            "tab": "å…³äº",
+            "group": "å·²çŸ¥Bug",
             "name": "version",
             "type": "description",
-            "text": "ÓĞÈË·´Ó¦ÔÚ¡¾¶¥¶Ëµ¼º½Ìõ¡¿ÖĞÖ»¡¾Òş²Ø×ó²àÁ´½Ó¡¿£¬»áµ¼ÖÂËÑË÷¿òÕÚ×¡Î¢²©Í¼±ê¡£ÎÒ²âÊÔÔİÊ±Ã»ÓĞ·¢ÏÖÕâ¸öÎÊÌâ(Î¢²©ĞÂ¿Ø v2.0.4 + Chrome v17.0.963.79 + ĞÂÀËÎ¢²©±ê×¼°æ¡¢ÌåÑé°æ)"
+            "text": "æœ‰äººååº”åœ¨ã€é¡¶ç«¯å¯¼èˆªæ¡ã€‘ä¸­åªã€éšè—å·¦ä¾§é“¾æ¥ã€‘ï¼Œä¼šå¯¼è‡´æœç´¢æ¡†é®ä½å¾®åšå›¾æ ‡ã€‚æˆ‘æµ‹è¯•æš‚æ—¶æ²¡æœ‰å‘ç°è¿™ä¸ªé—®é¢˜(å¾®åšæ–°æ§ v2.0.4 + Chrome v17.0.963.79 + æ–°æµªå¾®åšæ ‡å‡†ç‰ˆã€ä½“éªŒç‰ˆ)"
         },
 		
 		{
-            "tab": "¹ØÓÚ",
-            "group": "ÀúÊ·¸üĞÂ",
+            "tab": "å…³äº",
+            "group": "ç›¸å…³ç½‘é¡µ",
             "name": "version",
             "type": "description",
-            "text": "<a href=\"http://code.google.com/p/wei-bo-kong/wiki/ChangelogforWeibokongNew\" target=\"blank\">µã´Ë·ÃÎÊÀúÊ·¸üĞÂ¼ÇÂ¼</a>"
+            "text": "<a href=\"http://t.ye11ow.me/\" target=\"blank\">è®¿é—®å®˜æ–¹åšå®¢</a><br><a href=\"http://t.ye11ow.me/chrome-weibokongnew/changelog/\" target=\"blank\">è®¿é—®å†å²æ›´æ–°è®°å½•</a><br><a href=\"http://chrome.google.com/webstore/detail/pimgjnopcjhodkapdnhlmgnjeaegdfam\" target=\"blank\">è®¿é—®å¾®åšæ–°æ§Chromeå•†åº—</a>"
         },
 		
-		{
-            "tab": "¹ØÓÚ",
-            "group": "·ÃÎÊChromeÉÌµê",
-            "name": "version",
-            "type": "description",
-            "text": "<a href=\"http://chrome.google.com/webstore/detail/pimgjnopcjhodkapdnhlmgnjeaegdfam\" target=\"blank\">µã´Ë·ÃÎÊÎ¢²©ĞÂ¿Ø@ChromeÉÌµê</a>"
-        },
-		
-		{
-            "tab": "¹ØÓÚ",
-            "group": "¹ØÓÚÎ¢²©¿Ø",
+	  {
+            "tab": "å…³äº",
+            "group": "å…³äºå¾®åšæ§",
             "name": "bug",
             "type": "description",
-            "text": "¹ØÓÚBugºÍ½¨Òé:Çë·¢ËÍÓÊ¼şÖÁye111111ow (at) gmail.com ·Ç³£¸ĞĞ»!"
+            "text": "å…³äºBugå’Œå»ºè®®:è¯·å‘é€é‚®ä»¶è‡³ye111111ow (at) gmail.com éå¸¸æ„Ÿè°¢!"
         },
 		
 
