@@ -1,6 +1,6 @@
 ﻿// WeiboKongNew
-// version 2.0.5
-// 2012-03-20
+// version 2.1.0
+// 2012-03-25
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -17,11 +17,61 @@ var UPDATE = chrome.i18n.getMessage("appChangelog");
 var DATE = chrome.i18n.getMessage("appReleaseDate");
 
 
+/* reading mode*/
+function reading( options ) {
+	if ( options["enable_reading_manual"] == true ) {
+		$("body").append( "<div class=\"kong_reading_button\" ><a id=\"kong_reading_button\" href=\"\" style=\"color:white\" onClick=\"if (document.getElementById('kong_reading_button').innerHTML == '启用阅读模式'){document.getElementById('kong_mask').style.display='block'; document.getElementsByClassName('feed_lists')[0].className += ' kong_read'; document.getElementById('kong_reading_button').innerHTML = '退出阅读模式'; return false;}else{document.getElementById('kong_reading_button').innerHTML = '启用阅读模式'; document.getElementById('kong_mask').style.display='none'; document.getElementsByClassName('feed_lists')[0].className = 'feed_lists W_linka W_texta'; return false;}\">启用阅读模式</a><div>" );
+		//$('ul[node-type="feedGroup"]').append("<li><a href=\"\" onClick=\"document.getElementById('kong_mask').style.display='block'; document.getElementsByClassName('feed_lists')[0].className += ' kong_read'; return false;\">启用阅读模式</a></li>");
+	}
+	if ( options["enable_reading_auto"] == true ) {
+		$(".kong_mask").show();
+		$(".feed_lists.W_linka.W_texta").addClass( "kong_read" );
+	}
+	if ( options["enable_reading_hotkey"] == true ) {
+		$("body").keypress(function(event) {
+			if ( $("*:focus").is("textarea") || $("*:focus").is("input") ){
+				return;
+			}
+		  	if ( event.which == 114) {
+		  		$(".kong_mask").show();
+				$(".feed_lists.W_linka.W_texta").addClass( "kong_read" );
+				if ( options["enable_reading_manual"] == true ) $("#kong_reading_button").html( "退出阅读模式" );
+				/*var children = $('div[node-type="feed_list"]').children();
+				children[0].className += " kong_current_item";
+				$('body').scrollTop( children[0].offsetTop );*/
+		  	}
+		  	/*
+		  	if ( event.which == 110) {
+		  		if ( $('.kong_current_item').length == 0 ) {
+		  			var children = $('div[node-type="feed_list"]').children();
+		  			children[0].className += " kong_current_item";
+					$('body').scrollTop( children[0].offsetTop );
+		  		}
+		  		$('.kong_current_item').addClass("kong_previous_item");
+		  		$('.kong_current_item').next().addClass( "kong_current_item" );
+		  		$(".kong_previous_item").removeClass( "kong_current_item" );
+				$('body').scrollTop( $('.kong_current_item').offset().top - 20);
+		  	}
+		  	*/
+		});
+		$("body").keydown(function(event) {
+			if ( $("*:focus").is("textarea") || $("*:focus").is("input") ){
+				return;
+			}
+		  	if ( event.which == 27) {
+		  		$(".kong_mask").hide();
+				$(".feed_lists.W_linka.W_texta").removeClass( "kong_read" );
+				if ( options["enable_reading_manual"] == true ) $("#kong_reading_button").html( "启用阅读模式" );
+		  	}
+		});
+		
+	}
+}
+
 /*operations for navigation bar on top*/
 function topnav(options) {
 	if ( options['hide_top'] == true ) {
-		$(".global_header").hide();
-		$(".layer_message_box").hide();
+		$("#pl_content_top").hide();
 	} else {
 		if ( options['hide_top_logo'] == true ) {
 			$(".logo").hide();
@@ -40,29 +90,27 @@ function topnav(options) {
 			$(".layer_message_box").hide();
 		}
 	}
+	t = setTimeout(function(){topnav(options);}, 2000 );
 }
 
 /*operations for navigation bar on lelf, only avaiable for 体验版*/
 function leftside(options) {
-	if ( false ) {
+	if ( options['hide_left_info'] == true ) {
+		$("#pl_leftNav_common div:first-child").hide();
 	}
-	else {
-		if ( options['hide_left_info'] == true ) {
-			$("#pl_leftNav_common div:first-child").hide();
-		}
-		if ( options['hide_left_nav'] == true ) {
-			$("#pl_leftNav_common div:first-child").next().hide();
-		}
-		if ( options['hide_left_link'] == true ) {
-			$("#pl_leftNav_common div:first-child").next().next().hide();
-		}
-		if ( options['hide_left_game'] == true ) {
-			$("#pl_leftNav_game").hide();
-		}
-		if ( options['hide_left_app'] == true ) {
-			$("#pl_leftNav_app").hide();
-		}
+	if ( options['hide_left_nav'] == true ) {
+		$("#pl_leftNav_common div:first-child").next().hide();
 	}
+	if ( options['hide_left_link'] == true ) {
+		$("#pl_leftNav_common div:first-child").next().next().hide();
+	}
+	if ( options['hide_left_game'] == true ) {
+		$("#pl_leftNav_game").hide();
+	}
+	if ( options['hide_left_app'] == true ) {
+		$("#pl_leftNav_app").hide();
+	}
+
 }
 
 /*operations for navigation bar on right*/
@@ -133,6 +181,7 @@ function rightside(options) {
 			$("#pl_common_feedback").hide();
 		}
 	}
+	t = setTimeout(function(){rightside(options);}, 2000 );
 }
 
 /*popup images*/
@@ -194,6 +243,9 @@ function mainboard(options) {
 	}
 	if ( options['hide_main_micro'] == true ) {
 		$(".info.W_linkb.W_textb").hide();
+	}
+	if ( options["enable_reading_indicator"] == true ) {
+		reading_indicator();
 	}
 	/*
 	if ( options['hide_main_forward'] == true ) {
@@ -340,7 +392,17 @@ function mainboard(options) {
 	}
 	
 	*/
-	
+}
+
+function reading_indicator() {
+	$('dl[action-type="feed_list_item"]').each( function (){
+		$(this).hover(function(){
+			$(this).addClass( "kong_current_item" );
+		},function(){
+			$(this).removeClass( "kong_current_item" );
+		});
+	});
+	t = setTimeout(function(){reading_indicator();}, 2000 );
 }
 
 /*other operations*/
@@ -357,16 +419,6 @@ function others(options) {
 
 /*filter functions*/
 function filter(options) {
-/*
-	if ( options['enable_filter'] == true ) {
-		if ( options['filter'] != "" ) {
-			var names = options['filter'].toString().split(",");
-			for (var i in names) {
-				$('a[title=\"' + names[i] + '\"]').parent().parent().hide();
-			}
-		}
-	}
-*/	
 	if ( options['enable_filter_keyword_origin'] == true ) {
 		if ( options['filter_keyword'] != "" ) {
 			var keywords = options['filter_keyword'].toString().split(",");
@@ -489,6 +541,7 @@ function friendpage(options) {
 		}
 		if ( options['hide_top_left_friend'] == true ) {
 			$(".logo").next().hide();
+			$(".search").css("margin-left", "150px");
 		}
 		if ( options['hide_top_search_friend'] == true ) {
 			$(".search").hide();
@@ -615,6 +668,8 @@ function doit(options) {
 	){
 		$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
 		$("<div><img id=\"kong_hover_img\" /></div>").appendTo("body");
+		$("<div id=\"kong_mask\" class=\"kong_mask\">hello</div>").appendTo("body");
+		reading( options );
 		topnav(options);
 		leftside(options);
 		rightside(options);

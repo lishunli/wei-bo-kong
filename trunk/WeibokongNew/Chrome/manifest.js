@@ -3,7 +3,7 @@
     "icon": "icon.png",
 	
     "settings": [
-		{
+      {
             "tab": "基本设置",
             "group": "全局设置",
             "name": "enable_all",
@@ -113,7 +113,7 @@
             "group": "全局设置",
             "name": "hide_right_ads",
             "type": "checkbox",
-            "label": "隐藏广告<a style='color:red'>[Fixed]</a>"
+            "label": "隐藏广告"
         },
 		
 		{
@@ -294,6 +294,13 @@
             "type": "checkbox",
             "label": "精简模式(仅显示微博正文,隐藏转发,收藏,评论等功能)"
         },
+      {
+            "tab": "主面板",
+            "group": "详细设置",
+            "name": "enable_reading_indicator",
+            "type": "checkbox",
+            "label": "添加阅读指示器<a style='color:red'>[New]</a>"
+      },
 		
 		/*
 			Other
@@ -350,7 +357,7 @@
             "group": "顶端导航条",
             "name": "hide_top_left_friend",
             "type": "checkbox",	
-            "label": "隐藏左侧链接"
+            "label": "隐藏左侧链接<a style='color:red'>[Fixed]</a>"
         },
 		
 		{
@@ -521,6 +528,65 @@
             "type": "checkbox",
             "label": "隐藏底部链接"
         },
+
+        /*
+                  Reading
+            */
+      {
+            "tab": "阅读模式",
+            "group": "全局设置",
+            "name": "enable_reading_auto",
+            "type": "checkbox",
+            "label": "自动打开阅读模式<a style='color:red'>[New]</a>"
+      },
+
+      {
+            "tab": "阅读模式",
+            "group": "全局设置",
+            "name": "b",
+            "type": "description",
+            "text": "*如果启用了该选项，请同时启用下面两个选项之一，否则就无法退出阅读模式",
+      },
+
+      {
+            "tab": "阅读模式",
+            "group": "全局设置",
+            "name": "enable_reading_manual",
+            "type": "checkbox",
+            "label": "在界面添加阅读模式开关按钮<a style='color:red'>[New]</a>"
+      },
+      {
+            "tab": "阅读模式",
+            "group": "全局设置",
+            "name": "enable_reading_hotkey",
+            "type": "checkbox",
+            "label": "启用快捷键<a style='color:red'>[New]</a>"
+      },
+
+      {
+            "tab": "阅读模式",
+            "group": "全局设置",
+            "name": "b",
+            "type": "description",
+            "text": "R ：打开阅读模式;<br> Esc ：退出阅读模式",
+      },
+
+      {
+            "tab": "阅读模式",
+            "group": "备注1",
+            "name": "b",
+            "type": "description",
+            "text": "阅读模式和[主面板]共享优化方案，如果你想更改阅读模式内部样式，请至[主面板]",
+      },
+
+      {
+            "tab": "阅读模式",
+            "group": "备注2",
+            "name": "b",
+            "type": "description",
+            "text": "阅读模式暂时在测试中，如果你有意见或建议请<a href=\"http://t.ye11ow.me/chrome-weibokongnew/feedback/\" target=\"blank\">猛击此处</a>",
+      },
+
 		/*
 			Notification
 		*/
@@ -536,21 +602,21 @@
             "group": "桌面提醒",
             "name": "notification_post",
             "type": "checkbox",
-            "label": "有新微博时<a style='color:red'>[Fixed]</a>"
+            "label": "有新微博时"
         },
 		{
             "tab": "消息提醒",
             "group": "桌面提醒",
             "name": "notification_comment",
             "type": "checkbox",
-            "label": "有新评论时<a style='color:red'>[Fixed]</a>"
+            "label": "有新评论时"
         },
 		{
             "tab": "消息提醒",
             "group": "桌面提醒",
             "name": "notification_atme",
             "type": "checkbox",
-            "label": "有新@时<a style='color:red'>[Fixed]</a>"
+            "label": "有新@时"
         },
 		
 		{
@@ -591,7 +657,7 @@
             "label": "过滤转发内容",
         },
 		
-		{
+	{
             "tab": "消息过滤",
             "group": "过滤关键字",
             "name": "filter_keyword",
@@ -657,7 +723,7 @@
             "group": "关于微博控",
             "name": "bug",
             "type": "description",
-            "text": "关于Bug和建议:请发送邮件至ye111111ow (at) gmail.com 非常感谢!"
+            "text": "关于Bug和建议:请发送邮件至ye111111ow (at) gmail.com 或<a href=\"http://t.ye11ow.me/chrome-weibokongnew/feedback/\" target=\"blank\">猛击此处</a>非常感谢!"
         },
 		
 

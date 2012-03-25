@@ -250,12 +250,24 @@
 		me = settings.manifest.hide_main_micro_friend.label;
 		me.addEventListener("mouseover", function(){hover("hide_main_micro");}, false);
 		me.addEventListener("mouseout", unhover, false);
+
+		me = settings.manifest.enable_reading_indicator.label;
+		me.addEventListener("mouseover", function(){hover("enable_reading_indicator");}, false);
+		me.addEventListener("mouseout", unhover, false);
 	
 		/*
 			Other
 		*/
 		me = settings.manifest.hide_other_bot_friend.label;
 		me.addEventListener("mouseover", function(){hover("hide_other_bot");}, false);
+		me.addEventListener("mouseout", unhover, false);
+
+		/*
+			Reading
+		*/
+
+		me = settings.manifest.enable_reading_manual.label;
+		me.addEventListener("mouseover", function(){hover("enable_reading_manual");}, false);
 		me.addEventListener("mouseout", unhover, false);
 
 		/*

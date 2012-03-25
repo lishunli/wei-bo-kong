@@ -10,17 +10,17 @@
   },
   
   "appVersion": {
-	"message": "2.0.5", 
+	"message": "2.1.0", 
     "description":"App version."
   },
   
   "appChangelog": {
-	"message": "+隐藏右侧边栏偶尔会出现的天猫广告<br>-禁用了桌面提醒的音效<br>*修复了桌面提示乱码<br>-移出了对t.sina.com.cn这一域名的支持<br>-移出了一些不必要文件，减小了扩展体积<br>", 
+	"message": "+新增\"阅读模式\"：去除多余元素，加宽微博条目！(COOL!)<br>+新增\"阅读指示器\"<br>*修复好友页面顶端导航条bug<br>*修复了点击\"我的首页\"，“@提到我的”等链接导致导航条、侧边栏优化失效的bug<br>", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2012-03-20", 
+	"message": "2012-03-25", 
     "description":"App release date."
   }
 }

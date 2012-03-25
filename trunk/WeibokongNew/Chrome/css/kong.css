@@ -25,6 +25,43 @@
 	right: 55px;
 }
 
+.kong_reading_button {
+	position: fixed;
+	top: 0px;
+	left: 10px;
+	z-index: 99999;
+	font-color: white;
+	width: 100px;
+	height: 20px;
+	padding: 10px;
+}
+
+.kong_read {
+	position: absolute;
+	z-index: 99999;
+	width: 80%;
+	left: 8%;
+	top: 35px;
+	background-color: #EEE;
+	border: 1px solid #0066cc;
+	padding: 20px;
+}
+.kong_mask {
+	position: absolute;
+	z-index: 1;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background-color: #000;
+	opacity: 0.40;
+}
+
+.kong_current_item {
+	border-left: 2px solid #4d90fe;
+}
+
 .kong_hr {
 	border: 1px dashed grey;
 }
