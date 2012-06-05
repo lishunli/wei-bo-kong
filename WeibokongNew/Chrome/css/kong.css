@@ -29,11 +29,17 @@
 	position: fixed;
 	top: 0px;
 	left: 10px;
-	z-index: 99999;
+	z-index: 99998;
 	font-color: white;
 	width: 100px;
 	height: 20px;
 	padding: 10px;
+}
+
+.kong_gotop_button {
+	position: absolute;
+	right: 0px;
+	z-index: 99999;
 }
 
 .kong_read {
