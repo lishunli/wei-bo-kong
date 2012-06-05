@@ -1,6 +1,6 @@
 ﻿// WeiboKongNew
-// version 2.1.0
-// 2012-03-25
+// version 2.1.1
+// 2012-05-17
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -24,8 +24,14 @@ function reading( options ) {
 		//$('ul[node-type="feedGroup"]').append("<li><a href=\"\" onClick=\"document.getElementById('kong_mask').style.display='block'; document.getElementsByClassName('feed_lists')[0].className += ' kong_read'; return false;\">启用阅读模式</a></li>");
 	}
 	if ( options["enable_reading_auto"] == true ) {
+		var reading_mote_width = parseInt( options["reading_mode_width"] );
+		if ( reading_mote_width == NaN ) reading_mote_width = 70;
 		$(".kong_mask").show();
 		$(".feed_lists.W_linka.W_texta").addClass( "kong_read" );
+		$(".feed_lists.W_linka.W_texta").css("width", reading_mote_width-3+"%");
+		$(".feed_lists.W_linka.W_texta").css("left", ((100-reading_mote_width)/2)+"%");
+		$(".W_gotop").css( "z-index", "99999" );
+		$(".W_gotop").css( "left", "60%" );
 	}
 	if ( options["enable_reading_hotkey"] == true ) {
 		$("body").keypress(function(event) {
@@ -33,8 +39,14 @@ function reading( options ) {
 				return;
 			}
 		  	if ( event.which == 114) {
-		  		$(".kong_mask").show();
+		  		var reading_mote_width = parseInt( options["reading_mode_width"] );
+				if ( reading_mote_width == NaN ) reading_mote_width = 70;
+				$(".kong_mask").show();
 				$(".feed_lists.W_linka.W_texta").addClass( "kong_read" );
+				$(".feed_lists.W_linka.W_texta").css("width", reading_mote_width-3+"%");
+				$(".feed_lists.W_linka.W_texta").css("left", ((100-reading_mote_width)/2)+"%");
+				$(".W_gotop").css( "z-index", "99999" );
+				$(".W_gotop").css( "left", "60%" );
 				if ( options["enable_reading_manual"] == true ) $("#kong_reading_button").html( "退出阅读模式" );
 				/*var children = $('div[node-type="feed_list"]').children();
 				children[0].className += " kong_current_item";
@@ -61,6 +73,9 @@ function reading( options ) {
 		  	if ( event.which == 27) {
 		  		$(".kong_mask").hide();
 				$(".feed_lists.W_linka.W_texta").removeClass( "kong_read" );
+				$(".feed_lists.W_linka.W_texta").css("width", "100%");
+				$(".feed_lists.W_linka.W_texta").css("left", "0%");
+				$(".W_gotop").css( "left", "50%" );
 				if ( options["enable_reading_manual"] == true ) $("#kong_reading_button").html( "启用阅读模式" );
 		  	}
 		});
@@ -141,42 +156,87 @@ function rightside(options) {
 			$("#pl_content_mood").hide();
 		}
 		if ( options['hide_right_medals'] == true ) {
+			//old
 			$("#pl_content_medal").hide();
+			//new
+			$("#pl_rightmod_medal").hide();
 		}
 		if ( options['hide_right_nav'] == true ) {
 			$("#pl_nav_outlookBar").hide();
 		}
+		//old
 		if ( options['hide_right_game'] == true ) {
 			$('#pl_common_fun').hide();
 		}
 		if ( options['hide_right_topic'] == true ) {
-			$('#pl_content_promotetopic').hide();
+			if ( options['hide_right_alltopic'] == true ) {
+				$('#trustPagelete_zt_hottopic').hide(); 
+			}
+			else {
+				//old
+				$('#pl_content_promotetopic').hide();
+
+				options['class_data'] = $('li[action-data="index=0"]').attr( "class" );
+				$('li[action-data="index=0"]').hide();
+				$('li[action-data="index=1"]').attr( "class", options['class_data'] );
+				$('#pl_topic_followTopic .content div:nth-child(1)').hide();
+				$('#pl_topic_followTopic .content div:nth-child(2)').show();
+			}
 		}
 		if ( options['hide_right_people'] == true ) {
+			//old
 			$('#pl_content_homeInterest').hide();
+			//new
+			$('#trustPagelete_recom_interest').hide();
 		}
 		if ( options['hide_right_popuser'] == true ) {
 			$('#pl_relation_recommendPopularUsers').hide();
 		}
-		
 		if ( options['hide_right_interestgroup'] == true ) {
+			//old
 			$('#pl_common_thirdmodule_1005').hide();
+
+			if ( options['hide_right_activities'] == true &&  options['hide_right_apps'] == true ) {
+				$('#trustPagelete_recom_allinone').hide();
+			}
+			else {
+				$('li[action-data="type=group&flag=0"]').hide();
+				$('.W_rightModule2 .content div:nth-child(1)').hide();
+			}
 		}
+		if ( options['hide_right_activities'] == true ) {
+			$('li[action-data="type=event&flag=1"]').hide();
+			$('.W_rightModule2 .content div:nth-child(2)').hide();
+		}
+		if ( options['hide_right_apps'] == true ) {
+			$('li[action-data="type=app&flag=2"]').hide();
+			$(',W_rightModule2 .content div:nth-child(3)').hide();
+		}
+		//old
 		if ( options['hide_right_allinone'] == true ) {
 			$('#pl_content_allInOne').hide();
 		}
-		
 		if ( options['hide_right_alltopic'] == true ) {
+			//old
 			$('#pl_content_topic').hide();
+			//new
+			$('li[action-data="index=1"]').hide();
 		}
 		if ( options['hide_right_notice'] == true ) {
+			//old
 			$("#pl_common_reportentry").hide();
 			$("#pl_common_noticeboard").hide();
+			//new
+			$("#pl_rightmod_noticeboard").hide();
 		}
 		if ( options['hide_right_help'] == true ) {
+			//old
 			$("#pl_common_help").hide();
+			//new
+			$("#pl_rightmod_help").hide();
+			
 		}
-		
+		//old
 		if ( options['hide_right_feedback'] == true ) {
 			$("#pl_common_feedback").hide();
 		}
@@ -193,9 +253,9 @@ function hoverimg()
 			var y = event.clientY + document.body.scrollTop;
 				
 			$("#kong_hover_img").attr( "src", $(this).attr( "src" ).replace( "thumbnail", "bmiddle"  ) );
-			$("#kong_hover_img").css( "top", y - 50 );
-			$("#kong_hover_img").css( "left", x + 150 );
-			$("#kong_hover_img").css( "position", "absolute" );
+			$("#kong_hover_img").css( "top", "40px" );
+			$("#kong_hover_img").css( "right", "100px" );
+			$("#kong_hover_img").css( "position", "fixed" );
 			$("#kong_hover_img").css( "border", "3px solid white" );
 			$("#kong_hover_img").show();
 		},function(){
@@ -467,67 +527,89 @@ function checkUpdate() {
 
 /* blink title */
 function blink_info(msg) {
-	var timeoutId = setInterval(function() {
-        document.title = document.title == msg ? '【您有新消息】' : msg;
-    }, 1000);
+	for (i=0;i<15;i++) {
+		timer = setTimeout("", 1000);
+		document.title = document.title == msg ? '【您有新消息】' : msg;
+	}
 }
 
 /* notification */
-function checkNew(notified1,notified2,notified3,options) {
-	var html = $("a[action-type='feed_list_newBar']").html();
-	var flag = false;
-	if ( html != null && html.indexOf("点击查看") != -1 ) {
-		if ( options['notification_post'] == true ) {
-			flag = true;
-			if ( notified1 == false ) {
-				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'post'}, function(){});
-				notified1 = true;
+function checkNew(notified1,notified2,notified3,notified4,options) {
+	if ( $("a[action-type='feed_list_newBar']").css( "display" ) == "none" ) {
+		document.title = "我的首页 新浪微博-随时随地分享身边的新鲜事儿";
+	}
+	else {
+		var html = $("a[action-type='feed_list_newBar']").html();
+		var flag = false;
+		if ( html != null && html.indexOf("点击查看") != -1 ) {
+			if ( options['notification_post'] == true ) {
+				flag = true;
+				if ( notified1 == false ) {
+					chrome.extension.sendRequest({'action' : 'notify', 'type' : 'post'}, function(){});
+					notified1 = true;
+				}
 			}
-		}
-		if ( flag == false ) notified1 = false;
-		if ( options['notification_post_title'] == true ) {
-			blink_info("【新微博！】");
+			if ( flag == false ) notified1 = false;
+			if ( options['notification_post_title'] == true ) {
+				blink_info("【新微博】");
+				global_notification = true;
+			}
 		}
 	}
-
-	html = $(".layer_message_box").html();
-	if ( html != null ) {
-		flag = false;
-		if ( options['notification_comment'] == true && html.indexOf("查看评论") != -1 ) {
-			flag = true;
-			if ( notified2 == false ) {
-				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'comment'}, function(){});
-				notified2 = true;
+	if ( $(".layer_message_box").css( "display" ) == "none" ) {
+		document.title = "我的首页 新浪微博-随时随地分享身边的新鲜事儿";
+	}
+	else {
+		html = $(".layer_message_box").html();
+		if ( html != null ) {
+			flag = false;
+			if ( options['notification_comment'] == true && html.indexOf("查看评论") != -1 ) {
+				flag = true;
+				if ( notified2 == false ) {
+					chrome.extension.sendRequest({'action' : 'notify', 'type' : 'comment'}, function(){});
+					notified2 = true;
+				}
 			}
-		}
-		if ( flag == false ) notified2 = false;
-		flag = false;
-		if ( options['notification_atme'] == true && html.indexOf("查看@我") != -1 ) {
-			flag = true;
-			if ( notified3 == false ) {
-				chrome.extension.sendRequest({'action' : 'notify', 'type' : 'atme'}, function(){});
-				notified3 = true;
+			if ( flag == false ) notified2 = false;
+			flag = false;
+			if ( options['notification_atme'] == true && html.indexOf("查看@我") != -1 ) {
+				flag = true;
+				if ( notified3 == false ) {
+					chrome.extension.sendRequest({'action' : 'notify', 'type' : 'atme'}, function(){});
+					notified3 = true;
+				}
 			}
-		}
-		if ( flag == false ) notified3 = false;
-		if ( options['notification_comment_title']  == true && html.indexOf("查看评论") != -1 ) {
-			blink_info("【新评论！】");
-		}
-		if ( options['notification_atme_title']  == true && html.indexOf("查看@我") != -1 ) {
-			blink_info("【新@提到我！】");
+			if ( flag == false ) notified3 = false;
+			flag = false;
+			if ( options['notification_msg_title'] == true && html.indexOf("查看私信") != -1 ) {
+				flag = true;
+				if ( notified4 == false ) {
+					chrome.extension.sendRequest({'action' : 'notify', 'type' : 'msg'}, function(){});
+					notified4 = true;
+				}
+			}
+			if ( flag == false ) notified3 = false;
+			if ( options['notification_comment_title']  == true && html.indexOf("查看评论") != -1 ) {
+				blink_info("【新评论】");
+			}
+			if ( options['notification_atme_title']  == true && html.indexOf("查看@我") != -1 ) {
+				blink_info("【新@提到我】");
+			}
+			if ( options['notification_msg_title']  == true && html.indexOf("查看私信") != -1 ) {
+				blink_info("【新私信】");
+			}
 		}
 	}
-	//var intervals = options['notification_intervals'];
-	//if ( intervals < 10 ) intervals = 10;
+	
 	var intervals = 10;
-	t = setTimeout(function(){checkNew(notified1,notified2,notified3,options);}, intervals * 1000 );
+	t = setTimeout(function(){checkNew(notified1,notified2,notified3,notified4,options);}, intervals * 1000 );
 }
 
 function notification(options) {
 	if ( options['enable_notification'] == false ) {
 		return;
 	}
-	checkNew(false,false,false,options);
+	checkNew(false,false,false,false,options);
 }
 
 /* */
@@ -657,7 +739,6 @@ function searchpage(options) {
 function doit(options) {
 	checkUpdate();
 	if ( options['enable_all'] == false ) return;
-	
 	if ( $(document).attr('title').match("我的首页") || $(document).attr('title').match("我的首頁") ||
 		 $(document).attr('title').match("@我的微博") || $(document).attr('title').match("@我的微博") ||
 		 $(document).attr('title').match("@我的评论") || $(document).attr('title').match("@我的評論") ||

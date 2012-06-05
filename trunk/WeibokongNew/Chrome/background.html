@@ -65,6 +65,13 @@
 					);
 					notification.show();
 				}
+				else if ( request.type == 'msg') {
+					var notification = chrome.extension.getURL("notification/msg.html");
+					var notification = webkitNotifications.createHTMLNotification(
+					  notification 
+					);
+					notification.show();
+				}
 			}
 		};
 		chrome.extension.onRequest.addListener(onRequest);
