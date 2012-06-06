@@ -10,17 +10,33 @@
             "type": "checkbox",
             "label": "启用微博控"
         },
+
+        {
+            "tab": "基本设置",
+            "group": "v2.1.2更新详情",
+            "name": "version",
+            "type": "description",
+            "text": chrome.i18n.getMessage("appChangelog")
+      },
 		
 		/*
 			Top
 		*/
-		{
+	{
             "tab": "顶端导航条",
             "group": "全局设置",
             "name": "hide_top",	
             "type": "checkbox",
             "label": "隐藏所有元素"
-        },
+      },
+
+      {
+            "tab": "顶端导航条",
+            "group": "全局设置",
+            "name": "disable_top_float",     
+            "type": "checkbox",
+            "label": "固定导航条(禁止导航条随屏幕滚动) <strong style='color:red'>[New]</strong>"
+      },
 		{
             "tab": "顶端导航条",
             "group": "详细设置",
@@ -269,13 +285,21 @@
             "label": "隐藏勋章"
         },
             
-            {
+      {
             "tab": "右侧边栏",
             "group": "新版设置",
             "name": "hide_right_nav",
             "type": "checkbox",
             "label": "隐藏导航"
-        },
+      },
+
+      {
+            "tab": "右侧边栏",
+            "group": "新版设置",
+            "name": "hide_right_promotion",
+            "type": "checkbox",
+            "label": "隐藏邀请好友"
+      },
       
       {
             "tab": "右侧边栏",
@@ -354,7 +378,7 @@
             "group": "优化功能",
             "name": "hover_main_img",
             "type": "checkbox",
-            "label": "鼠标悬浮显示大图<a style='color:red'>[Fixed]</a>"
+            "label": "鼠标悬浮显示大图"
         },
 		
 		{
@@ -697,7 +721,7 @@
             "group": "阅读模式宽度",
             "name": "b",
             "type": "description",
-            "text": "*占屏幕百分比，如70就是占屏幕70%宽度。需要刷新页面才能生效<a style='color:red'>[New]</a>",
+            "text": "*占屏幕百分比，如70就是占屏幕70%宽度。需要刷新页面才能生效",
       },
 
       {
@@ -742,7 +766,7 @@
             "group": "全局设置",
             "name": "b",
             "type": "description",
-            "text": "*消息提醒持续时间(秒)<a style='color:red'>[New]</a>",
+            "text": "*消息提醒持续时间(秒)",
       },
 		{
             "tab": "消息提醒",
@@ -770,7 +794,7 @@
             "group": "桌面提醒",
             "name": "notification_msg",
             "type": "checkbox",
-            "label": "有新私信时<a style='color:red'>[New]</a>"
+            "label": "有新私信时"
         },
 		
 		{
@@ -799,7 +823,7 @@
             "group": "标题闪烁",
             "name": "notification_msg_title",
             "type": "checkbox",
-            "label": "有新私信时<a style='color:red'>[New]</a>"
+            "label": "有新私信时"
         },
 		{
             "tab": "消息过滤",
@@ -854,21 +878,21 @@
             "text": chrome.i18n.getMessage("appReleaseDate")
         },
 		
-		{
+	{
             "tab": "关于",
             "group": "更新详情",
             "name": "version",
             "type": "description",
             "text": chrome.i18n.getMessage("appChangelog")
-        },
+      },
 		
-		{
+	{
             "tab": "关于",
             "group": "已知Bug",
             "name": "version",
             "type": "description",
-            "text": "阅读模式下暂时无法转发、收藏"
-        },
+            "text": "1. 阅读模式下暂时无法转发、收藏<br/>2. 有用户反应桌面提醒乱码，我这里测试没有出现问题。如果你的桌面提醒有出现乱码，请将chrome版本告诉我，谢谢！<br/>"
+      },
 		
 		{
             "tab": "关于",

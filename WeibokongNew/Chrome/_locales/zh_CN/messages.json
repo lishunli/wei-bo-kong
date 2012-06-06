@@ -10,17 +10,17 @@
   },
   
   "appVersion": {
-	"message": "2.1.1", 
+	"message": "2.1.2", 
     "description":"App version."
   },
   
   "appChangelog": {
-	"message": "+新增桌面提醒持续时间设置<br>+新增“新私信”桌面提醒<br>+新增阅读模式宽度设置<br>+新增阅读模式下的“回到顶部”按钮<br>*修复标题闪烁无法恢复的bug<br>*优化了“鼠标悬浮显示大图”功能<br>", 
+	"message": "+支持最近改版的右侧边栏优化<br/>+固定顶端导航条<br/>*有用户反应桌面提醒乱码，我这里测试没有出现问题。如果你的桌面提醒有出现乱码，请将chrome版本告诉我，谢谢", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2012-05-17", 
+	"message": "2012-06-05", 
     "description":"App release date."
   }
 }
