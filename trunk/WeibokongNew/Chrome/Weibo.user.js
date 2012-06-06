@@ -1,6 +1,6 @@
 ﻿// WeiboKongNew
-// version 2.1.1
-// 2012-05-17
+// version 2.1.2
+// 2012-06-05
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -88,9 +88,13 @@ function topnav(options) {
 	if ( options['hide_top'] == true ) {
 		$("#pl_content_top").hide();
 	} else {
+		if ( options['disable_top_float'] == true ) {
+			$(".global_header").css( "position", "absolute");
+		}
 		if ( options['hide_top_logo'] == true ) {
 			$(".logo").hide();
 		}
+		
 		if ( options['hide_top_left'] == true ) {
 			$(".logo").next().hide();
 			$(".search").css("margin-left", "150px");
@@ -163,6 +167,9 @@ function rightside(options) {
 		}
 		if ( options['hide_right_nav'] == true ) {
 			$("#pl_nav_outlookBar").hide();
+		}
+		if ( options['hide_right_promotion'] == true ) {
+			$("#pl_rightmod_promotion").hide();
 		}
 		//old
 		if ( options['hide_right_game'] == true ) {
