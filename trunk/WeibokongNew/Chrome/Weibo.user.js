@@ -1,6 +1,6 @@
 ﻿// WeiboKongNew
-// version 2.1.2
-// 2012-06-05
+// version 2.1.3
+// 2012-06-13
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -541,26 +541,25 @@ function blink_info(msg) {
 }
 
 /* notification */
-function checkNew(notified1,notified2,notified3,notified4,options) {
+function notification(options) {
+	if ( options['enable_notification'] == false ) {
+		return;
+	}
+	// 8	4 		2   	1
+	// 0 	0 		0 		0
+	// post comment atme  	msg
+	var notify_value = 0;
+	var new_post = false;
+	var new_comment = false;
+	var new_atme = false;
+	var new_msg = false;
 	if ( $("a[action-type='feed_list_newBar']").css( "display" ) == "none" ) {
 		document.title = "我的首页 新浪微博-随时随地分享身边的新鲜事儿";
 	}
 	else {
 		var html = $("a[action-type='feed_list_newBar']").html();
-		var flag = false;
 		if ( html != null && html.indexOf("点击查看") != -1 ) {
-			if ( options['notification_post'] == true ) {
-				flag = true;
-				if ( notified1 == false ) {
-					chrome.extension.sendRequest({'action' : 'notify', 'type' : 'post'}, function(){});
-					notified1 = true;
-				}
-			}
-			if ( flag == false ) notified1 = false;
-			if ( options['notification_post_title'] == true ) {
-				blink_info("【新微博】");
-				global_notification = true;
-			}
+			new_post = true;
 		}
 	}
 	if ( $(".layer_message_box").css( "display" ) == "none" ) {
@@ -569,54 +568,53 @@ function checkNew(notified1,notified2,notified3,notified4,options) {
 	else {
 		html = $(".layer_message_box").html();
 		if ( html != null ) {
-			flag = false;
-			if ( options['notification_comment'] == true && html.indexOf("查看评论") != -1 ) {
-				flag = true;
-				if ( notified2 == false ) {
-					chrome.extension.sendRequest({'action' : 'notify', 'type' : 'comment'}, function(){});
-					notified2 = true;
-				}
+			if ( html.indexOf("查看评论") != -1 ) {
+				new_comment = true;
 			}
-			if ( flag == false ) notified2 = false;
-			flag = false;
-			if ( options['notification_atme'] == true && html.indexOf("查看@我") != -1 ) {
-				flag = true;
-				if ( notified3 == false ) {
-					chrome.extension.sendRequest({'action' : 'notify', 'type' : 'atme'}, function(){});
-					notified3 = true;
-				}
+			if ( html.indexOf("查看@我") != -1 ) {
+				new_atme = true;
 			}
-			if ( flag == false ) notified3 = false;
-			flag = false;
-			if ( options['notification_msg_title'] == true && html.indexOf("查看私信") != -1 ) {
-				flag = true;
-				if ( notified4 == false ) {
-					chrome.extension.sendRequest({'action' : 'notify', 'type' : 'msg'}, function(){});
-					notified4 = true;
-				}
-			}
-			if ( flag == false ) notified3 = false;
-			if ( options['notification_comment_title']  == true && html.indexOf("查看评论") != -1 ) {
-				blink_info("【新评论】");
-			}
-			if ( options['notification_atme_title']  == true && html.indexOf("查看@我") != -1 ) {
-				blink_info("【新@提到我】");
-			}
-			if ( options['notification_msg_title']  == true && html.indexOf("查看私信") != -1 ) {
-				blink_info("【新私信】");
+			if ( html.indexOf("查看私信") != -1 ) {
+				new_msg = true;
 			}
 		}
 	}
-	
-	var intervals = 10;
-	t = setTimeout(function(){checkNew(notified1,notified2,notified3,notified4,options);}, intervals * 1000 );
-}
 
-function notification(options) {
-	if ( options['enable_notification'] == false ) {
-		return;
+	if ( options['notification_post_title'] == true && new_post == true ) {
+		blink_info("【新微博】");
 	}
-	checkNew(false,false,false,false,options);
+	else if ( options['notification_comment_title'] == true && new_comment == true ) {
+		blink_info("【新评论】");
+	}
+	else if ( options['notification_atme_title'] == true && new_atme == true ) {
+		blink_info("【新@我】");
+	}
+
+	if ( options['notification_post'] == true && new_post == true ) {
+		notify_value += 8;
+	}
+	if ( options['notification_comment'] == true && new_comment == true ) {
+		notify_value += 4;
+	}
+	if ( options['notification_atme'] == true && new_atme == true ) {
+		notify_value += 2;
+	}
+	if ( options['notification_msg'] == true && new_msg == true ) {
+		notify_value += 1;
+	}
+	if ( localStorage["notified"] != "0" ) {
+		var n_int = parseInt(localStorage["notified"]);
+		n_int--;
+		localStorage["notified"]= n_int;
+	}
+	else if ( notify_value != 0  ) {
+		if ( localStorage["notified"] == "0" ) {
+			chrome.extension.sendRequest({'action' : 'notify', 'value' : notify_value}, function(){});
+			localStorage["notified"] = "60";
+		}
+	}
+	var intervals = 10;
+	t = setTimeout(function(){notification(options);}, intervals * 1000 );
 }
 
 /* */
@@ -746,6 +744,7 @@ function searchpage(options) {
 function doit(options) {
 	checkUpdate();
 	if ( options['enable_all'] == false ) return;
+	localStorage["notified"] = "0";
 	if ( $(document).attr('title').match("我的首页") || $(document).attr('title').match("我的首頁") ||
 		 $(document).attr('title').match("@我的微博") || $(document).attr('title').match("@我的微博") ||
 		 $(document).attr('title').match("@我的评论") || $(document).attr('title').match("@我的評論") ||

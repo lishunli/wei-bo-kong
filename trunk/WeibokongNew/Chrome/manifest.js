@@ -3,21 +3,29 @@
     "icon": "icon.png",
 	
     "settings": [
-      {
+    {
             "tab": "基本设置",
             "group": "全局设置",
             "name": "enable_all",
             "type": "checkbox",
             "label": "启用微博控"
-        },
+    },
 
-        {
+    {
             "tab": "基本设置",
-            "group": "v2.1.2更新详情",
+            "group": "v" + chrome.i18n.getMessage("appVersion") + "更新详情",
             "name": "version",
             "type": "description",
-            "text": chrome.i18n.getMessage("appChangelog")
-      },
+            "text": chrome.i18n.getMessage("appChangelog") + "<br/>*庆祝该扩展发布一周年(2011-6 ~ 2012-6)，特此在首页打个广告"
+    },
+
+    {
+            "tab": "基本设置",
+            "group": "广告",
+            "name": "version",
+            "type": "description",
+            "text": "我将在2012年8月本科毕业，目前正在找工作（成都或者上海）。如果你有兴趣请联系我邮箱，我会把简历发给你，谢谢！"
+    },
 		
 		/*
 			Top
@@ -35,7 +43,7 @@
             "group": "全局设置",
             "name": "disable_top_float",     
             "type": "checkbox",
-            "label": "固定导航条(禁止导航条随屏幕滚动) <strong style='color:red'>[New]</strong>"
+            "label": "固定导航条(禁止导航条随屏幕滚动) "
       },
 		{
             "tab": "顶端导航条",
@@ -137,7 +145,7 @@
             "group": "关于新/旧版侧边栏",
             "name": "hide_right_tips",
             "type": "description",
-            "text": "2012-5月新浪微博右侧边栏进行了改版，如果你发现右侧边栏界面发生了变化、以前的优化失效，请使用\"新版设置\"进行优化。",
+            "text": "2012-5月新浪微博右侧边栏进行了改版，如果你发现右侧边栏界面发生了变化、以前的优化失效，请使用\"新版设置\"进行优化。扩展将于2个版本后停止对旧版侧边栏的支持，如果你的微博现在依然是旧版侧边栏，请给我发邮件，谢谢！",
         },
 		
 		{
@@ -748,7 +756,7 @@
             "group": "全局设置",
             "name": "enable_notification",
             "type": "checkbox",
-            "label": "启用消息提醒"
+            "label": "启用消息提醒 <strong style='color:red'>[Fixed]</strong>"
       },
       {
             "tab": "消息提醒",
@@ -818,14 +826,8 @@
             "type": "checkbox",
             "label": "有新@时"
         },
-        {
-            "tab": "消息提醒",
-            "group": "标题闪烁",
-            "name": "notification_msg_title",
-            "type": "checkbox",
-            "label": "有新私信时"
-        },
-		{
+	
+      {
             "tab": "消息过滤",
             "group": "过滤关键字",
             "name": "enable_filter_keyword_origin",
@@ -891,7 +893,7 @@
             "group": "已知Bug",
             "name": "version",
             "type": "description",
-            "text": "1. 阅读模式下暂时无法转发、收藏<br/>2. 有用户反应桌面提醒乱码，我这里测试没有出现问题。如果你的桌面提醒有出现乱码，请将chrome版本告诉我，谢谢！<br/>"
+            "text": "1. 阅读模式下暂时无法转发、收藏<br/>2. 关于消息提醒的延迟：这不是bug，因为受限制于扩展实现原理，如果想要即时弹出消息提醒，会消耗较大资源。因此该扩展会每10秒查看一次是否有新消息，这也就是延迟的原因<br/>3. 使用按钮打开阅读模式时，无法更改宽度"
       },
 		
 		{
