@@ -44,34 +44,37 @@
 				chrome.tabs.create({url: request.url, selected: tab.selected}, null);
 			}
 			else if (request.action == 'notify' ) {
-				if ( request.type == 'post') {
-					var notification = chrome.extension.getURL("notification/post.html");
-					var notification = webkitNotifications.createHTMLNotification(
-					  notification 
-					);
-					notification.show();
+				var icon = chrome.extension.getURL("img/icon/icon_48.png");
+				var title = "你有新消息";
+				var body = "";
+				var notify_value = request.value;
+				if ( notify_value > 7 ) {
+					body += "新微博\n";
+					notify_value -= 8;
 				}
-				else if ( request.type == 'comment') {
-					var notification = chrome.extension.getURL("notification/comment.html");
-					var notification = webkitNotifications.createHTMLNotification(
-					  notification 
-					);
-					notification.show();
+				if ( notify_value > 3 ) {
+					body += "新评论";
+					notify_value -= 4;
 				}
-				else if ( request.type == 'atme') {
-					var notification = chrome.extension.getURL("notification/atme.html");
-					var notification = webkitNotifications.createHTMLNotification(
-					  notification 
-					);
-					notification.show();
+				if ( notify_value > 1 ) {
+					body += "新@我\n";
+					notify_value -= 2;
 				}
-				else if ( request.type == 'msg') {
-					var notification = chrome.extension.getURL("notification/msg.html");
-					var notification = webkitNotifications.createHTMLNotification(
-					  notification 
-					);
-					notification.show();
+				if ( notify_value > 0 ) {
+					body += "新私信\n";
+					notify_value -= 1;
 				}
+				
+				var popup = webkitNotifications.createNotification( icon, title, body );
+				popup.replaceId = this.replaceId;
+				var settings = new Store("settings", {});
+     			var autoclose = settings.get( "notification_time" );
+				popup.ondisplay = function(event) {  
+                        setTimeout(function() {  
+                            event.currentTarget.cancel();  
+                        }, autoclose * 1000 );  
+                    };
+				popup.show();
 			}
 		};
 		chrome.extension.onRequest.addListener(onRequest);

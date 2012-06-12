@@ -10,17 +10,17 @@
   },
   
   "appVersion": {
-	"message": "2.1.2", 
+	"message": "2.1.3", 
     "description":"App version."
   },
   
   "appChangelog": {
-	"message": "+支持最近改版的右侧边栏优化<br/>+固定顶端导航条<br/>*有用户反应桌面提醒乱码，我这里测试没有出现问题。如果你的桌面提醒有出现乱码，请将chrome版本告诉我，谢谢", 
+	"message": "*完全重写了消息提醒模块，解决了桌面提醒乱码bug和一些有的没的bug", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2012-06-05", 
+	"message": "2012-06-13", 
     "description":"App release date."
   }
 }
