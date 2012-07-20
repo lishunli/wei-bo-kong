@@ -1,15 +1,3 @@
-#kong_update {
-	position: absolute;
-	bottom: 0px;
-	right: 50px;
-	width: 150px;
-	height:200px;
-	display: block;
-	border: solid 1px #E5E5E5;
-	background: white;
-	z-index:9;
-}
-
 #kong_title {
 	text-align: center;
 	font-weight: bold;
@@ -24,7 +12,7 @@
 	bottom:5px;
 	right: 55px;
 }
-
+/*
 .kong_reading_button {
 	position: fixed;
 	top: 0px;
@@ -35,7 +23,7 @@
 	height: 20px;
 	padding: 10px;
 }
-
+*/
 .kong_gotop_button {
 	position: absolute;
 	right: 0px;
@@ -44,24 +32,21 @@
 
 .kong_read {
 	position: absolute;
-	z-index: 99999;
-	width: 80%;
-	left: 8%;
-	top: 35px;
+	z-index: 9997;
+	left: 0px;
+	top: 0px;
 	background-color: #EEE;
-	border: 1px solid #0066cc;
-	padding: 20px;
 }
 .kong_mask {
 	position: absolute;
-	z-index: 1;
+	z-index: 9997;
 	top: 0px;
 	left: 0px;
 	width: 100%;
 	height: 100%;
 	display: none;
 	background-color: #000;
-	opacity: 0.40;
+	opacity: 0.60;
 }
 
 .kong_current_item {
