@@ -16,7 +16,7 @@
             "group": "v" + chrome.i18n.getMessage("appVersion") + "更新详情",
             "name": "version",
             "type": "description",
-            "text": chrome.i18n.getMessage("appChangelog") + "<br/>*庆祝该扩展发布一周年(2011-6 ~ 2012-6)，特此在首页打个广告"
+            "text": chrome.i18n.getMessage("appChangelog") + "<br/>*庆祝自己快毕业，特此在首页打个广告"
     },
 
     {
@@ -142,136 +142,7 @@
 
         {
             "tab": "右侧边栏",
-            "group": "关于新/旧版侧边栏",
-            "name": "hide_right_tips",
-            "type": "description",
-            "text": "2012-5月新浪微博右侧边栏进行了改版，如果你发现右侧边栏界面发生了变化、以前的优化失效，请使用\"新版设置\"进行优化。扩展将于2个版本后停止对旧版侧边栏的支持，如果你的微博现在依然是旧版侧边栏，请给我发邮件，谢谢！",
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_tips",
-            "type": "checkbox",
-            "label": "隐藏小提示"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_info",
-            "type": "checkbox",
-            "label": "隐藏个人资料"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_mood",
-            "type": "checkbox",
-            "label": "隐藏写心情"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_medals",
-            "type": "checkbox",
-            "label": "隐藏勋章"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_nav",
-            "type": "checkbox",
-            "label": "隐藏右侧导航"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_game",
-            "type": "checkbox",
-            "label": "隐藏微游戏"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_topic",
-            "type": "checkbox",
-            "label": "隐藏热门话题"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_people",
-            "type": "checkbox",
-            "label": "隐藏可能感兴趣的人"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_popuser",
-            "type": "checkbox",
-            "label": "隐藏人气用户"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_interestgroup",
-            "type": "checkbox",
-            "label": "隐藏可能感兴趣的微群"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_allinone",
-            "type": "checkbox",
-            "label": "隐藏其他推荐"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_alltopic",
-            "type": "checkbox",
-            "label": "隐藏关注的话题"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_notice",
-            "type": "checkbox",
-            "label": "隐藏公告栏"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_help",
-            "type": "checkbox",
-            "label": "隐藏帮助"
-        },
-		
-		{
-            "tab": "右侧边栏",
-            "group": "旧版设置",
-            "name": "hide_right_feedback",
-            "type": "checkbox",
-            "label": "隐藏意见反馈"
-        },
-
-
-      {
-            "tab": "右侧边栏",
-            "group": "新版设置",
+            "group": "详细设置",
             "name": "hide_right_info",
             "type": "checkbox",
             "label": "隐藏个人资料"
@@ -279,7 +150,7 @@
             
             {
             "tab": "右侧边栏",
-            "group": "新版设置",
+            "group": "详细设置",
             "name": "hide_right_mood",
             "type": "checkbox",
             "label": "隐藏写心情"
@@ -287,7 +158,7 @@
             
             {
             "tab": "右侧边栏",
-            "group": "新版设置",
+            "group": "详细设置",
             "name": "hide_right_medals",
             "type": "checkbox",
             "label": "隐藏勋章"
@@ -295,7 +166,7 @@
             
       {
             "tab": "右侧边栏",
-            "group": "新版设置",
+            "group": "详细设置",
             "name": "hide_right_nav",
             "type": "checkbox",
             "label": "隐藏导航"
@@ -303,7 +174,7 @@
 
       {
             "tab": "右侧边栏",
-            "group": "新版设置",
+            "group": "详细设置",
             "name": "hide_right_promotion",
             "type": "checkbox",
             "label": "隐藏邀请好友"
@@ -311,7 +182,7 @@
       
       {
             "tab": "右侧边栏",
-            "group": "新版设置",
+            "group": "详细设置",
             "name": "hide_right_people",
             "type": "checkbox",
             "label": "隐藏可能感兴趣的人"
@@ -319,7 +190,7 @@
             
       {
             "tab": "右侧边栏",
-            "group": "新版设置",
+            "group": "详细设置",
             "name": "hide_right_topic",
             "type": "checkbox",
             "label": "隐藏热门话题"
@@ -327,16 +198,23 @@
 
       {
             "tab": "右侧边栏",
-            "group": "新版设置",
+            "group": "详细设置",
             "name": "hide_right_alltopic",
             "type": "checkbox",
             "label": "隐藏关注的话题"
       },
-            
-         
+
       {
             "tab": "右侧边栏",
-            "group": "新版设置",
+            "group": "详细设置",
+            "name": "hide_right_vip",
+            "type": "checkbox",
+            "label": "隐藏会员专区"
+      },
+
+      {
+            "tab": "右侧边栏",
+            "group": "详细设置",
             "name": "hide_right_interestgroup",
             "type": "checkbox",
             "label": "隐藏微群"
@@ -344,7 +222,7 @@
 
       {
             "tab": "右侧边栏",
-            "group": "新版设置",
+            "group": "详细设置",
             "name": "hide_right_activities",
             "type": "checkbox",
             "label": "隐藏活动"
@@ -352,7 +230,7 @@
 
       {
             "tab": "右侧边栏",
-            "group": "新版设置",
+            "group": "详细设置",
             "name": "hide_right_apps",
             "type": "checkbox",
             "label": "隐藏应用"
@@ -360,7 +238,7 @@
 
       {
             "tab": "右侧边栏",
-            "group": "新版设置",
+            "group": "详细设置",
             "name": "hide_right_help",
             "type": "checkbox",
             "label": "隐藏玩转微博"
@@ -369,7 +247,7 @@
             
       {
             "tab": "右侧边栏",
-            "group": "新版设置",
+            "group": "详细设置",
             "name": "hide_right_notice",
             "type": "checkbox",
             "label": "隐藏公告栏"
@@ -674,78 +552,92 @@
         /*
                   Reading
             */
-      {
+      
+
+        {
+            "tab": "阅读模式",
+            "group": "全局设置",
+            "name": "enable_reading_mode",
+            "type": "checkbox",
+            "label": "启用阅读模式"
+        },
+
+        {
+            "tab": "阅读模式",
+            "group": "全局设置",
+            "name": "b",
+            "type": "description",
+            "text": "快捷键列表：<br/>R ：打开阅读模式;<br/> Esc ：退出阅读模式",
+        },
+
+        {
             "tab": "阅读模式",
             "group": "全局设置",
             "name": "enable_reading_auto",
             "type": "checkbox",
             "label": "自动打开阅读模式"
-      },
+        },
 
-      {
-            "tab": "阅读模式",
-            "group": "全局设置",
-            "name": "b",
-            "type": "description",
-            "text": "*如果启用了该选项，请同时启用下面两个选项之一，否则就无法退出阅读模式",
-      },
-
-      {
-            "tab": "阅读模式",
-            "group": "全局设置",
-            "name": "enable_reading_manual",
-            "type": "checkbox",
-            "label": "在界面添加阅读模式开关按钮"
-      },
-      {
-            "tab": "阅读模式",
-            "group": "全局设置",
-            "name": "enable_reading_hotkey",
-            "type": "checkbox",
-            "label": "启用快捷键"
-      },
-
-      {
-            "tab": "阅读模式",
-            "group": "全局设置",
-            "name": "b",
-            "type": "description",
-            "text": "R ：打开阅读模式;<br> Esc ：退出阅读模式",
-      },
-
-      {
+      
+        {
             "tab": "阅读模式",
             "group": "阅读模式宽度",
             "name": "reading_mode_width",
             "type": "slider",
             "display": true,
-            "min": 70,
+            "min": 50,
             "max": 100,
             "step": 2,
-      },
+        },
 
-      {
+        {
             "tab": "阅读模式",
             "group": "阅读模式宽度",
             "name": "b",
             "type": "description",
-            "text": "*占屏幕百分比，如70就是占屏幕70%宽度。需要刷新页面才能生效",
-      },
+            "text": "*占屏幕百分比，如70就是占屏幕70%宽度<strong style='color:red'>[Fixed]</strong>",
+        },
+
+        {
+            "tab": "阅读模式",
+            "group": "详细设置",
+            "name": "b",
+            "type": "description",
+            "text": "*以下设置在进入阅读模式后生效",
+        },
+
+        {
+            "tab": "阅读模式",
+            "group": "详细设置",
+            "name": "enable_reading_hidingtop",
+            "type": "checkbox",
+            "label": "隐藏微博顶部导航条<strong style='color:red'>[New]</strong>",
+        },
+
+        {
+            "tab": "阅读模式",
+            "group": "详细设置",
+            "name": "enable_reading_enlarge_font",
+            "type": "checkbox",
+            "label": "增大字体<strong style='color:red'>[New]</strong>",
+        },
+
+        {
+            "tab": "阅读模式",
+            "group": "详细设置",
+            "name": "enable_reading_hidingbuttons",
+            "type": "checkbox",
+            "label": "隐藏'评论''转发''收藏'等按钮<strong style='color:red'>[New]</strong>",
+        },
+
+      
 
       {
             "tab": "阅读模式",
-            "group": "备注1",
+            "group": "备注",
             "name": "b",
             "type": "description",
-            "text": "阅读模式和[主面板]共享优化方案，如果你想更改阅读模式内部样式，请至[主面板]",
-      },
-
-      {
-            "tab": "阅读模式",
-            "group": "备注2",
-            "name": "b",
-            "type": "description",
-            "text": "阅读模式暂时在测试中，如果你有意见或建议请<a href=\"http://t.ye11ow.me/chrome-weibokongnew/feedback/\" target=\"blank\">猛击此处</a>",
+            "text": "*阅读模式和[主面板]共享优化方案，如果你想更改阅读模式内部样式，请至[主面板]<br/>*阅读模式暂时在测试中，如果你有意见或建议请<a href=\"http://t.ye11ow.me/chrome-weibokongnew/feedback/\" target=\"blank\">猛击此处</a>",
       },
 
 		/*
@@ -756,7 +648,7 @@
             "group": "全局设置",
             "name": "enable_notification",
             "type": "checkbox",
-            "label": "启用消息提醒 <strong style='color:red'>[Fixed]</strong>"
+            "label": "启用消息提醒"
       },
       {
             "tab": "消息提醒",

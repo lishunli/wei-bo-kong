@@ -1,6 +1,6 @@
 ﻿// WeiboKongNew
-// version 2.1.3
-// 2012-06-13
+// version 2.1.4
+// 2012-07-20
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -19,21 +19,15 @@ var DATE = chrome.i18n.getMessage("appReleaseDate");
 
 /* reading mode*/
 function reading( options ) {
-	if ( options["enable_reading_manual"] == true ) {
+	/*if ( options["enable_reading_manual"] == true ) {
 		$("body").append( "<div class=\"kong_reading_button\" ><a id=\"kong_reading_button\" href=\"\" style=\"color:white\" onClick=\"if (document.getElementById('kong_reading_button').innerHTML == '启用阅读模式'){document.getElementById('kong_mask').style.display='block'; document.getElementsByClassName('feed_lists')[0].className += ' kong_read'; document.getElementById('kong_reading_button').innerHTML = '退出阅读模式'; return false;}else{document.getElementById('kong_reading_button').innerHTML = '启用阅读模式'; document.getElementById('kong_mask').style.display='none'; document.getElementsByClassName('feed_lists')[0].className = 'feed_lists W_linka W_texta'; return false;}\">启用阅读模式</a><div>" );
 		//$('ul[node-type="feedGroup"]').append("<li><a href=\"\" onClick=\"document.getElementById('kong_mask').style.display='block'; document.getElementsByClassName('feed_lists')[0].className += ' kong_read'; return false;\">启用阅读模式</a></li>");
-	}
-	if ( options["enable_reading_auto"] == true ) {
-		var reading_mote_width = parseInt( options["reading_mode_width"] );
-		if ( reading_mote_width == NaN ) reading_mote_width = 70;
-		$(".kong_mask").show();
-		$(".feed_lists.W_linka.W_texta").addClass( "kong_read" );
-		$(".feed_lists.W_linka.W_texta").css("width", reading_mote_width-3+"%");
-		$(".feed_lists.W_linka.W_texta").css("left", ((100-reading_mote_width)/2)+"%");
-		$(".W_gotop").css( "z-index", "99999" );
-		$(".W_gotop").css( "left", "60%" );
-	}
-	if ( options["enable_reading_hotkey"] == true ) {
+	}*/
+	
+	if ( options["enable_reading_mode"] == true ) {
+		if ( options["enable_reading_auto"] == true ) {
+
+		}
 		$("body").keypress(function(event) {
 			if ( $("*:focus").is("textarea") || $("*:focus").is("input") ){
 				return;
@@ -43,11 +37,28 @@ function reading( options ) {
 				if ( reading_mote_width == NaN ) reading_mote_width = 70;
 				$(".kong_mask").show();
 				$(".feed_lists.W_linka.W_texta").addClass( "kong_read" );
-				$(".feed_lists.W_linka.W_texta").css("width", reading_mote_width-3+"%");
-				$(".feed_lists.W_linka.W_texta").css("left", ((100-reading_mote_width)/2)+"%");
+				$(".feed_lists.W_linka.W_texta").css("padding-left", ((100-reading_mote_width)/2)+"%");
+				$(".feed_lists.W_linka.W_texta").css("padding-right", ((100-reading_mote_width)/2)+"%");
+				$(".feed_lists.W_linka.W_texta").css("padding-top", "30px");
+				$(".feed_lists.W_linka.W_texta").css("width", reading_mote_width+"%");
 				$(".W_gotop").css( "z-index", "99999" );
 				$(".W_gotop").css( "left", "60%" );
-				if ( options["enable_reading_manual"] == true ) $("#kong_reading_button").html( "退出阅读模式" );
+				if ( options["enable_reading_hidingtop"] == true ) {
+					$("#pl_content_top").hide();
+				}
+				if ( options["enable_reading_enlarge_font"] == true ) {
+					$('p[node-type="feed_list_content"]').css("font-size", "18px");
+					$('p[node-type="feed_list_content"]').css("font-weight", "bolder");
+					$('dt[node-type="feed_list_forwardContent"]').css("font-size", "16px");
+					$('dt[node-type="feed_list_forwardContent"]').css("font-weight", "bolder");	
+				}
+				if ( options["enable_reading_hidingbuttons"] == true ) {
+					$('.info.W_linkb.W_textb span:first-child').hide();
+				}
+
+
+				
+				//if ( options["enable_reading_manual"] == true ) $("#kong_reading_button").html( "退出阅读模式" );
 				/*var children = $('div[node-type="feed_list"]').children();
 				children[0].className += " kong_current_item";
 				$('body').scrollTop( children[0].offsetTop );*/
@@ -73,10 +84,25 @@ function reading( options ) {
 		  	if ( event.which == 27) {
 		  		$(".kong_mask").hide();
 				$(".feed_lists.W_linka.W_texta").removeClass( "kong_read" );
+				$(".feed_lists.W_linka.W_texta").css("padding-top", "0px");
 				$(".feed_lists.W_linka.W_texta").css("width", "100%");
+				$(".feed_lists.W_linka.W_texta").css("padding-left", "0px");
+				$(".feed_lists.W_linka.W_texta").css("padding-right", "0px");
 				$(".feed_lists.W_linka.W_texta").css("left", "0%");
 				$(".W_gotop").css( "left", "50%" );
-				if ( options["enable_reading_manual"] == true ) $("#kong_reading_button").html( "启用阅读模式" );
+				if ( options["enable_reading_hidingtop"] == true ) {
+					$("#pl_content_top").show();
+				}
+				if ( options["enable_reading_enlarge_font"] == true ) {
+					$('p[node-type="feed_list_content"]').css("font-size", "14px");
+					$('p[node-type="feed_list_content"]').css("font-weight", "normal");
+					$('dt[node-type="feed_list_forwardContent"]').css("font-size", "12px");
+					$('dt[node-type="feed_list_forwardContent"]').css("font-weight", "normal");	
+				}
+				if ( options["enable_reading_hidingbuttons"] == true ) {
+					$('.info.W_linkb.W_textb span:first-child').show();
+				}
+				//if ( options["enable_reading_manual"] == true ) $("#kong_reading_button").html( "启用阅读模式" );
 		  	}
 		});
 		
@@ -148,6 +174,7 @@ function rightside(options) {
 			$("#ads_37").hide();
 			$("#ads_36").hide();
 			$('div[ad-data]').hide();
+			$('#trustPagelet_ugrowth_invite').hide();
 
 		}
 		if ( options['hide_right_tips'] == true ) {
@@ -160,9 +187,6 @@ function rightside(options) {
 			$("#pl_content_mood").hide();
 		}
 		if ( options['hide_right_medals'] == true ) {
-			//old
-			$("#pl_content_medal").hide();
-			//new
 			$("#pl_rightmod_medal").hide();
 		}
 		if ( options['hide_right_nav'] == true ) {
@@ -171,18 +195,11 @@ function rightside(options) {
 		if ( options['hide_right_promotion'] == true ) {
 			$("#pl_rightmod_promotion").hide();
 		}
-		//old
-		if ( options['hide_right_game'] == true ) {
-			$('#pl_common_fun').hide();
-		}
 		if ( options['hide_right_topic'] == true ) {
 			if ( options['hide_right_alltopic'] == true ) {
 				$('#trustPagelete_zt_hottopic').hide(); 
 			}
 			else {
-				//old
-				$('#pl_content_promotetopic').hide();
-
 				options['class_data'] = $('li[action-data="index=0"]').attr( "class" );
 				$('li[action-data="index=0"]').hide();
 				$('li[action-data="index=1"]').attr( "class", options['class_data'] );
@@ -190,19 +207,17 @@ function rightside(options) {
 				$('#pl_topic_followTopic .content div:nth-child(2)').show();
 			}
 		}
+		if ( options['hide_right_vip'] == true ) {
+			$('#trustPagelet_recom_member').hide();
+		}
+
 		if ( options['hide_right_people'] == true ) {
-			//old
-			$('#pl_content_homeInterest').hide();
-			//new
 			$('#trustPagelete_recom_interest').hide();
 		}
 		if ( options['hide_right_popuser'] == true ) {
 			$('#pl_relation_recommendPopularUsers').hide();
 		}
 		if ( options['hide_right_interestgroup'] == true ) {
-			//old
-			$('#pl_common_thirdmodule_1005').hide();
-
 			if ( options['hide_right_activities'] == true &&  options['hide_right_apps'] == true ) {
 				$('#trustPagelete_recom_allinone').hide();
 			}
@@ -219,33 +234,15 @@ function rightside(options) {
 			$('li[action-data="type=app&flag=2"]').hide();
 			$(',W_rightModule2 .content div:nth-child(3)').hide();
 		}
-		//old
-		if ( options['hide_right_allinone'] == true ) {
-			$('#pl_content_allInOne').hide();
-		}
 		if ( options['hide_right_alltopic'] == true ) {
-			//old
-			$('#pl_content_topic').hide();
-			//new
 			$('li[action-data="index=1"]').hide();
 		}
 		if ( options['hide_right_notice'] == true ) {
-			//old
-			$("#pl_common_reportentry").hide();
-			$("#pl_common_noticeboard").hide();
-			//new
 			$("#pl_rightmod_noticeboard").hide();
 		}
 		if ( options['hide_right_help'] == true ) {
-			//old
-			$("#pl_common_help").hide();
-			//new
 			$("#pl_rightmod_help").hide();
 			
-		}
-		//old
-		if ( options['hide_right_feedback'] == true ) {
-			$("#pl_common_feedback").hide();
 		}
 	}
 	t = setTimeout(function(){rightside(options);}, 2000 );
@@ -520,14 +517,8 @@ function filter(options) {
 /* auto updater */
 function checkUpdate() {
 	if ( localStorage["version"] == undefined || VERSION > localStorage["version"] ) {
+		$(".feed_lists.W_linka.W_texta").prepend( "<dl id='kong_update' class='feed_list W_linecolor'><dt class='face'></dt><dd class='content'><p node-type='feed_list_content'><a>"+DATE+" 微博新控v"+VERSION+"更新详情：       (10秒后自动隐藏)</a><br/><em>"+UPDATE+"</em></p></dd><dd class='clear'></dd></dl>" )
 		localStorage["version"] = VERSION;
-		newElement = document.createElement('div');
-		newElement.id = "kong_update";
-		newElement.innerHTML += "<div id='kong_title'>微博控更新详情 v" + VERSION +"</div>"
-		newElement.innerHTML += "<div id='kong_date'>" + DATE + "</div><br>" 
-		newElement.innerHTML += UPDATE;
-		newElement.innerHTML += "<div id='kong_func'>10秒后自动<a href=\"\" onClick=\"document.getElementById('kong_update').style.display = 'none'; return false;\">关闭</a></div>"
-		document.body.appendChild(newElement);
 		var timer = setTimeout("document.getElementById('kong_update').style.display = 'none';", 10000);
 	}
 }
@@ -755,7 +746,6 @@ function doit(options) {
 	){
 		$("<style type='text/css'> .kong_button_original { color:" + $('.MIB_linkbl > a').css("color") + "; } </style>").appendTo("head");
 		$("<div><img id=\"kong_hover_img\" /></div>").appendTo("body");
-		$("<div id=\"kong_mask\" class=\"kong_mask\">hello</div>").appendTo("body");
 		reading( options );
 		topnav(options);
 		leftside(options);
