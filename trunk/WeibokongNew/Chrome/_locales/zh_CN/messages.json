@@ -10,17 +10,17 @@
   },
   
   "appVersion": {
-	"message": "2.1.4", 
+	"message": "2.1.5", 
     "description":"App version."
   },
   
   "appChangelog": {
-	"message": "+【右侧边栏】-【隐藏会员专区】<br/>+【右侧边栏】-【隐藏广告】现在可以隐藏'涨粉日记'<br/>+【阅读模式】增大字体<br/>*【阅读模式】优化阅读模式样式<br/>*【阅读模式】修复无法转发的bug<br/>*【阅读模式】修复背景虚化bug<br/>*更改更新详情显示方式<br/>-【阅读模式】禁用了通过链接打开阅读模式的功能(bug太多)<br/>", 
+	"message": "+【右侧边栏】-【隐藏奥运金牌榜】<br/>+【消息过滤】-【过滤来自特定应用的微博】<br/>", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2012-07-20", 
+	"message": "2012-07-31", 
     "description":"App release date."
   }
 }

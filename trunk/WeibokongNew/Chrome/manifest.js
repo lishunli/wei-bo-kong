@@ -43,7 +43,7 @@
             "group": "全局设置",
             "name": "disable_top_float",     
             "type": "checkbox",
-            "label": "固定导航条(禁止导航条随屏幕滚动) "
+            "label": "禁止导航条随屏幕滚动 "
       },
 		{
             "tab": "顶端导航条",
@@ -164,13 +164,21 @@
             "label": "隐藏勋章"
         },
             
-      {
+        {
             "tab": "右侧边栏",
             "group": "详细设置",
             "name": "hide_right_nav",
             "type": "checkbox",
             "label": "隐藏导航"
-      },
+        },
+
+        {
+            "tab": "右侧边栏",
+            "group": "详细设置",
+            "name": "hide_right_olympics",
+            "type": "checkbox",
+            "label": "隐藏奥运金牌榜 <strong style='color:red'>[New]</strong>"
+        },
 
       {
             "tab": "右侧边栏",
@@ -595,7 +603,7 @@
             "group": "阅读模式宽度",
             "name": "b",
             "type": "description",
-            "text": "*占屏幕百分比，如70就是占屏幕70%宽度<strong style='color:red'>[Fixed]</strong>",
+            "text": "*占屏幕百分比，如70就是占屏幕70%宽度",
         },
 
         {
@@ -611,7 +619,7 @@
             "group": "详细设置",
             "name": "enable_reading_hidingtop",
             "type": "checkbox",
-            "label": "隐藏微博顶部导航条<strong style='color:red'>[New]</strong>",
+            "label": "隐藏微博顶部导航条",
         },
 
         {
@@ -619,7 +627,7 @@
             "group": "详细设置",
             "name": "enable_reading_enlarge_font",
             "type": "checkbox",
-            "label": "增大字体<strong style='color:red'>[New]</strong>",
+            "label": "增大字体",
         },
 
         {
@@ -627,7 +635,7 @@
             "group": "详细设置",
             "name": "enable_reading_hidingbuttons",
             "type": "checkbox",
-            "label": "隐藏'评论''转发''收藏'等按钮<strong style='color:red'>[New]</strong>",
+            "label": "隐藏'评论''转发''收藏'等按钮",
         },
 
       
@@ -718,8 +726,10 @@
             "type": "checkbox",
             "label": "有新@时"
         },
+
+    //filter
 	
-      {
+        {
             "tab": "消息过滤",
             "group": "过滤关键字",
             "name": "enable_filter_keyword_origin",
@@ -735,7 +745,7 @@
             "label": "过滤转发内容",
         },
 		
-	{
+	   {
             "tab": "消息过滤",
             "group": "过滤关键字",
             "name": "filter_keyword",
@@ -743,6 +753,32 @@
             "label": "请输入想屏蔽的关键字",
 			"text": "以半角逗号,分隔关键字",
 			"masked": "false"
+        },
+
+        {
+            "tab": "消息过滤",
+            "group": "过滤来自",
+            "name": "enable_filter_source",
+            "type": "checkbox",
+            "label": "过滤来自特定应用的微博 <strong style='color:red'>[New]</strong>",
+        },
+        
+       {
+            "tab": "消息过滤",
+            "group": "过滤来自",
+            "name": "filter_source_keyword",
+            "type": "text",
+            "label": "请输入想屏蔽的关键字",
+            "text": "以半角逗号,分隔关键字",
+            "masked": "false"
+        },
+
+        {
+            "tab": "消息过滤",
+            "group": "过滤来自",
+            "name": "thx",
+            "type": "description",
+            "text": "使用介绍:你可以在此屏蔽来自豆瓣电影、虾米音乐、皮皮时光机等好友在第三方网站发布的微博条目。例如你想屏蔽所有来自豆瓣电影的条目，请激活【过滤来自特定应用的微博】，并且在关键字中填上“豆瓣电影”。同样，你可以屏蔽自定的关键字，只需要把某个条目下面“来自XX”中的“XX”复制到过滤关键字里面就ok了。详细图文教程请猛击<a target='_blank' href='http://t.ye11ow.me/chrome-weibokongnew/#屏蔽功能'>此处</a>。"
         },
 		
 		/*
@@ -785,7 +821,7 @@
             "group": "已知Bug",
             "name": "version",
             "type": "description",
-            "text": "1. 阅读模式下暂时无法转发、收藏<br/>2. 关于消息提醒的延迟：这不是bug，因为受限制于扩展实现原理，如果想要即时弹出消息提醒，会消耗较大资源。因此该扩展会每10秒查看一次是否有新消息，这也就是延迟的原因<br/>3. 使用按钮打开阅读模式时，无法更改宽度"
+            "text": "1. 关于消息提醒的延迟：这不是bug，因为受限制于扩展实现原理，如果想要即时弹出消息提醒，会消耗较大资源。因此该扩展会每10秒查看一次是否有新消息，这也就是延迟的原因<br/>"
       },
 		
 		{
@@ -811,9 +847,5 @@
             "type": "description",
             "text": "我将在2012年8月本科毕业，目前正在找工作（成都或者上海）。如果你有兴趣请联系我邮箱，我会把简历发给你，谢谢！"
         },
-
-
-		
-
 	]
 }
