@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="gbk">
+  </head>
+  <body>
+	<script type="text/javascript" src="lib/store.js"></script> 
+	<script type="text/javascript" src="jquery.min.js"></script> 
+	<script>
+		/* show page action */
+		function showPageAction(tabId, changeInfo, tab) {
+			if (tab.url.search("weibo.com") > -1 || tab.url.search("www.weibo.com") > -1) {
+			  chrome.pageAction.show(tabId);
+			}
+		};
+		
+		/* send options*/
+		function getOptions(callback) {
+			var settings = new Store("settings", {});
+			var options = settings.toObject();
+			callback(options);
+		};
+		
+		/* process the requests */
+		function onRequest(request, sender, callback) {
+			if (request.action == 'getOptions') {
+				getOptions(callback);
+			}
+			else if (request.action == 'refresh') {
+				chrome.windows.getCurrent(function(win) {
+					var cwin = win.id;
+					chrome.tabs.getAllInWindow(cwin, function(tabs) {
+						for (var i = 0; i < tabs.length; i++) {
+							var t = tabs[i].url;
+							if (t.match('weibo.com') || t.match('www.weibo.com')) {
+								var tab = tabs[i];
+								chrome.tabs.update(tab.id, {url: tab.url, selected: tab.selected}, null);
+							}
+						}
+					});
+				});
+			}
+			else if (request.action == 'redirect' ) {
+				chrome.tabs.create({url: request.url, selected: tab.selected}, null);
+			}
+			else if (request.action == 'notify' ) {
+				var icon = chrome.extension.getURL("img/icon/icon_48.png");
+				var title = "你有新消息";
+				var body = "";
+				var notify_value = request.value;
+				if ( notify_value > 7 ) {
+					body += "新微博\n";
+					notify_value -= 8;
+				}
+				if ( notify_value > 3 ) {
+					body += "新评论";
+					notify_value -= 4;
+				}
+				if ( notify_value > 1 ) {
+					body += "新@我\n";
+					notify_value -= 2;
+				}
+				if ( notify_value > 0 ) {
+					body += "新私信\n";
+					notify_value -= 1;
+				}
+				
+				var popup = webkitNotifications.createNotification( icon, title, body );
+				popup.replaceId = this.replaceId;
+				var settings = new Store("settings", {});
+     			var autoclose = settings.get( "notification_time" );
+				popup.ondisplay = function(event) {  
+                        setTimeout(function() {  
+                            event.currentTarget.cancel();  
+                        }, autoclose * 1000 );  
+                    };
+				popup.show();
+			}
+		};
+		chrome.extension.onRequest.addListener(onRequest);
+		chrome.tabs.onUpdated.addListener(showPageAction);
+    </script>
+  </body>
+</html>
