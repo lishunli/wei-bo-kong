@@ -1,6 +1,6 @@
 ﻿// WeiboKongNew
-// version 2.1.4
-// 2012-07-20
+// version 2.1.5
+// 2012-07-31
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -191,6 +191,9 @@ function rightside(options) {
 		}
 		if ( options['hide_right_nav'] == true ) {
 			$("#pl_nav_outlookBar").hide();
+		}
+		if ( options['hide_right_olympics'] == true ) {
+			$("#trustPagelet_yunying_olympic").hide();
 		}
 		if ( options['hide_right_promotion'] == true ) {
 			$("#pl_rightmod_promotion").hide();
@@ -511,6 +514,21 @@ function filter(options) {
 			});
 		}
 	}
+	if ( options['enable_filter_source'] == true ) {
+		if ( options['filter_source_keyword'] != "" ) {
+			var keywords = options['filter_source_keyword'].toString().split(",");
+			$(".info.W_linkb.W_textb").each(function (index){
+				var html = $(this).html();
+				for (var k in keywords) {
+					if ( html.search( keywords[k] ) != -1 ) {
+						$(this).parent().parent().hide();
+						break;
+					}
+				}
+			});
+		}
+	}
+
 	t = setTimeout(function(){filter(options);}, 2000 );
 }
 
