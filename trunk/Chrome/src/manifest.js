@@ -13,10 +13,18 @@
 
     {
             "tab": "基本设置",
-            "group": "v" + chrome.i18n.getMessage("appVersion") + "更新详情",
-            "name": "version",
+            "group": "全局设置",
+            "name": "auth_status",
             "type": "description",
-            "text": chrome.i18n.getMessage("appChangelog") + "<br/>*庆祝自己快毕业，特此在首页打个广告"
+            "text": "授权状态:"
+    },
+
+    {
+            "tab": "基本设置",
+            "group": "全局设置",
+            "name": "auth_btn",
+            "type": "button",
+            "text": "授权"
     },
 
     {

@@ -16,7 +16,6 @@ var VERSION = chrome.i18n.getMessage("appVersion");
 var UPDATE = chrome.i18n.getMessage("appChangelog");
 var DATE = chrome.i18n.getMessage("appReleaseDate");
 
-
 /* reading mode*/
 function reading( options ) {
 	/*if ( options["enable_reading_manual"] == true ) {
@@ -752,6 +751,10 @@ function searchpage(options) {
 
 function doit(options) {
 	checkUpdate();
+	var url = "https://api.weibo.com/2/account/get_uid.json";
+		$.getJSON(url, function(json) {
+			alert(json);
+		});
 	if ( options['enable_all'] == false ) return;
 	localStorage["notified"] = "0";
 	if ( $(document).attr('title').match("我的首页") || $(document).attr('title').match("我的首頁") ||
