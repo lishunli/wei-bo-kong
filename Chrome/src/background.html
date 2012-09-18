@@ -5,8 +5,16 @@
   </head>
   <body>
 	<script type="text/javascript" src="lib/store.js"></script> 
+	<script src=" http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3916367922" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="jquery.min.js"></script> 
 	<script>
+	var settings = new Store("settings", {});
+	var options = settings.toObject();
+	
+
+	chrome.browserAction.setBadgeBackgroundColor({color:[0, 200, 0, 100]});
+	chrome.browserAction.setBadgeText({text:String(50)});
+
 		/* show page action */
 		function showPageAction(tabId, changeInfo, tab) {
 			if (tab.url.search("weibo.com") > -1 || tab.url.search("www.weibo.com") > -1) {
@@ -16,8 +24,6 @@
 		
 		/* send options*/
 		function getOptions(callback) {
-			var settings = new Store("settings", {});
-			var options = settings.toObject();
 			callback(options);
 		};
 		
@@ -45,23 +51,23 @@
 			}
 			else if (request.action == 'notify' ) {
 				var icon = chrome.extension.getURL("img/icon/icon_48.png");
-				var title = "你有新消息";
+				var title = "脛茫脫脨脨脗脧没脧垄";
 				var body = "";
 				var notify_value = request.value;
 				if ( notify_value > 7 ) {
-					body += "新微博\n";
+					body += "脨脗脦垄虏漏\n";
 					notify_value -= 8;
 				}
 				if ( notify_value > 3 ) {
-					body += "新评论";
+					body += "脨脗脝脌脗脹";
 					notify_value -= 4;
 				}
 				if ( notify_value > 1 ) {
-					body += "新@我\n";
+					body += "脨脗@脦脪\n";
 					notify_value -= 2;
 				}
 				if ( notify_value > 0 ) {
-					body += "新私信\n";
+					body += "脨脗脣陆脨脜\n";
 					notify_value -= 1;
 				}
 				
