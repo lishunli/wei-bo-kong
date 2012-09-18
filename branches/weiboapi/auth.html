@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="gbk">
+	<script type="text/javascript" src="lib/store.js"></script> 
+	<script src=" http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3916367922" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="jquery.min.js"></script>
+  </head>
+  <body>
+    <form  id="at" action="https://api.weibo.com/oauth2/access_token" method="POST">
+      <input type="hidden" name="code" id="user_code" value="11" />
+      <input type="hidden" name="client_id" value="3916367922" />
+      <input type="hidden" name="client_secret" value="58032e7aecd61334fccfb7e490b1df91" />
+      <input type="hidden" name="grant_type" value="authorization_code" />
+      <input type="hidden" name="redirect_uri" value="chrome-extension://iedfopegeoohmgbhiflbjhbnejeiejie/auth.html" />
+    </form>
+    <script type="text/javascript">
+      /*
+      WB2.anyWhere(function(W){
+        W.parseCMD("/oauth2/access_token", function(sResult, bStatus){
+            alert(1);
+            alert(sResult);
+        },{
+            client_id : 3916367922,
+            client_secret : "58032e7aecd61334fccfb7e490b1df91",
+            grant_type : "authorization_code",
+            redirect_uri : "chrome-extension://iedfopegeoohmgbhiflbjhbnejeiejie/auth.html",
+            code : token
+
+        });
+      });*/
+      alert(1);
+      if ( localStorage["auth_status"] == "code" ) {
+        var token = new String(document.location);
+        token = token.substr(token.indexOf("code=")+5);
+        alert(token);
+        $("#user_code").val( token );
+        $("#at").submit();
+        localStorage["auth_status"] = "token";
+      }
+      else if ( localStorage["auth_status"] == "token" ) {
+        alert(1);
+        alert( $("body").html() );
+      }
+      
+    </script>
+  </body>
+</html>
