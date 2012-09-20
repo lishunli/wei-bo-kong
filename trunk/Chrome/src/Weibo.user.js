@@ -1,6 +1,6 @@
 ﻿// WeiboKongNew
 // version 2.1.6
-// 2012-09-19
+// 2012-09-20
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -493,6 +493,14 @@ function others(options) {
 
 // filter functions
 function filter(options) {
+	if ( options['enable_filter'] == true ) {
+		if ( options['filter'] != "" ) {
+			var names = options['filter'].toString().split(",");
+			for (var i in names) {
+				$('a[title=\"' + names[i] + '\"]').parent().parent().hide();
+			}
+		}
+	}
 	if ( options['enable_filter_keyword_origin'] == true ) {
 		if ( options['filter_keyword'] != "" ) {
 			var keywords = options['filter_keyword'].toString().split(",");

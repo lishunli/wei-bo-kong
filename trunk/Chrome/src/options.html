@@ -25,26 +25,10 @@
         <script src="js/i18n.js"></script>
         <script src="manifest.js"></script>
         <script src="settings.js"></script>
-        <script src=" http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3916367922" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			function refresh() {
 				chrome.extension.sendRequest( {action: 'refresh'}, function(){} );
 			}
-            /*
-            WB2.anyWhere(function(W){
-                W.widget.connectButton({
-                    id: "wb_connect_btn",
-                    type: '3,2',
-                    callback : {
-                        login:function(o){
-                            alert(o.screen_name)
-                        },
-                        logout:function(){
-                            alert('logout');
-                        }
-                    }
-                });
-            });*/
 		</script>
     </head>
 

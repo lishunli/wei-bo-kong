@@ -10,17 +10,17 @@
   },
   
   "appVersion": {
-	"message": "2.1.5", 
+	"message": "2.1.6", 
     "description":"App version."
   },
   
   "appChangelog": {
-	"message": "+【消息提醒】-【播放提示音】<br/>*【右侧边栏】-【隐藏会员专区】<br/>", 
+	"message": "+ 增加【消息提醒】-【播放提示音】<br/>+ 重新启用【消息过滤】-【过滤用户】（官方过滤系统非微博会员只能过滤5个）<br/>* 修复【右侧边栏】-【隐藏会员专区】<br/>* 更新至Manifest v2<br/>- 移除【阅读模式】-【自动启用阅读模式】<br/>", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2012-09-19", 
+	"message": "2012-09-20", 
     "description":"App release date."
   }
 }

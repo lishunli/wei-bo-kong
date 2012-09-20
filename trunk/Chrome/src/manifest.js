@@ -1,79 +1,83 @@
 ﻿this.manifest = {
     "name": "微博新控-设置",
     "icon": "icon.png",
-	
     "settings": [
     {
-            "tab": "基本设置",
-            "group": "全局设置",
-            "name": "enable_all",
-            "type": "checkbox",
-            "label": "启用微博控"
+        "tab": "基本设置",
+        "group": "全局设置",
+        "name": "enable_all",
+        "type": "checkbox",
+        "label": "启用微博控"
     },
 
     {
-            "tab": "基本设置",
-            "group": "全局设置",
-            "name": "auth_status",
-            "type": "description",
-            "text": chrome.i18n.getMessage("appChangelog")
+        "tab": "基本设置",
+        "group": "全局设置",
+        "name": "description",
+        "type": "description",
+        "text": "*此选项为该扩展的全局开关，请确保选中"
     },
 
-		
-		/*
-			Top
-		*/
+    {
+        "tab": "基本设置",
+        "group": "当前版本更新详情",
+        "name": "auth_status",
+        "type": "description",
+        "text": chrome.i18n.getMessage("appChangelog")
+    },
+	/*
+		Top
+	*/
 	{
-            "tab": "顶端导航条",
-            "group": "全局设置",
-            "name": "hide_top",	
-            "type": "checkbox",
-            "label": "隐藏所有元素"
-      },
+        "tab": "顶端导航条",
+        "group": "全局设置",
+        "name": "hide_top",	
+        "type": "checkbox",
+        "label": "隐藏所有元素"
+    },
 
-      {
-            "tab": "顶端导航条",
-            "group": "全局设置",
-            "name": "disable_top_float",     
-            "type": "checkbox",
-            "label": "禁止导航条随屏幕滚动 "
-      },
-		{
-            "tab": "顶端导航条",
-            "group": "详细设置",
-            "name": "hide_top_logo",
-            "type": "checkbox",
-            "label": "隐藏新浪图标"
-        },
-		{
-            "tab": "顶端导航条",
-            "group": "详细设置",
-            "name": "hide_top_left",
-            "type": "checkbox",	
-            "label": "隐藏左侧链接"
-        },
-		{
-            "tab": "顶端导航条",
-            "group": "详细设置",
-            "name": "hide_top_search",
-            "type": "checkbox",	
-            "label": "隐藏搜索栏"
-        },
-		{
-            "tab": "顶端导航条",
-            "group": "详细设置",
-            "name": "hide_top_right",
-            "type": "checkbox",	
-            "label": "隐藏右侧链接"
-        },
-		{
-            "tab": "顶端导航条",
-            "group": "详细设置",
-            "name": "hide_top_tips",
-            "type": "checkbox",	
-            "label": "隐藏小提示"
-        },
-		
+    {
+        "tab": "顶端导航条",
+        "group": "全局设置",
+        "name": "disable_top_float",     
+        "type": "checkbox",
+        "label": "禁止导航条随屏幕滚动 "
+    },
+	{
+        "tab": "顶端导航条",
+        "group": "详细设置",
+        "name": "hide_top_logo",
+        "type": "checkbox",
+        "label": "隐藏新浪图标"
+    },
+	{
+        "tab": "顶端导航条",
+        "group": "详细设置",
+        "name": "hide_top_left",
+        "type": "checkbox",	
+        "label": "隐藏左侧链接"
+    },
+	{
+        "tab": "顶端导航条",
+        "group": "详细设置",
+        "name": "hide_top_search",
+        "type": "checkbox",	
+        "label": "隐藏搜索栏"
+    },
+	{
+        "tab": "顶端导航条",
+        "group": "详细设置",
+        "name": "hide_top_right",
+        "type": "checkbox",	
+        "label": "隐藏右侧链接"
+    },
+	{
+        "tab": "顶端导航条",
+        "group": "详细设置",
+        "name": "hide_top_tips",
+        "type": "checkbox",	
+        "label": "隐藏小提示"
+    },	
 		/*
 			Left
 		*/
@@ -194,7 +198,7 @@
             "group": "详细设置",
             "name": "hide_right_vip",
             "type": "checkbox",
-            "label": "隐藏会员专区"
+            "label": "隐藏会员专区 <strong style='color:red'>[Fixed]</strong>"
         },
 
         {
@@ -639,7 +643,7 @@
             "group": "全局设置",
             "name": "enable_notification_sound",
             "type": "checkbox",
-            "label": "播放提示音"
+            "label": "播放提示音 <strong style='color:red'>[New]</strong>"
     },
       {
             "tab": "消息提醒",
@@ -711,7 +715,32 @@
         },
 
     //filter
-	
+	   {
+            "tab": "消息过滤",
+            "group": "过滤用户",
+            "name": "enable_filter",
+            "type": "checkbox",
+            "label": "启用过滤用户 <strong style='color:red'>[New]</strong>",
+        },
+        
+        {
+            "tab": "消息过滤",
+            "group": "过滤用户",
+            "name": "filter",
+            "type": "text",
+            "label": "请输入想屏蔽用户名",
+            "text": "以半角逗号,分隔用户名",
+            "masked": "false"
+        },
+        
+        {
+            "tab": "消息过滤",
+            "group": "过滤用户",
+            "name": "bugs",
+            "type": "description",
+            "text": "*请以半角逗号分隔多个用户名"
+        },
+        
         {
             "tab": "消息过滤",
             "group": "过滤关键字",
@@ -804,7 +833,7 @@
             "group": "已知Bug",
             "name": "version",
             "type": "description",
-            "text": "1. 关于消息提醒的延迟：这不是bug，因为受限制于扩展实现原理，如果想要即时弹出消息提醒，会消耗较大资源。因此该扩展会每10秒查看一次是否有新消息，这也就是延迟的原因<br/>"
+            "text": "1. 关于消息提醒的延迟：这不是bug，因为受限制于扩展实现原理，如果想要即时弹出消息提醒，会消耗较大资源。因此该扩展会每10秒查看一次是否有新消息，这也就是延迟的原因<br/><br/>"
       },
 		
 		{
