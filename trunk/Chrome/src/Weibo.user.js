@@ -1,6 +1,6 @@
 ﻿// WeiboKongNew
-// version 2.1.5
-// 2012-07-31
+// version 2.1.6
+// 2012-09-19
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -11,26 +11,25 @@
 // ==/UserScript==
 
 
-/*define global extension variables*/
+/*define global variables*/
 var VERSION = chrome.i18n.getMessage("appVersion");
 var UPDATE = chrome.i18n.getMessage("appChangelog");
 var DATE = chrome.i18n.getMessage("appReleaseDate");
 
-/* reading mode*/
+/*reading mode*/
 function reading( options ) {
+	//TODO Fix bugs
 	/*if ( options["enable_reading_manual"] == true ) {
 		$("body").append( "<div class=\"kong_reading_button\" ><a id=\"kong_reading_button\" href=\"\" style=\"color:white\" onClick=\"if (document.getElementById('kong_reading_button').innerHTML == '启用阅读模式'){document.getElementById('kong_mask').style.display='block'; document.getElementsByClassName('feed_lists')[0].className += ' kong_read'; document.getElementById('kong_reading_button').innerHTML = '退出阅读模式'; return false;}else{document.getElementById('kong_reading_button').innerHTML = '启用阅读模式'; document.getElementById('kong_mask').style.display='none'; document.getElementsByClassName('feed_lists')[0].className = 'feed_lists W_linka W_texta'; return false;}\">启用阅读模式</a><div>" );
 		//$('ul[node-type="feedGroup"]').append("<li><a href=\"\" onClick=\"document.getElementById('kong_mask').style.display='block'; document.getElementsByClassName('feed_lists')[0].className += ' kong_read'; return false;\">启用阅读模式</a></li>");
 	}*/
-	
 	if ( options["enable_reading_mode"] == true ) {
-		if ( options["enable_reading_auto"] == true ) {
-
-		}
 		$("body").keypress(function(event) {
+			//check if the post box is focused
 			if ( $("*:focus").is("textarea") || $("*:focus").is("input") ){
 				return;
 			}
+			// key 114 = 'r'
 		  	if ( event.which == 114) {
 		  		var reading_mote_width = parseInt( options["reading_mode_width"] );
 				if ( reading_mote_width == NaN ) reading_mote_width = 70;
@@ -54,14 +53,13 @@ function reading( options ) {
 				if ( options["enable_reading_hidingbuttons"] == true ) {
 					$('.info.W_linkb.W_textb span:first-child').hide();
 				}
-
-
-				
-				//if ( options["enable_reading_manual"] == true ) $("#kong_reading_button").html( "退出阅读模式" );
-				/*var children = $('div[node-type="feed_list"]').children();
+				//TODO Fix bugs
+				/*if ( options["enable_reading_manual"] == true ) $("#kong_reading_button").html( "退出阅读模式" );
+				var children = $('div[node-type="feed_list"]').children();
 				children[0].className += " kong_current_item";
 				$('body').scrollTop( children[0].offsetTop );*/
 		  	}
+		  	//TODO press 'N' to scroll down (like google reader)
 		  	/*
 		  	if ( event.which == 110) {
 		  		if ( $('.kong_current_item').length == 0 ) {
@@ -77,9 +75,11 @@ function reading( options ) {
 		  	*/
 		});
 		$("body").keydown(function(event) {
+			//check if the post box is focused
 			if ( $("*:focus").is("textarea") || $("*:focus").is("input") ){
 				return;
 			}
+			// key 27 = 'q'
 		  	if ( event.which == 27) {
 		  		$(".kong_mask").hide();
 				$(".feed_lists.W_linka.W_texta").removeClass( "kong_read" );
@@ -108,7 +108,7 @@ function reading( options ) {
 	}
 }
 
-/*operations for navigation bar on top*/
+/*navigation bar on top*/
 function topnav(options) {
 	if ( options['hide_top'] == true ) {
 		$("#pl_content_top").hide();
@@ -137,7 +137,7 @@ function topnav(options) {
 	t = setTimeout(function(){topnav(options);}, 2000 );
 }
 
-/*operations for navigation bar on lelf, only avaiable for 体验版*/
+/*navigation sidebar on lelf, only avaiable for 体验版*/
 function leftside(options) {
 	if ( options['hide_left_info'] == true ) {
 		$("#pl_leftNav_common div:first-child").hide();
@@ -157,7 +157,7 @@ function leftside(options) {
 
 }
 
-/*operations for navigation bar on right*/
+/*navigation sidebar on right*/
 function rightside(options) {
 	if ( options['hide_right'] == true ) {
 		$(".W_main_r").hide();
@@ -210,7 +210,7 @@ function rightside(options) {
 			}
 		}
 		if ( options['hide_right_vip'] == true ) {
-			$('#trustPagelet_recom_member').hide();
+			$('#trustPagelet_member_zone').hide();
 		}
 
 		if ( options['hide_right_people'] == true ) {
@@ -257,7 +257,6 @@ function hoverimg()
 		$(this).hover(function(){
 			var x = event.clientX + document.body.scrollLeft;
 			var y = event.clientY + document.body.scrollTop;
-				
 			$("#kong_hover_img").attr( "src", $(this).attr( "src" ).replace( "thumbnail", "bmiddle"  ) );
 			$("#kong_hover_img").css( "top", "40px" );
 			$("#kong_hover_img").css( "right", "100px" );
@@ -285,10 +284,11 @@ function unhover() {
 	hover.style.display = "none";
 }
 
-/*operations for main contents*/
+/*main contents*/
 function mainboard(options) {
-	//var theme = "kong_button" + getTheme( options['global_theme'] );
-	//var theme_hover = "kong_button_hover" + getTheme( options['global_theme'] );
+	//TODO theme support
+	/*var theme = "kong_button" + getTheme( options['global_theme'] );
+	var theme_hover = "kong_button_hover" + getTheme( options['global_theme'] );*/
 	if ( options['hover_main_img'] == true ) {
 		hoverimg();
 	}
@@ -307,12 +307,17 @@ function mainboard(options) {
 	if ( options['hide_main_nav'] == true ) {
 		$('div[node-type="feed_nav"]').hide();
 	}
+	if ( options['hide_main_sort'] == true ) {
+		$('div[node-type="smartSort"]').hide();
+	}
 	if ( options['hide_main_micro'] == true ) {
 		$(".info.W_linkb.W_textb").hide();
 	}
 	if ( options["enable_reading_indicator"] == true ) {
 		reading_indicator();
 	}
+	//hide forward contents
+	//DEPRECATED
 	/*
 	if ( options['hide_main_forward'] == true ) {
 		$(".sms").each(function (index){
@@ -372,6 +377,8 @@ function mainboard(options) {
 			}
 		});
 	}
+	//hide images
+	//DEPRECATED
 	if ( options["hide_main_image"] == true ) {
 		$(".feed_img > a").each( function (){
 			var str = $(this).attr( "onclick" );
@@ -456,10 +463,11 @@ function mainboard(options) {
 			$(this).hide();
 		});
 	}
-	
 	*/
 }
 
+//Add reading indicator to reading mode
+//TODO fix display bugs, not cool right now
 function reading_indicator() {
 	$('dl[action-type="feed_list_item"]').each( function (){
 		$(this).hover(function(){
@@ -471,7 +479,7 @@ function reading_indicator() {
 	t = setTimeout(function(){reading_indicator();}, 2000 );
 }
 
-/*other operations*/
+// other, bottom
 function others(options) {
 	if ( options['hide_other_ads'] == true ) {
 		$("#ads_bottom_1").hide();
@@ -483,7 +491,7 @@ function others(options) {
 }
 
 
-/*filter functions*/
+// filter functions
 function filter(options) {
 	if ( options['enable_filter_keyword_origin'] == true ) {
 		if ( options['filter_keyword'] != "" ) {
@@ -527,11 +535,10 @@ function filter(options) {
 			});
 		}
 	}
-
 	t = setTimeout(function(){filter(options);}, 2000 );
 }
 
-/* auto updater */
+// auto updater
 function checkUpdate() {
 	if ( localStorage["version"] == undefined || VERSION > localStorage["version"] ) {
 		$(".feed_lists.W_linka.W_texta").prepend( "<dl id='kong_update' class='feed_list W_linecolor'><dt class='face'></dt><dd class='content'><p node-type='feed_list_content'><a>"+DATE+" 微博新控v"+VERSION+"更新详情：       (10秒后自动隐藏)</a><br/><em>"+UPDATE+"</em></p></dd><dd class='clear'></dd></dl>" )
@@ -540,7 +547,7 @@ function checkUpdate() {
 	}
 }
 
-/* blink title */
+// notification: blink title
 function blink_info(msg) {
 	for (i=0;i<15;i++) {
 		timer = setTimeout("", 1000);
@@ -548,7 +555,7 @@ function blink_info(msg) {
 	}
 }
 
-/* notification */
+// notification: desktop 
 function notification(options) {
 	if ( options['enable_notification'] == false ) {
 		return;
@@ -625,7 +632,7 @@ function notification(options) {
 	t = setTimeout(function(){notification(options);}, intervals * 1000 );
 }
 
-/* */
+// friend page
 function friendpage(options) {
 	if ( options['hide_top_friend'] == true ) {
 		$(".global_header").hide();
@@ -706,8 +713,9 @@ function friendpage(options) {
 	}
 }
 
-/*
-function searchpage(options) {
+// search page
+// DEPRECATED
+/*function searchpage(options) {
 	if ( options['hide_top_search'] == true ) {
 		$(".tsina_gnbarea").hide();
 	} else {
@@ -749,6 +757,8 @@ function searchpage(options) {
 }
 */
 
+// entry function
+// check update -> init -> main page -> other page
 function doit(options) {
 	checkUpdate();
 	var url = "https://api.weibo.com/2/account/get_uid.json";
@@ -776,32 +786,17 @@ function doit(options) {
 		filter(options);
 		notification(options);
 	}
+	//TODO Search page
+	/*
 	else if ( $(document).attr('title').match("微博搜索") || $(document).attr('title').match("微博搜尋") ){
-		//searchpage(options);
-	}
-	else {
-		if ( options['enable_friend'] == false ) return;
+		searchpage(options);
+	}*/
+	else if ( options['enable_friend'] == true ){
 		friendpage(options);
 	}
 }
 
 
-
-/*
-function getTheme( theme )
-{
-	switch (theme) {
-		case 'grey':
-		return '_grey';
-		case 'blue':
-		return '_blue';
-		case 'original':
-		return '_original';
-		default:
-		return '_original';
-	}
-}
-*/
 
 /*get settings*/
 chrome.extension.sendRequest({'action' : 'getOptions'}, doit);

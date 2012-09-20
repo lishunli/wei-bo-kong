@@ -1,24 +1,10 @@
-ï»¿window.addEvent("domready", function () {
+window.addEvent("domready", function () {
     new FancySettings.initWithManifest(function (settings) {
-    	var _settings = new Store("settings", {});
-      	var options = _settings.toObject();
-		document.getElementById("settings-label").innerHTML = "å¾®åšæ–°æ§";
-		document.getElementById("search").placeholder = "è¯·è¾“å…¥\"New\"è¯•è¯•";
-		document.getElementById("search-label").innerHTML = "æœç´¢";
-		WB2.login(function(){});
-		if ( WB2.checkLogin() == false ) {
-			settings.manifest.auth_status.element.innerHTML += "<a style='color:red'>æœªæˆæƒ</a>";
-		}
-		else {
-			settings.manifest.auth_status.element.innerHTML += "<a style='color:green'>å·²æˆæƒ</a>";
-		}		
-		settings.manifest.auth_btn.addEvent("action", function (value) {
-			localStorage["auth_status"] = "code";
-		    location.href = "https://api.weibo.com/oauth2/authorize?client_id=3916367922&repsonse_type=code&redirect_uri=chrome-extension://iedfopegeoohmgbhiflbjhbnejeiejie/auth.html";
-		});
+		document.getElementById("settings-label").innerHTML = "Î¢²©ĞÂ¿ØÉèÖÃ";
+		document.getElementById("search").placeholder = "ÔÚ´ËÊäÈë\"New\"ÊÔÊÔ";
+		document.getElementById("search-label").innerHTML = "ËÑË÷";
     });
 });
-
 
 function hover(img) {
 	var hover = document.getElementById("hover");

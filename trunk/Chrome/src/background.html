@@ -4,7 +4,8 @@
 	<meta charset="gbk">
   </head>
   <body>
-	<script type="text/javascript" src="lib/store.js"></script> 
+  	<span id="dummy"></span>
+	<script type="text/javascript" src="lib/store.js"></script>
 	<script src=" http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3916367922" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="jquery.min.js"></script> 
 	<script>
@@ -75,7 +76,11 @@
 				popup.replaceId = this.replaceId;
 				var settings = new Store("settings", {});
      			var autoclose = settings.get( "notification_time" );
-				popup.ondisplay = function(event) {  
+     			var sound = settings.get( "enable_notification_sound" );
+				popup.ondisplay = function(event) {
+  						if ( sound == true) {
+  							document.getElementById("dummy").innerHTML="<embed src=\"sound.mp3\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+  						}
                         setTimeout(function() {  
                             event.currentTarget.cancel();  
                         }, autoclose * 1000 );  
