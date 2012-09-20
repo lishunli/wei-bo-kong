@@ -16,24 +16,9 @@
             "group": "全局设置",
             "name": "auth_status",
             "type": "description",
-            "text": "授权状态:"
+            "text": chrome.i18n.getMessage("appChangelog")
     },
 
-    {
-            "tab": "基本设置",
-            "group": "全局设置",
-            "name": "auth_btn",
-            "type": "button",
-            "text": "授权"
-    },
-
-    {
-            "tab": "基本设置",
-            "group": "广告",
-            "name": "version",
-            "type": "description",
-            "text": "我将在2012年8月本科毕业，目前正在找工作（成都或者上海）。如果你有兴趣请联系我邮箱，我会把简历发给你，谢谢！"
-    },
 		
 		/*
 			Top
@@ -179,62 +164,46 @@
             "type": "checkbox",
             "label": "隐藏导航"
         },
-
-        {
-            "tab": "右侧边栏",
-            "group": "详细设置",
-            "name": "hide_right_olympics",
-            "type": "checkbox",
-            "label": "隐藏奥运金牌榜 <strong style='color:red'>[New]</strong>"
-        },
-
-      {
-            "tab": "右侧边栏",
-            "group": "详细设置",
-            "name": "hide_right_promotion",
-            "type": "checkbox",
-            "label": "隐藏邀请好友"
-      },
       
-      {
+        {
             "tab": "右侧边栏",
             "group": "详细设置",
             "name": "hide_right_people",
             "type": "checkbox",
             "label": "隐藏可能感兴趣的人"
-      },
+        },
             
-      {
+        {
             "tab": "右侧边栏",
             "group": "详细设置",
             "name": "hide_right_topic",
             "type": "checkbox",
             "label": "隐藏热门话题"
-      },
+        },
 
-      {
+        {
             "tab": "右侧边栏",
             "group": "详细设置",
             "name": "hide_right_alltopic",
             "type": "checkbox",
             "label": "隐藏关注的话题"
-      },
+        },
 
-      {
+        {
             "tab": "右侧边栏",
             "group": "详细设置",
             "name": "hide_right_vip",
             "type": "checkbox",
             "label": "隐藏会员专区"
-      },
+        },
 
-      {
+        {
             "tab": "右侧边栏",
             "group": "详细设置",
             "name": "hide_right_interestgroup",
             "type": "checkbox",
             "label": "隐藏微群"
-      },
+        },
 
       {
             "tab": "右侧边栏",
@@ -321,6 +290,14 @@
             "name": "hide_main_nav",
             "type": "checkbox",
             "label": "隐藏分组导航"
+        },
+
+        {
+            "tab": "主面板",
+            "group": "详细设置",
+            "name": "hide_main_sort",
+            "type": "checkbox",
+            "label": "隐藏排序 <strong style='color:red'>[New]</strong>"
         },
 		
 		{
@@ -585,15 +562,6 @@
             "type": "description",
             "text": "快捷键列表：<br/>R ：打开阅读模式;<br/> Esc ：退出阅读模式",
         },
-
-        {
-            "tab": "阅读模式",
-            "group": "全局设置",
-            "name": "enable_reading_auto",
-            "type": "checkbox",
-            "label": "自动打开阅读模式"
-        },
-
       
         {
             "tab": "阅读模式",
@@ -665,7 +633,14 @@
             "name": "enable_notification",
             "type": "checkbox",
             "label": "启用消息提醒"
-      },
+    },
+    {
+            "tab": "消息提醒",
+            "group": "全局设置",
+            "name": "enable_notification_sound",
+            "type": "checkbox",
+            "label": "播放提示音"
+    },
       {
             "tab": "消息提醒",
             "group": "全局设置",
@@ -768,7 +743,7 @@
             "group": "过滤来自",
             "name": "enable_filter_source",
             "type": "checkbox",
-            "label": "过滤来自特定应用的微博 <strong style='color:red'>[New]</strong>",
+            "label": "过滤来自特定应用的微博",
         },
         
        {
@@ -846,14 +821,6 @@
             "name": "bug",
             "type": "description",
             "text": "关于Bug和建议:请发送邮件至ye111111ow (at) gmail.com 或<a href=\"http://t.ye11ow.me/chrome-weibokongnew/feedback/\" target=\"blank\">猛击此处</a>非常感谢!"
-        },
-
-        {
-            "tab": "关于",
-            "group": "关于我",
-            "name": "bug",
-            "type": "description",
-            "text": "我将在2012年8月本科毕业，目前正在找工作（成都或者上海）。如果你有兴趣请联系我邮箱，我会把简历发给你，谢谢！"
-        },
+        }
 	]
 }

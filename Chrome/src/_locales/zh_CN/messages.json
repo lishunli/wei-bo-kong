@@ -15,12 +15,12 @@
   },
   
   "appChangelog": {
-	"message": "+【右侧边栏】-【隐藏奥运金牌榜】<br/>+【消息过滤】-【过滤来自特定应用的微博】<br/>", 
+	"message": "+【消息提醒】-【播放提示音】<br/>*【右侧边栏】-【隐藏会员专区】<br/>", 
     "description":"App changelog."
   },
   
   "appReleaseDate": {
-	"message": "2012-07-31", 
+	"message": "2012-09-19", 
     "description":"App release date."
   }
 }
