@@ -1,8 +1,8 @@
 window.addEvent("domready", function () {
     new FancySettings.initWithManifest(function (settings) {
-		document.getElementById("settings-label").innerHTML = "Î¢²©ĞÂ¿ØÉèÖÃ";
-		document.getElementById("search").placeholder = "ÔÚ´ËÊäÈë\"New\"ÊÔÊÔ";
-		document.getElementById("search-label").innerHTML = "ËÑË÷";
+		document.getElementById("settings-label").innerHTML = "å¾®åšæ–°æ§";
+		document.getElementById("search").placeholder = "è¾“å…¥\"New\"è¯•è¯•";
+		document.getElementById("search-label").innerHTML = "æœç´¢ç»“æœ";
     });
 });
 
