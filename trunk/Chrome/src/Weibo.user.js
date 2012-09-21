@@ -1,6 +1,11 @@
-﻿// WeiboKongNew
+﻿/********************************
+Copyright (c) 2011~2012 Min Zhang
+http://code.google.com/p/wei-bo-kong/
+License: LGPL v2.1
+********************************/
+// WeiboKongNew
 // version 2.1.6
-// 2012-09-20
+// 2012-09-21
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -806,5 +811,5 @@ function doit(options) {
 
 
 
-/*get settings*/
+//get settings
 chrome.extension.sendRequest({'action' : 'getOptions'}, doit);
