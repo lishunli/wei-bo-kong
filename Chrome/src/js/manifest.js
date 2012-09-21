@@ -1,4 +1,9 @@
-﻿this.manifest = {
+﻿/********************************
+Copyright (c) 2011~2012 Min Zhang
+http://code.google.com/p/wei-bo-kong/
+License: LGPL v2.1
+********************************/
+this.manifest = {
     "name": "微博新控-设置",
     "icon": "icon.png",
     "settings": [

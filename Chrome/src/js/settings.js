@@ -1,3 +1,8 @@
+/********************************
+Copyright (c) 2011~2012 Min Zhang
+http://code.google.com/p/wei-bo-kong/
+License: LGPL v2.1
+********************************/
 window.addEvent("domready", function () {
     new FancySettings.initWithManifest(function (settings) {
 		document.getElementById("settings-label").innerHTML = "微博新控";
@@ -18,4 +23,8 @@ function hover(img) {
 function unhover() {
 	var hover = document.getElementById("hover");
 	hover.style.display = "none";
+}
+
+function refresh() {
+	chrome.extension.sendRequest( {action: 'refresh'}, function(){} );
 }
