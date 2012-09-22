@@ -779,6 +779,7 @@ function doit(options) {
 			alert(json);
 		});
 	if ( options['enable_all'] == false ) return;
+	alert(options['hide_right_help']);
 	localStorage["notified"] = "0";
 	if ( $(document).attr('title').match("我的首页") || $(document).attr('title').match("我的首頁") ||
 		 $(document).attr('title').match("@我的微博") || $(document).attr('title').match("@我的微博") ||
