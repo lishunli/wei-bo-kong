@@ -214,13 +214,13 @@ this.manifest = {
             "label": "隐藏微群"
         },
 
-      {
-            "tab": "右侧边栏",
-            "group": "详细设置",
-            "name": "hide_right_activities",
-            "type": "checkbox",
-            "label": "隐藏活动"
-      },
+    {
+        "tab": "右侧边栏",
+        "group": "详细设置",
+        "name": "hide_right_kan",
+        "type": "checkbox",
+        "label": "隐藏微刊 <strong style='color:red'>[New]</strong>"
+    },
 
       {
             "tab": "右侧边栏",

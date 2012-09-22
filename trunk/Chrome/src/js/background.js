@@ -3,8 +3,7 @@ Copyright (c) 2011~2012 Min Zhang
 http://code.google.com/p/wei-bo-kong/
 License: LGPL v2.1
 ********************************/
-var settings = new Store("settings", {});	
-var options = settings.toObject();
+
 
 /* show page action */
 function showPageAction(tabId, changeInfo, tab) {
@@ -15,11 +14,15 @@ function showPageAction(tabId, changeInfo, tab) {
 		
 /* send options*/
 function getOptions(callback) {
+	var settings = new Store("settings", {});	
+	var options = settings.toObject();
 	callback(options);
 };
 		
 /* process the requests */
 function onRequest(request, sender, callback) {
+	var settings = new Store("settings", {});	
+	var options = settings.toObject();
 	if (request.action == 'getOptions') {
 		getOptions(callback);
 	}
@@ -65,8 +68,8 @@ function onRequest(request, sender, callback) {
 		var popup = webkitNotifications.createNotification( icon, title, body );
 		popup.replaceId = this.replaceId;
 		var settings = new Store("settings", {});
-   			var autoclose = settings.get( "notification_time" );
-   			var sound = settings.get( "enable_notification_sound" );
+   		var autoclose = settings.get( "notification_time" );
+   		var sound = settings.get( "enable_notification_sound" );
 		popup.ondisplay = function(event) {
 				if ( sound == true) {
 					document.getElementById("dummy").innerHTML="<embed src=\"sound.mp3\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
