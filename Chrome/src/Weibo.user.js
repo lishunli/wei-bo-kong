@@ -5,7 +5,7 @@ License: LGPL v2.1
 ********************************/
 // WeiboKongNew
 // version 2.1.6
-// 2012-09-21
+// 2012-09-22
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -225,7 +225,7 @@ function rightside(options) {
 			$('#pl_relation_recommendPopularUsers').hide();
 		}
 		if ( options['hide_right_interestgroup'] == true ) {
-			if ( options['hide_right_activities'] == true &&  options['hide_right_apps'] == true ) {
+			if ( options['hide_right_kan'] == true &&  options['hide_right_apps'] == true ) {
 				$('#trustPagelete_recom_allinone').hide();
 			}
 			else {
@@ -233,13 +233,13 @@ function rightside(options) {
 				$('.W_rightModule2 .content div:nth-child(1)').hide();
 			}
 		}
-		if ( options['hide_right_activities'] == true ) {
-			$('li[action-data="type=event&flag=1"]').hide();
-			$('.W_rightModule2 .content div:nth-child(2)').hide();
+		if ( options['hide_right_kan'] == true ) {
+			$('li[action-data="type=kan&flag=3"]').hide();
+			$('.W_rightModule2 .content div:nth-child(3)').hide();
 		}
 		if ( options['hide_right_apps'] == true ) {
 			$('li[action-data="type=app&flag=2"]').hide();
-			$(',W_rightModule2 .content div:nth-child(3)').hide();
+			$(',W_rightModule2 .content div:nth-child(4)').hide();
 		}
 		if ( options['hide_right_alltopic'] == true ) {
 			$('li[action-data="index=1"]').hide();
@@ -774,12 +774,7 @@ function friendpage(options) {
 // check update -> init -> main page -> other page
 function doit(options) {
 	checkUpdate();
-	var url = "https://api.weibo.com/2/account/get_uid.json";
-		$.getJSON(url, function(json) {
-			alert(json);
-		});
 	if ( options['enable_all'] == false ) return;
-	alert(options['hide_right_help']);
 	localStorage["notified"] = "0";
 	if ( $(document).attr('title').match("我的首页") || $(document).attr('title').match("我的首頁") ||
 		 $(document).attr('title').match("@我的微博") || $(document).attr('title').match("@我的微博") ||
@@ -809,8 +804,6 @@ function doit(options) {
 		friendpage(options);
 	}
 }
-
-
 
 //get settings
 chrome.extension.sendRequest({'action' : 'getOptions'}, doit);
