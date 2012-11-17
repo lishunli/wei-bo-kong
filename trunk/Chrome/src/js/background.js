@@ -1,8 +1,8 @@
-/********************************
-Copyright (c) 2011~2012 Min Zhang
+/*
+Copyright (c) 2011~2013 Min Zhang
 http://code.google.com/p/wei-bo-kong/
 License: LGPL v2.1
-********************************/
+*/
 
 
 /* show page action */
@@ -45,23 +45,23 @@ function onRequest(request, sender, callback) {
 	}
 	else if (request.action == 'notify' ) {
 		var icon = chrome.extension.getURL("img/icon/icon_48.png");
-		var title = "ÄãÓÐÐÂÏûÏ¢";
+		var title = "微博新控桌面提醒";
 		var body = "";
 		var notify_value = request.value;
 		if ( notify_value > 7 ) {
-			body += "ÐÂÎ¢²©\n";
+			body += "您有新微博\n";
 			notify_value -= 8;
 		}
 		if ( notify_value > 3 ) {
-			body += "ÐÂÆÀÂÛ";
+			body += "您有新评论";
 			notify_value -= 4;
 		}
 		if ( notify_value > 1 ) {
-			body += "ÐÂ@ÎÒ\n";
+			body += "您有新@\n";
 			notify_value -= 2;
 		}
 		if ( notify_value > 0 ) {
-			body += "ÐÂË½ÐÅ\n";
+			body += "您有新私信\n";
 			notify_value -= 1;
 		}
 		
