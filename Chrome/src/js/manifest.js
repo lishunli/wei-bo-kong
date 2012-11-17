@@ -1,5 +1,5 @@
 ﻿/********************************
-Copyright (c) 2011~2012 Min Zhang
+Copyright (c) 2011~2013 Min Zhang
 http://code.google.com/p/wei-bo-kong/
 License: LGPL v2.1
 ********************************/
@@ -29,6 +29,14 @@ this.manifest = {
         "name": "auth_status",
         "type": "description",
         "text": chrome.i18n.getMessage("appChangelog")
+    },
+
+    {
+        "tab": "基本设置",
+        "group": "我不是广告",
+        "name": "noad",
+        "type": "description",
+        "text": "由于新浪微博最近又更新了新版，所以我打算开发一套更智能的系统来实现该插件。不出意外的话，下个版本[微博新控]将会有非常大的改观。当然这也需要很多时间，感谢各位的支持~"
     },
 	/*
 		Top
@@ -173,6 +181,14 @@ this.manifest = {
             "type": "checkbox",
             "label": "隐藏导航"
         },
+
+        {
+            "tab": "右侧边栏",
+            "group": "详细设置",
+            "name": "hide_right_update",
+            "type": "checkbox",
+            "label": "隐藏升级新版微博 <strong style='color:red'>[New]</strong>"
+        },
       
         {
             "tab": "右侧边栏",
@@ -203,7 +219,7 @@ this.manifest = {
             "group": "详细设置",
             "name": "hide_right_vip",
             "type": "checkbox",
-            "label": "隐藏会员专区 <strong style='color:red'>[Fixed]</strong>"
+            "label": "隐藏会员专区"
         },
 
         {
@@ -219,7 +235,7 @@ this.manifest = {
         "group": "详细设置",
         "name": "hide_right_kan",
         "type": "checkbox",
-        "label": "隐藏微刊 <strong style='color:red'>[New]</strong>"
+        "label": "隐藏微刊"
     },
 
       {

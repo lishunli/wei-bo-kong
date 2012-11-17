@@ -1,11 +1,11 @@
-﻿/********************************
-Copyright (c) 2011~2012 Min Zhang
+/********************************
+Copyright (c) 2011~2013 Min Zhang
 http://code.google.com/p/wei-bo-kong/
 License: LGPL v2.1
 ********************************/
 // WeiboKongNew
-// version 2.1.6
-// 2012-09-22
+// version 2.1.7
+// 2012-11-17
 //
 // ==UserScript==
 // @name          WeiboKongNew
@@ -195,6 +195,9 @@ function rightside(options) {
 		}
 		if ( options['hide_right_nav'] == true ) {
 			$("#pl_nav_outlookBar").hide();
+		}
+		if ( options['hide_right_update'] == true ) {
+			$("#pl_rightmod_freeupgrade").hide();
 		}
 		if ( options['hide_right_olympics'] == true ) {
 			$("#trustPagelet_yunying_olympic").hide();
@@ -541,7 +544,11 @@ function filter(options) {
 				var html = $(this).html();
 				for (var k in keywords) {
 					if ( html.search( keywords[k] ) != -1 ) {
-						$(this).parent().parent().hide();
+						var me = $(this);
+						while ( !($(me).hasClass("feed_list") && $(me).hasClass("W_linecolor")) ) {
+							me = $(me).parent();
+						}
+						$(me).hide();
 						break;
 					}
 				}
